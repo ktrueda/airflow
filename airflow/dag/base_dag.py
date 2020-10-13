@@ -30,6 +30,8 @@ class BaseDag(metaclass=ABCMeta):
     @abstractmethod
     def dag_id(self):
         """
+        dag_id.
+
         :return: the DAG ID
         :rtype: unicode
         """
@@ -39,6 +41,8 @@ class BaseDag(metaclass=ABCMeta):
     @abstractmethod
     def task_ids(self):
         """
+        task_ids.
+
         :return: A list of task IDs that are in this DAG
         :rtype: List[unicode]
         """
@@ -48,6 +52,8 @@ class BaseDag(metaclass=ABCMeta):
     @abstractmethod
     def full_filepath(self):
         """
+        full_filepath.
+
         :return: The absolute path to the file that contains this DAG's definition
         :rtype: unicode
         """
@@ -57,6 +63,8 @@ class BaseDag(metaclass=ABCMeta):
     @abstractmethod
     def concurrency(self):
         """
+        concurrency.
+
         :return: maximum number of tasks that can run simultaneously from this DAG
         :rtype: int
         """
@@ -65,6 +73,8 @@ class BaseDag(metaclass=ABCMeta):
     @abstractmethod
     def pickle_id(self):
         """
+        pickle_id.
+
         :return: The pickle ID for this DAG, if it has one. Otherwise None.
         :rtype: unicode
         """
@@ -80,6 +90,8 @@ class BaseDagBag:
     @abstractmethod
     def dag_ids(self):
         """
+        dag_ids.
+
         :return: a list of DAG IDs in this bag
         :rtype: List[unicode]
         """
@@ -88,6 +100,8 @@ class BaseDagBag:
     @abstractmethod
     def get_dag(self, dag_id):
         """
+        get_dag.
+
         :return: whether the task exists in this bag
         :rtype: airflow.dag.base_dag.BaseDag
         """
