@@ -53,9 +53,8 @@ if not sys.warnoptions:
 
 def expand_env_var(env_var):
     """
-    Expands (potentially nested) env vars by repeatedly applying
-    `expandvars` and `expanduser` until interpolation stops having
-    any effect.
+    Expands (potentially nested) env vars by repeatedly applying `expandvars` and `expanduser` until interpolation stops having any effect.
+
     """
     if not env_var:
         return env_var
@@ -228,8 +227,8 @@ class AirflowConfigParser(ConfigParser):  # pylint: disable=too-many-ancestors
 
     def _validate_config_dependencies(self):
         """
-        Validate that config values aren't invalid given other config values
-        or system-level limitations and requirements.
+        Validate that config values aren't invalid given other config values or system-level limitations and requirements.
+
         """
         if (
                 self.get("core", "executor") not in ('DebugExecutor', 'SequentialExecutor') and
@@ -480,8 +479,9 @@ class AirflowConfigParser(ConfigParser):  # pylint: disable=too-many-ancestors
 
     def remove_option(self, section, option, remove_default=True):
         """
-        Remove an option if it exists in config from a file or
-        default config. If both of config have the same option, this removes
+        Remove an option if it exists in config from a file or default config.
+
+        If both of config have the same option, this removes
         the option in both configs unless remove_default=False.
         """
         if super().has_option(section, option):
@@ -493,8 +493,7 @@ class AirflowConfigParser(ConfigParser):  # pylint: disable=too-many-ancestors
     # noinspection PyProtectedMember
     def getsection(self, section: str) -> Optional[Dict[str, Union[str, int, float, bool]]]:
         """
-        Returns the section as a dict. Values are converted to int, float, bool
-        as required.
+        Returns the section as a dict. Values are converted to int, float, bool as required.
 
         :param section: section from the config
         :rtype: dict
@@ -753,8 +752,7 @@ else:
 
 def parameterized_config(template):
     """
-    Generates a configuration from the provided template + variables defined in
-    current scope
+    Generates a configuration from the provided template + variables defined in current scope.
 
     :param template: a config content templated with {{variables}}
     """
@@ -960,6 +958,7 @@ def set(*args, **kwargs):  # noqa pylint: disable=redefined-builtin
 def ensure_secrets_loaded() -> List[BaseSecretsBackend]:
     """
     Ensure that all secrets backends are loaded.
+
     If the secrets_backend_list contains only 2 default backends, reload it.
     """
     # Check if the secrets_backend_list contains only 2 default backends
@@ -986,8 +985,9 @@ def get_custom_secret_backend() -> Optional[BaseSecretsBackend]:
 
 def initialize_secrets_backends() -> List[BaseSecretsBackend]:
     """
-    * import secrets backend classes
-    * instantiate them and return them in a list
+    Import secrets backend.
+
+    instantiate them and return them in a list
     """
     backend_list = []
 

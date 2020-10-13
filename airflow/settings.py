@@ -93,8 +93,9 @@ STATE_COLORS = {
 
 def policy(task):  # pylint: disable=unused-argument
     """
-    This policy setting allows altering tasks after they are loaded in
-    the DagBag. It allows administrator to rewire some task parameters.
+    This policy setting allows altering tasks after they are loaded in the DagBag.
+
+    It allows administrator to rewire some task parameters.
 
     To define policy, add a ``airflow_local_settings`` module
     to your PYTHONPATH that defines this ``policy`` function.
@@ -112,8 +113,7 @@ def policy(task):  # pylint: disable=unused-argument
 
 def task_instance_mutation_hook(task_instance):  # pylint: disable=unused-argument
     """
-    This setting allows altering task instances before they are queued by
-    the Airflow scheduler.
+    This setting allows altering task instances before they are queued by the Airflow scheduler.
 
     To define task_instance_mutation_hook, add a ``airflow_local_settings`` module
     to your PYTHONPATH that defines this ``task_instance_mutation_hook`` function.
@@ -124,9 +124,7 @@ def task_instance_mutation_hook(task_instance):  # pylint: disable=unused-argume
 
 def pod_mutation_hook(pod):  # pylint: disable=unused-argument
     """
-    This setting allows altering ``kubernetes.client.models.V1Pod`` object
-    before they are passed to the Kubernetes client by the ``PodLauncher``
-    for scheduling.
+    This setting allows altering ``kubernetes.client.models.V1Pod`` object before they are passed to the Kubernetes client by the ``PodLauncher`` for scheduling.
 
     To define a pod mutation hook, add a ``airflow_local_settings`` module
     to your PYTHONPATH that defines this ``pod_mutation_hook`` function.
@@ -275,8 +273,8 @@ def validate_session():
 
 def configure_action_logging():
     """
-    Any additional configuration (register callback) for airflow.utils.action_loggers
-    module
+    Any additional configuration (register callback) for airflow.utils.action_loggers module.
+
     :rtype: None
     """
 
