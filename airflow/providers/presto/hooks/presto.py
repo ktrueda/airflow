@@ -86,8 +86,7 @@ class PrestoHook(DbApiHook):
 
     def get_first(self, hql: str, parameters: Optional[dict] = None) -> Any:
         """
-        Returns only the first row, regardless of how many rows the query
-        returns.
+        Returns only the first row, regardless of how many rows the query returns.
         """
         try:
             return super().get_first(self._strip_sql(hql), parameters)

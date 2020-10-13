@@ -18,8 +18,7 @@
 #
 
 """
-This module contains operators to replicate records from
-DynamoDB table to S3.
+This module contains operators to replicate records from DynamoDB table to S3.
 """
 import json
 from copy import copy
@@ -51,6 +50,7 @@ def _upload_file_to_s3(file_obj, bucket_name, s3_key_prefix):
 class DynamoDBToS3Operator(BaseOperator):
     """
     Replicates records from a DynamoDB table to S3.
+
     It scans a DynamoDB table and write the received records to a file
     on the local filesystem. It flushes the file to S3 once the file size
     exceeds the file size limit specified by the user.
