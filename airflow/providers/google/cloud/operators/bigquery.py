@@ -94,7 +94,9 @@ class BigQueryConsoleIndexableLink(BaseOperatorLink):
 
 class BigQueryCheckOperator(CheckOperator):
     """
-    Performs checks against BigQuery. The ``BigQueryCheckOperator`` expects
+    Performs checks against BigQuery.
+
+    The ``BigQueryCheckOperator`` expects
     a sql query that will return a single row. Each value on that
     first row is evaluated using python ``bool`` casting. If any of the
     values return ``False`` the check is failed and errors out.
@@ -265,8 +267,7 @@ class BigQueryValueCheckOperator(ValueCheckOperator):
 
 class BigQueryIntervalCheckOperator(IntervalCheckOperator):
     """
-    Checks that the values of metrics given as SQL expressions are within
-    a certain tolerance of the ones from days_back before.
+    Checks that the values of metrics given as SQL expressions are within a certain tolerance of the ones from days_back before.
 
     This method constructs a query like so ::
 
@@ -360,8 +361,9 @@ class BigQueryIntervalCheckOperator(IntervalCheckOperator):
 
 class BigQueryGetDataOperator(BaseOperator):
     """
-    Fetches the data from a BigQuery table (alternatively fetch data for selected columns)
-    and returns data in a python list. The number of elements in the returned list will
+    Fetches the data from a BigQuery table (alternatively fetch data for selected columns) and returns data in a python list.
+
+    The number of elements in the returned list will
     be equal to the number of rows fetched. Each element in the list will again be a list
     where element would represent the columns values for that row.
 
@@ -495,6 +497,7 @@ class BigQueryGetDataOperator(BaseOperator):
 class BigQueryExecuteQueryOperator(BaseOperator):
     """
     Executes BigQuery SQL queries in a specific BigQuery database.
+
     This operator does not assert idempotency.
 
     :param sql: the sql code to be executed (templated)
@@ -750,8 +753,7 @@ class BigQueryExecuteQueryOperator(BaseOperator):
 
 class BigQueryCreateEmptyTableOperator(BaseOperator):
     """
-    Creates a new, empty table in the specified BigQuery dataset,
-    optionally with schema.
+    Creates a new, empty table in the specified BigQuery dataset, optionally with schema.
 
     The schema to be used for the BigQuery table may be specified in one of
     two ways. You may either directly pass the schema fields in, or you may
@@ -975,8 +977,7 @@ class BigQueryCreateEmptyTableOperator(BaseOperator):
 # pylint: disable=too-many-instance-attributes
 class BigQueryCreateExternalTableOperator(BaseOperator):
     """
-    Creates a new external table in the dataset with the data from Google Cloud
-    Storage.
+    Creates a new external table in the dataset with the data from Google Cloud Storage.
 
     The schema to be used for the BigQuery table may be specified in one of
     two ways. You may either directly pass the schema fields in, or you may
@@ -1226,6 +1227,7 @@ class BigQueryCreateExternalTableOperator(BaseOperator):
 class BigQueryDeleteDatasetOperator(BaseOperator):
     """
     This operator deletes an existing dataset from your Project in Big query.
+
     https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/delete
 
     .. seealso::
@@ -1326,6 +1328,7 @@ class BigQueryDeleteDatasetOperator(BaseOperator):
 class BigQueryCreateEmptyDatasetOperator(BaseOperator):
     """
     This operator is used to create new dataset for your Project in BigQuery.
+
     https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#resource
 
     .. seealso::
@@ -1583,6 +1586,7 @@ class BigQueryGetDatasetTablesOperator(BaseOperator):
 class BigQueryPatchDatasetOperator(BaseOperator):
     """
     This operator is used to patch dataset for your Project in BigQuery.
+
     It only replaces fields that are provided in the submitted dataset resource.
 
     .. seealso::
@@ -1668,6 +1672,7 @@ class BigQueryPatchDatasetOperator(BaseOperator):
 class BigQueryUpdateDatasetOperator(BaseOperator):
     """
     This operator is used to update dataset for your Project in BigQuery.
+
     Use ``fields`` to specify which fields of dataset to update. If a field
     is listed in ``fields`` and is ``None`` in dataset, it will be deleted.
     If no ``fields`` are provided then all fields of provided ``dataset_reources``
@@ -1938,6 +1943,7 @@ class BigQueryUpsertTableOperator(BaseOperator):
 class BigQueryInsertJobOperator(BaseOperator):
     """
     Executes a BigQuery job. Waits for the job to complete and returns job id.
+
     This operator work in the following way:
 
     - it calculates a unique hash of the job using job's configuration or uuid if ``force_rerun`` is True

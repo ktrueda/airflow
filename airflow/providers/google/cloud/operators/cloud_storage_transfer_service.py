@@ -104,8 +104,7 @@ class TransferJobPreprocessor:
 
     def process_body(self):
         """
-        Injects AWS credentials into body if needed and
-        reformats schedule information.
+        Injects AWS credentials into body if needed and reformats schedule information.
 
         :return: Preprocessed body
         :rtype: dict
@@ -162,9 +161,7 @@ class TransferJobValidator:
 
     def validate_body(self):
         """
-        Validates the body. Checks if body specifies `transferSpec`
-        if yes, then check if AWS credentials are passed correctly and
-        no more than 1 data source was selected.
+        Validates the body. Checks if body specifies `transferSpec` if yes, then check if AWS credentials are passed correctly and no more than 1 data source was selected.
 
         :raises: AirflowException
         """
@@ -346,7 +343,9 @@ class CloudDataTransferServiceUpdateJobOperator(BaseOperator):
 
 class CloudDataTransferServiceDeleteJobOperator(BaseOperator):
     """
-    Delete a transfer job. This is a soft delete. After a transfer job is
+    Delete a transfer job.
+
+    This is a soft delete. After a transfer job is
     deleted, the job and all the transfer executions are subject to garbage
     collection. Transfer jobs become eligible for garbage collection
     30 days after soft delete.
@@ -421,8 +420,7 @@ class CloudDataTransferServiceDeleteJobOperator(BaseOperator):
 
 class CloudDataTransferServiceGetOperationOperator(BaseOperator):
     """
-    Gets the latest state of a long-running operation in Google Storage Transfer
-    Service.
+    Gets the latest state of a long-running operation in Google Storage Transfer Service.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -487,7 +485,8 @@ class CloudDataTransferServiceGetOperationOperator(BaseOperator):
 
 class CloudDataTransferServiceListOperationsOperator(BaseOperator):
     """
-    Lists long-running operations in Google Storage Transfer
+    Lists long-running operations in Google Storage Transfer.
+
     Service that match the specified filter.
 
     .. seealso::
@@ -755,8 +754,7 @@ class CloudDataTransferServiceCancelOperationOperator(BaseOperator):
 
 class CloudDataTransferServiceS3ToGCSOperator(BaseOperator):
     """
-    Synchronizes an S3 bucket with a Google Cloud Storage bucket using the
-    Google Cloud Storage Transfer Service.
+    Synchronizes an S3 bucket with a Google Cloud Storage bucket using the Google Cloud Storage Transfer Service.
 
     .. warning::
 

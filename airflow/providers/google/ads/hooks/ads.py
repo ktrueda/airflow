@@ -128,6 +128,7 @@ class GoogleAdsHook(BaseHook):
     def _update_config_with_secret(self, secrets_temp: IO[str]) -> None:
         """
         Gets Google Cloud secret from connection and saves the contents to the temp file
+
         Updates google ads config with file path of the temp file containing the secret
         Note, the secret must be passed as a file path for Google Ads API
         """
@@ -191,6 +192,7 @@ class GoogleAdsHook(BaseHook):
     def list_accessible_customers(self) -> List[str]:
         """
         Returns resource names of customers directly accessible by the user authenticating the call.
+
         The resulting list of customers is based on your OAuth credentials. The request returns a list
         of all accounts that you are able to act upon directly given your current credentials. This will
         not necessarily include all accounts within the account hierarchy; rather, it will only include
