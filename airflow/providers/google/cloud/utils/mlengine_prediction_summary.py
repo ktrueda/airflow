@@ -17,9 +17,12 @@
 # specific language governing permissions and limitations
 # under the License.
 
-"""A template called by DataFlowPythonOperator to summarize BatchPrediction.
+"""
+A template called by DataFlowPythonOperator to summarize BatchPrediction.
+
 It accepts a user function to calculate the metric(s) per instance in
 the prediction results, then aggregates to output as a summary.
+
 Args:
   --prediction_path:
       The GCS folder that contains BatchPrediction results, containing

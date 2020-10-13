@@ -82,8 +82,9 @@ class PostgresToGCSOperator(BaseSQLToGCSOperator):
 
     def convert_type(self, value, schema_type):
         """
-        Takes a value from Postgres, and converts it to a value that's safe for
-        JSON/Google Cloud Storage/BigQuery. Dates are converted to UTC seconds.
+        Takes a value from Postgres, and converts it to a value that's safe for JSON/Google Cloud Storage/BigQuery.
+
+        Dates are converted to UTC seconds.
         Decimals are converted to floats. Times are converted to seconds.
         """
         if isinstance(value, (datetime.datetime, datetime.date)):
