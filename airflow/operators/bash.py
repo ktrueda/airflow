@@ -118,8 +118,7 @@ class BashOperator(BaseOperator):
 
     def execute(self, context):
         """
-        Execute the bash command in a temporary directory
-        which will be cleaned afterwards
+        Execute the bash command in a temporary directory which will be cleaned afterwards.
         """
         self.log.info('Tmp dir root location: \n %s', gettempdir())
 
