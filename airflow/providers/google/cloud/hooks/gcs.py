@@ -109,8 +109,9 @@ def _fallback_object_url_to_object_name_and_bucket_name(
 
 class GCSHook(GoogleBaseHook):
     """
-    Interact with Google Cloud Storage. This hook uses the Google Cloud
-    connection.
+    Interact with Google Cloud Storage.
+
+    This hook uses the Google Cloud connection.
     """
 
     _conn = None  # type: Optional[storage.Client]
@@ -197,9 +198,7 @@ class GCSHook(GoogleBaseHook):
 
     def rewrite(self, source_bucket, source_object, destination_bucket, destination_object=None):
         """
-        Has the same functionality as copy, except that will work on files
-        over 5 TB, as well as when copying between locations and/or storage
-        classes.
+        Has the same functionality as copy, except that will work on files over 5 TB, as well as when copying between locations and/or storage classes.
 
         destination_object can be omitted, in which case source_object is used.
 
@@ -657,7 +656,9 @@ class GCSHook(GoogleBaseHook):
         labels=None,
     ):
         """
-        Creates a new bucket. Google Cloud Storage uses a flat namespace, so
+        Creates a new bucket.
+
+        Google Cloud Storage uses a flat namespace, so
         you can't create a bucket with a name that is already in use.
 
         .. seealso::
@@ -720,6 +721,7 @@ class GCSHook(GoogleBaseHook):
     def insert_bucket_acl(self, bucket_name, entity, role, user_project=None):
         """
         Creates a new ACL entry on the specified bucket_name.
+
         See: https://cloud.google.com/storage/docs/json_api/v1/bucketAccessControls/insert
 
         :param bucket_name: Name of a bucket_name.
@@ -750,6 +752,7 @@ class GCSHook(GoogleBaseHook):
     def insert_object_acl(self, bucket_name, object_name, entity, role, generation=None, user_project=None):
         """
         Creates a new ACL entry on the specified object.
+
         See: https://cloud.google.com/storage/docs/json_api/v1/objectAccessControls/insert
 
         :param bucket_name: Name of a bucket_name.
@@ -988,8 +991,7 @@ class GCSHook(GoogleBaseHook):
 
 def gcs_object_is_directory(bucket: str) -> bool:
     """
-    Return True if given Google Cloud Storage URL (gs://<bucket>/<blob>)
-    is a directory or an empty bucket. Otherwise return False.
+    Return True if given Google Cloud Storage URL (gs://<bucket>/<blob>) is a directory or an empty bucket. Otherwise return False.
     """
     _, blob = _parse_gcs_url(bucket)
 
@@ -998,8 +1000,7 @@ def gcs_object_is_directory(bucket: str) -> bool:
 
 def _parse_gcs_url(gsurl: str) -> Tuple[str, str]:
     """
-    Given a Google Cloud Storage URL (gs://<bucket>/<blob>), returns a
-    tuple containing the corresponding bucket and blob.
+    Given a Google Cloud Storage URL (gs://<bucket>/<blob>), returns a tuple containing the corresponding bucket and blob.
     """
     parsed_url = urlparse(gsurl)
     if not parsed_url.netloc:

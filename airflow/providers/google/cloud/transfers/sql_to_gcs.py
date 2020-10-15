@@ -235,8 +235,7 @@ class BaseSQLToGCSOperator(BaseOperator):
         return files_to_upload
 
     def _configure_csv_file(self, file_handle, schema):
-        """Configure a csv writer with the file_handle and write schema as headers for the new file.
-        """
+        """Configure a csv writer with the file_handle and write schema as headers for the new file."""
         csv_writer = csv.writer(file_handle, encoding='utf-8', delimiter=self.field_delimiter)
         csv_writer.writerow(schema)
         return csv_writer

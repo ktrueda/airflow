@@ -58,8 +58,7 @@ class CloudFunctionsHook(GoogleBaseHook):
     @staticmethod
     def _full_location(project_id: str, location: str) -> str:
         """
-        Retrieve full location of the function in the form of
-        ``projects/<GCP_PROJECT_ID>/locations/<GCP_LOCATION>``
+        Retrieve full location of the function in the form of ``projects/<GCP_PROJECT_ID>/locations/<GCP_LOCATION>``.
 
         :param project_id: The Google Cloud Project project_id where the function belongs.
         :type project_id: str
@@ -204,8 +203,9 @@ class CloudFunctionsHook(GoogleBaseHook):
         project_id: str,
     ) -> Dict:
         """
-        Synchronously invokes a deployed Cloud Function. To be used for testing
-        purposes as very limited traffic is allowed.
+        Synchronously invokes a deployed Cloud Function.
+
+        To be used for testing purposes as very limited traffic is allowed.
 
         :param function_id: ID of the function to be called
         :type function_id: str
@@ -233,8 +233,7 @@ class CloudFunctionsHook(GoogleBaseHook):
 
     def _wait_for_operation_to_complete(self, operation_name: str) -> Dict:
         """
-        Waits for the named operation to complete - checks status of the
-        asynchronous call.
+        Waits for the named operation to complete - checks status of the asynchronous call.
 
         :param operation_name: The name of the operation.
         :type operation_name: str
