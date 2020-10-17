@@ -33,6 +33,7 @@ warnings.warn(
 class CloudSqlDatabaseHook(CloudSQLDatabaseHook):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.hooks.cloud_sql.CloudSQLDatabaseHook`.
     """
 

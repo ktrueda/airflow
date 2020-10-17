@@ -44,6 +44,7 @@ warnings.warn(
 class CloudDLPDeleteDlpJobOperator(CloudDLPDeleteDLPJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dlp.CloudDLPDeleteDLPJobOperator`.
     """
 
@@ -60,6 +61,7 @@ class CloudDLPDeleteDlpJobOperator(CloudDLPDeleteDLPJobOperator):
 class CloudDLPGetDlpJobOperator(CloudDLPGetDLPJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dlp.CloudDLPGetDLPJobOperator`.
     """
 
@@ -75,6 +77,7 @@ class CloudDLPGetDlpJobOperator(CloudDLPGetDLPJobOperator):
 class CloudDLPGetJobTripperOperator(CloudDLPGetDLPJobTriggerOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dlp.CloudDLPGetDLPJobTriggerOperator`.
     """
 
@@ -90,6 +93,7 @@ class CloudDLPGetJobTripperOperator(CloudDLPGetDLPJobTriggerOperator):
 class CloudDLPListDlpJobsOperator(CloudDLPListDLPJobsOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dlp.CloudDLPListDLPJobsOperator`.
     """
 

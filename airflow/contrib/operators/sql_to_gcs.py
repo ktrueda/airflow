@@ -30,6 +30,7 @@ warnings.warn(
 class BaseSQLToGoogleCloudStorageOperator(BaseSQLToGCSOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.transfers.sql_to_gcs.BaseSQLToGCSOperator`.
     """
 

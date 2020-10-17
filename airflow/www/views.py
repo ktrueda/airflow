@@ -151,8 +151,7 @@ def get_date_time_num_runs_dag_runs_form_data(www_request, session, dag):
 
 def task_group_to_dict(task_group):
     """
-    Create a nested dict representation of this TaskGroup and its children used to construct
-    the Graph View.
+    Create a nested dict representation of this TaskGroup and its children used to construct the Graph View.
     """
     if isinstance(task_group, BaseOperator):
         return {
@@ -367,8 +366,7 @@ class Airflow(AirflowBaseView):  # noqa: D101  pylint: disable=too-many-public-m
     @expose('/health')
     def health(self):
         """
-        An endpoint helping check the health status of the Airflow instance,
-        including metadatabase and scheduler.
+        An endpoint helping check the health status of the Airflow instance, including metadatabase and scheduler.
         """
         payload = {
             'metadatabase': {'status': 'unhealthy'}
