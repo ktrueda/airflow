@@ -985,9 +985,10 @@ def get_custom_secret_backend() -> Optional[BaseSecretsBackend]:
 
 def initialize_secrets_backends() -> List[BaseSecretsBackend]:
     """
-    Import secrets backend.
-
-    instantiate them and return them in a list
+    initialize_secrets_backends
+    
+    * import secrets backend.
+    * instantiate them and return them in a list
     """
     backend_list = []
 
