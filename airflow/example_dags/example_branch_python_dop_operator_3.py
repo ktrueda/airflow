@@ -17,8 +17,7 @@
 # under the License.
 
 """
-Example DAG demonstrating the usage of BranchPythonOperator with depends_on_past=True, where tasks may be run
-or skipped on alternating runs.
+Example DAG demonstrating the usage of BranchPythonOperator with depends_on_past=True, where tasks may be run or skipped on alternating runs.
 """
 
 from airflow import DAG

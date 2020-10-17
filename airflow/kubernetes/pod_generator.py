@@ -15,8 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 """
-This module provides an interface between the previous Pod
-API and outputs a kubernetes.client.models.V1Pod.
+This module provides an interface between the previous Pod API and outputs a kubernetes.client.models.V1Pod.
+
 The advantage being that the full Kubernetes API
 is supported and no serialization need be written.
 """
@@ -75,6 +75,8 @@ class PodDefaults:
 
 def make_safe_label_value(string):
     """
+    make_safe_label_values.
+
     Valid label values must be 63 characters or less and must be empty or begin and
     end with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
     dots (.), and alphanumerics between.
@@ -94,6 +96,8 @@ def make_safe_label_value(string):
 
 def datetime_to_label_safe_datestring(datetime_obj: datetime.datetime) -> str:
     """
+    datetime_to_label_safe_datestring
+
     Kubernetes doesn't like ":" in labels, since ISO datetime format uses ":" but
     not "_" let's
     replace ":" with "_"
@@ -106,6 +110,8 @@ def datetime_to_label_safe_datestring(datetime_obj: datetime.datetime) -> str:
 
 def label_safe_datestring_to_datetime(string: str) -> datetime.datetime:
     """
+    label_safe_datestring_to_datetime
+
     Kubernetes doesn't permit ":" in labels. ISO datetime format uses ":" but not
     "_", let's
     replace ":" with "_"
@@ -246,6 +252,8 @@ class PodGenerator:
     @staticmethod
     def reconcile_pods(base_pod: k8s.V1Pod, client_pod: Optional[k8s.V1Pod]) -> k8s.V1Pod:
         """
+        reconcile_pods
+
         :param base_pod: has the base attributes which are overwritten if they exist
             in the client pod and remain if they do not exist in the client_pod
         :type base_pod: k8s.V1Pod
@@ -269,6 +277,7 @@ class PodGenerator:
     def reconcile_metadata(base_meta, client_meta):
         """
         Merge kubernetes Metadata objects
+
         :param base_meta: has the base attributes which are overwritten if they exist
             in the client_meta and remain if they do not exist in the client_meta
         :type base_meta: k8s.V1ObjectMeta
@@ -294,6 +303,8 @@ class PodGenerator:
     def reconcile_specs(base_spec: Optional[k8s.V1PodSpec],
                         client_spec: Optional[k8s.V1PodSpec]) -> Optional[k8s.V1PodSpec]:
         """
+        reconcile_specs
+
         :param base_spec: has the base attributes which are overwritten if they exist
             in the client_spec and remain if they do not exist in the client_spec
         :type base_spec: k8s.V1PodSpec
@@ -318,6 +329,8 @@ class PodGenerator:
     def reconcile_containers(base_containers: List[k8s.V1Container],
                              client_containers: List[k8s.V1Container]) -> List[k8s.V1Container]:
         """
+        reconcile_containers
+
         :param base_containers: has the base attributes which are overwritten if they exist
             in the client_containers and remain if they do not exist in the client_containers
         :type base_containers: List[k8s.V1Container]
@@ -360,6 +373,8 @@ class PodGenerator:
         scheduler_job_id: str
     ) -> k8s.V1Pod:
         """
+        construct_pod.
+
         Construct a pod by gathering and consolidating the configuration from 3 places:
             - airflow.cfg
             - executor_config
@@ -424,6 +439,8 @@ class PodGenerator:
     @staticmethod
     def deserialize_model_file(path: str) -> k8s.V1Pod:
         """
+        deserialize_model_file
+
         :param path: Path to the file
         :return: a kubernetes.client.models.V1Pod
 
@@ -444,6 +461,7 @@ class PodGenerator:
     def deserialize_model_dict(pod_dict: dict) -> k8s.V1Pod:
         """
         Deserializes python dictionary to k8s.V1Pod
+
         @param pod_dict:
         @return:
         """
@@ -454,6 +472,8 @@ class PodGenerator:
     @staticmethod
     def make_unique_pod_id(pod_id):
         r"""
+        make_unique_pod_id
+
         Kubernetes pod names must be <= 253 chars and must pass the following regex for
         validation
         ``^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$``
@@ -472,6 +492,8 @@ class PodGenerator:
 
 def merge_objects(base_obj, client_obj):
     """
+    merge_objects
+
     :param base_obj: has the base attributes which are overwritten if they exist
         in the client_obj and remain if they do not exist in the client_obj
     :param client_obj: the object that the client wants to create.
@@ -501,6 +523,8 @@ def merge_objects(base_obj, client_obj):
 
 def extend_object_field(base_obj, client_obj, field_name):
     """
+    extend_object_field
+
     :param base_obj: an object which has a property `field_name` that is a list
     :param client_obj: an object which has a property `field_name` that is a list.
         A copy of this object is returned with `field_name` modified

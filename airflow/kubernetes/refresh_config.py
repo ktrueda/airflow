@@ -17,6 +17,7 @@
 
 """
 NOTE: this module can be removed once upstream client supports token refresh
+
 see: https://github.com/kubernetes-client/python/issues/741
 """
 
@@ -35,8 +36,7 @@ from kubernetes.config.kube_config import KUBE_CONFIG_DEFAULT_LOCATION, KubeConf
 
 class RefreshKubeConfigLoader(KubeConfigLoader):
     """
-    Patched KubeConfigLoader, this subclass takes expirationTimestamp into
-    account and sets api key refresh callback hook in Configuration object
+    Patched KubeConfigLoader, this subclass takes expirationTimestamp into account and sets api key refresh callback hook in Configuration object
     """
 
     def __init__(self, *args, **kwargs):
@@ -45,8 +45,9 @@ class RefreshKubeConfigLoader(KubeConfigLoader):
 
     def _load_from_exec_plugin(self):
         """
-        We override _load_from_exec_plugin method to also read and store
-        expiration timestamp for aws-iam-authenticator. It will be later
+        We override _load_from_exec_plugin method to also read and store expiration timestamp for aws-iam-authenticator.
+
+        It will be later
         used for api token refresh.
         """
         if 'exec' not in self._user:
@@ -80,8 +81,7 @@ class RefreshKubeConfigLoader(KubeConfigLoader):
 
 class RefreshConfiguration(Configuration):
     """
-    Patched Configuration, this subclass taskes api key refresh callback hook
-    into account
+    Patched Configuration, this subclass taskes api key refresh callback hook into account
     """
 
     def __init__(self, *args, **kwargs):
@@ -96,8 +96,7 @@ class RefreshConfiguration(Configuration):
 
 def _get_kube_config_loader_for_yaml_file(filename, **kwargs) -> Optional[RefreshKubeConfigLoader]:
     """
-    Adapted from the upstream _get_kube_config_loader_for_yaml_file function, changed
-    KubeConfigLoader to RefreshKubeConfigLoader
+    Adapted from the upstream _get_kube_config_loader_for_yaml_file function, changed KubeConfigLoader to RefreshKubeConfigLoader
     """
     with open(filename) as f:
         return RefreshKubeConfigLoader(
@@ -108,6 +107,8 @@ def _get_kube_config_loader_for_yaml_file(filename, **kwargs) -> Optional[Refres
 
 def load_kube_config(client_configuration, config_file=None, context=None):
     """
+    load_kube_config.
+
     Adapted from the upstream load_kube_config function, changes:
         - removed persist_config argument since it's not being used
         - remove `client_configuration is None` branch since we always pass
