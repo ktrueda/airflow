@@ -31,8 +31,7 @@ from airflow.utils.operator_helpers import context_to_airflow_vars
 
 class HiveToSambaOperator(BaseOperator):
     """
-    Executes hql code in a specific Hive database and loads the
-    results of the query as a csv to a Samba location.
+    Executes hql code in a specific Hive database and loads the results of the query as a csv to a Samba location.
 
     :param hql: the hql to be exported. (templated)
     :type hql: str

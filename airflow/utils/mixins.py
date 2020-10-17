@@ -28,8 +28,7 @@ class MultiprocessingStartMethodMixin:
 
     def _get_multiprocessing_start_method(self) -> str:
         """
-        Determine method of creating new processes by checking if the
-        mp_start_method is set in configs, else, it uses the OS default.
+        Determine method of creating new processes by checking if the mp_start_method is set in configs, else, it uses the OS default.
         """
         if conf.has_option('core', 'mp_start_method'):
             return conf.get('core', 'mp_start_method')
