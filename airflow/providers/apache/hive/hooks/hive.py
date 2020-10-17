@@ -816,6 +816,7 @@ class HiveServer2Hook(DbApiHook):
     """
     Wrapper around the pyhive library.
 
+    Notes
     * the default authMechanism is PLAIN, to override it you
     can specify it in the ``extra`` of your connection in the UI
     * the default for run_set_variable_statements is true, if you
