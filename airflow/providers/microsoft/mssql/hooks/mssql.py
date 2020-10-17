@@ -17,6 +17,7 @@
 # under the License.
 """
 This module is deprecated due to the discontinuation of the pymssql project.
+
 See https://github.com/pymssql/pymssql/issues/668.
 Support for pymssql will be removed in Airflow 2.0.
 Please use :mod:`~airflow.providers.odbc.hooks.odbc`.

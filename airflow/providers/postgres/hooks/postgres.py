@@ -115,6 +115,7 @@ class PostgresHook(DbApiHook):
     def copy_expert(self, sql: str, filename: str) -> None:
         """
         Executes SQL using psycopg2 copy_expert method.
+
         Necessary to execute COPY command without access to a superuser.
 
         Note: if this method is called with a "COPY FROM" statement and
@@ -150,8 +151,7 @@ class PostgresHook(DbApiHook):
     @staticmethod
     def _serialize_cell(cell: object, conn: Optional[connection] = None) -> object:
         """
-        Postgresql will adapt all arguments to the execute() method internally,
-        hence we return cell without any conversion.
+        Postgresql will adapt all arguments to the execute() method internally, hence we return cell without any conversion.
 
         See http://initd.org/psycopg/docs/advanced.html#adapting-new-types for
         more information.
@@ -167,8 +167,9 @@ class PostgresHook(DbApiHook):
 
     def get_iam_token(self, conn: Connection) -> Tuple[str, str, int]:
         """
-        Uses AWSHook to retrieve a temporary password to connect to Postgres
-        or Redshift. Port is required. If none is provided, default is used for
+        Uses AWSHook to retrieve a temporary password to connect to Postgres or Redshift.
+
+        Port is required. If none is provided, default is used for
         each service
         """
         from airflow.providers.amazon.aws.hooks.base_aws import AwsBaseHook
@@ -204,6 +205,7 @@ class PostgresHook(DbApiHook):
     ) -> str:
         """
         Static helper method that generate the INSERT SQL statement.
+
         The REPLACE variant is specific to MySQL syntax.
 
         :param table: Name of the target table
