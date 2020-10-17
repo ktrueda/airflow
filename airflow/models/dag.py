@@ -77,6 +77,7 @@ DagStateChangeCallback = Callable[[Context], None]
 def get_last_dagrun(dag_id, session, include_externally_triggered=False):
     """
     Returns the last dag run for a dag, None if there was none.
+
     Last dag run can be any type of run eg. scheduled or backfilled.
     Overridden DagRuns are ignored.
     """
@@ -91,8 +92,9 @@ def get_last_dagrun(dag_id, session, include_externally_triggered=False):
 @functools.total_ordering
 class DAG(BaseDag, LoggingMixin):
     """
-    A dag (directed acyclic graph) is a collection of tasks with directional
-    dependencies. A dag also has a schedule, a start date and an end date
+    A dag (directed acyclic graph) is a collection of tasks with directional dependencies.
+
+    A dag also has a schedule, a start date and an end date
     (optional). For each schedule, (say daily or hourly), the DAG needs to run
     each individual tasks as their dependencies are met. Certain tasks have
     the property of depending on their own past, meaning that they can't run
@@ -472,8 +474,7 @@ class DAG(BaseDag, LoggingMixin):
         date_last_automated_dagrun: Optional[pendulum.DateTime],
     ) -> Tuple[Optional[pendulum.DateTime], Optional[pendulum.DateTime]]:
         """
-        Get information about the next DagRun of this dag after ``date_last_automated_dagrun`` -- the
-        execution date, and the earliest it could be scheduled
+        Get information about the next DagRun of this dag after ``date_last_automated_dagrun`` -- the execution date, and the earliest it could be scheduled
 
         :param date_last_automated_dagrun: The max(execution_date) of existing
             "automated" DagRuns for this dag (scheduled or backfill, but not
@@ -496,8 +497,9 @@ class DAG(BaseDag, LoggingMixin):
 
     def next_dagrun_after_date(self, date_last_automated_dagrun: Optional[pendulum.DateTime]):
         """
-        Get the next execution date after the given ``date_last_automated_dagrun``, according to
-        schedule_interval, start_date, end_date etc.  This doesn't check max active run or any other
+        Get the next execution date after the given ``date_last_automated_dagrun``, according to schedule_interval, start_date, end_date etc.
+
+        This doesn't check max active run or any other
         "concurrency" type limits, it only performs calculations based on the various date and interval fields
         of this dag and it's tasks.
 
@@ -572,8 +574,9 @@ class DAG(BaseDag, LoggingMixin):
 
     def get_run_dates(self, start_date, end_date=None):
         """
-        Returns a list of dates between the interval received as parameter using this
-        dag's schedule interval. Returned dates can be used for execution dates.
+        Returns a list of dates between the interval received as parameter using this dag's schedule interval.
+
+        Returned dates can be used for execution dates.
 
         :param start_date: the start date of the interval
         :type start_date: datetime
@@ -717,8 +720,7 @@ class DAG(BaseDag, LoggingMixin):
     @provide_session
     def get_concurrency_reached(self, session=None) -> bool:
         """
-        Returns a boolean indicating whether the concurrency limit for this DAG
-        has been reached
+        Returns a boolean indicating whether the concurrency limit for this DAG has been reached.
         """
         TI = TaskInstance
         qry = session.query(func.count(TI.task_id)).filter(
@@ -763,8 +765,9 @@ class DAG(BaseDag, LoggingMixin):
     @property
     def normalized_schedule_interval(self) -> Optional[ScheduleInterval]:
         """
-        Returns Normalized Schedule Interval. This is used internally by the Scheduler to
-        schedule DAGs.
+        Returns Normalized Schedule Interval.
+
+        This is used internally by the Scheduler to schedule DAGs.
 
         1. Converts Cron Preset to a Cron Expression (e.g ``@monthly`` to ``0 0 1 * *``)
         2. If Schedule Interval is "@once" return "None"
@@ -781,8 +784,9 @@ class DAG(BaseDag, LoggingMixin):
     @provide_session
     def handle_callback(self, dagrun, success=True, reason=None, session=None):
         """
-        Triggers the appropriate callback depending on the value of success, namely the
-        on_failure_callback or on_success_callback. This method gets the context of a
+        Triggers the appropriate callback depending on the value of success, namely the on_failure_callback or on_success_callback.
+
+        This method gets the context of a
         single TaskInstance part of this DagRun and passes that to the callable along
         with a 'reason', primarily to differentiate DagRun failures.
 
@@ -846,8 +850,7 @@ class DAG(BaseDag, LoggingMixin):
     @provide_session
     def get_dagrun(self, execution_date, session=None):
         """
-        Returns the dag run for a given execution date if it exists, otherwise
-        none.
+        Returns the dag run for a given execution date if it exists, otherwise none.
 
         :param execution_date: The execution date of the DagRun to find.
         :param session:
@@ -954,8 +957,7 @@ class DAG(BaseDag, LoggingMixin):
 
     def set_dependency(self, upstream_task_id, downstream_task_id):
         """
-        Simple utility method to set dependency between two tasks that
-        already have been added to the DAG using add_task()
+        Simple utility method to set dependency between two tasks that already have been added to the DAG using add_task()
         """
         self.get_task(upstream_task_id).set_downstream(
             self.get_task(downstream_task_id))
@@ -1009,8 +1011,7 @@ class DAG(BaseDag, LoggingMixin):
 
     def topological_sort(self, include_subdag_tasks: bool = False):
         """
-        Sorts tasks in topographical order, such that a task comes after any of its
-        upstream dependencies.
+        Sorts tasks in topographical order, such that a task comes after any of its upstream dependencies.
 
         Heavily inspired by:
         http://blog.jupo.org/2012/04/06/topological-sorting-acyclic-directed-graphs/
@@ -1094,8 +1095,7 @@ class DAG(BaseDag, LoggingMixin):
             dag_bag=None,
     ):
         """
-        Clears a set of task instances associated with the current dag for
-        a specified date range.
+        Clears a set of task instances associated with the current dag for a specified date range.
 
         :param start_date: The minimum execution_date to clear
         :type start_date: datetime.datetime or None
@@ -1350,6 +1350,8 @@ class DAG(BaseDag, LoggingMixin):
     def sub_dag(self, task_regex, include_downstream=False,
                 include_upstream=True):
         """
+        sub_dag.
+
         Returns a subset of the current dag as a deep copy of the current dag
         based on a regex that should match one or many tasks, and includes
         upstream and downstream neighbours based on the flag passed.
@@ -1622,6 +1624,7 @@ class DAG(BaseDag, LoggingMixin):
     ):
         """
         Creates a dag run from this dag including the tasks associated with this dag.
+
         Returns the dag run.
 
         :param run_id: defines the run id for this dag run
@@ -1693,8 +1696,7 @@ class DAG(BaseDag, LoggingMixin):
     @provide_session
     def bulk_write_to_db(cls, dags: Collection["DAG"], session=None):
         """
-        Ensure the DagModel rows for the given dags are up-to-date in the dag table in the DB, including
-        calculated fields.
+        Ensure the DagModel rows for the given dags are up-to-date in the dag table in the DB, including calculated fields.
 
         Note that this method can be called for both DAGs and SubDAGs. A SubDag is actually a SubDagOperator.
 
@@ -1796,8 +1798,9 @@ class DAG(BaseDag, LoggingMixin):
     @provide_session
     def sync_to_db(self, session=None):
         """
-        Save attributes about this DAG to the DB. Note that this method
-        can be called for both DAGs and SubDAGs. A SubDag is actually a
+        Save attributes about this DAG to the DB.
+
+        Note that this method can be called for both DAGs and SubDAGs. A SubDag is actually a
         SubDagOperator.
 
         :return: None
@@ -1815,8 +1818,7 @@ class DAG(BaseDag, LoggingMixin):
     @provide_session
     def deactivate_unknown_dags(active_dag_ids, session=None):
         """
-        Given a list of known DAGs, deactivate any other DAGs that are
-        marked as active in the ORM
+        Given a list of known DAGs, deactivate any other DAGs that are marked as active in the ORM
 
         :param active_dag_ids: list of DAG IDs that are active
         :type active_dag_ids: list[unicode]
@@ -1834,8 +1836,9 @@ class DAG(BaseDag, LoggingMixin):
     @provide_session
     def deactivate_stale_dags(expiration_date, session=None):
         """
-        Deactivate any DAGs that were last touched by the scheduler before
-        the expiration date. These DAGs were likely deleted.
+        Deactivate any DAGs that were last touched by the scheduler before the expiration date.
+
+        These DAGs were likely deleted.
 
         :param expiration_date: set inactive DAGs that were touched before this
             time
@@ -2036,8 +2039,7 @@ class DagModel(Base):
 
     def get_default_view(self) -> str:
         """
-        Get the Default DAG View, returns the default config value if DagModel does not
-        have a value
+        Get the Default DAG View, returns the default config value if DagModel does not have a value
         """
         # This is for backwards-compatibility with old dags that don't have None as default_view
         return self.default_view or conf.get('webserver', 'dag_default_view').lower()
@@ -2077,6 +2079,7 @@ class DagModel(Base):
     def deactivate_deleted_dags(cls, alive_dag_filelocs: List[str], session=None):
         """
         Set ``is_active=False`` on the DAGs for which the DAG files have been removed.
+
         Additionally change ``is_active=False`` to ``True`` if the DAG file exists.
 
         :param alive_dag_filelocs: file paths of alive DAGs

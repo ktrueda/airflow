@@ -27,8 +27,9 @@ from airflow.utils.helpers import parse_template_string
 
 class FileProcessorHandler(logging.Handler):
     """
-    FileProcessorHandler is a python log handler that handles
-    dag processor logs. It creates and delegates log handling
+    FileProcessorHandler is a python log handler that handles dag processor logs.
+
+    It creates and delegates log handling
     to `logging.FileHandler` after receiving dag processor context.
 
     :param base_log_folder: Base log folder to place logs.
@@ -105,8 +106,7 @@ class FileProcessorHandler(logging.Handler):
 
     def _symlink_latest_log_directory(self):
         """
-        Create symbolic link to the current day's log directory to
-        allow easy access to the latest scheduler log files.
+        Create symbolic link to the current day's log directory to allow easy access to the latest scheduler log files.
 
         :return: None
         """

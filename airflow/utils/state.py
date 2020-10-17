@@ -21,8 +21,7 @@ from airflow.settings import STATE_COLORS
 
 class State:
     """
-    Static class with task instance states constants and color method to
-    avoid hardcoding.
+    Static class with task instance states constants and color method to avoid hardcoding.
     """
 
     # scheduler
@@ -112,8 +111,9 @@ class State:
     @classmethod
     def finished(cls):
         """
-        A list of states indicating that a task started and completed a
-        run attempt. Note that the attempt could have resulted in failure or
+        A list of states indicating that a task started and completed a run attempt.
+
+        Note that the attempt could have resulted in failure or
         have been interrupted; in any case, it is no longer running.
         """
         return [
@@ -125,8 +125,7 @@ class State:
     @classmethod
     def unfinished(cls):
         """
-        A list of states indicating that a task either has not completed
-        a run or has not even started.
+        A list of states indicating that a task either has not completed a run or has not even started.
         """
         return [
             cls.NONE,
