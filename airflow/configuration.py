@@ -987,7 +987,7 @@ def initialize_secrets_backends() -> List[BaseSecretsBackend]:
     """
     initialize_secrets_backends
     
-    * import secrets backend.
+    * import secrets backend classes
     * instantiate them and return them in a list
     """
     backend_list = []
