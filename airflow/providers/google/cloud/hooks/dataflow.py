@@ -243,8 +243,7 @@ class _DataflowJobsController(LoggingMixin):
 
     def _check_dataflow_job_state(self, job) -> bool:
         """
-        Helper method to check the state of one job in dataflow for this task
-        if job failed raise exception
+        Helper method to check the state of one job in dataflow for this task if job failed raise exception.
 
         :return: True if job is done.
         :rtype: bool

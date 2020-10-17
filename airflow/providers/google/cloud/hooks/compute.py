@@ -81,6 +81,7 @@ class ComputeEngineHook(GoogleBaseHook):
     def start_instance(self, zone: str, resource_id: str, project_id: str) -> None:
         """
         Starts an existing instance defined by project_id, zone and resource_id.
+
         Must be called with keyword arguments rather than positional.
 
         :param zone: Google Cloud zone where the instance exists
@@ -111,7 +112,8 @@ class ComputeEngineHook(GoogleBaseHook):
     @GoogleBaseHook.fallback_to_default_project_id
     def stop_instance(self, zone: str, resource_id: str, project_id: str) -> None:
         """
-        Stops an instance defined by project_id, zone and resource_id
+        Stops an instance defined by project_id, zone and resource_id.
+
         Must be called with keyword arguments rather than positional.
 
         :param zone: Google Cloud zone where the instance exists
@@ -143,6 +145,7 @@ class ComputeEngineHook(GoogleBaseHook):
     def set_machine_type(self, zone: str, resource_id: str, body: Dict, project_id: str) -> None:
         """
         Sets machine type of an instance defined by project_id, zone and resource_id.
+
         Must be called with keyword arguments rather than positional.
 
         :param zone: Google Cloud zone where the instance exists.
@@ -181,6 +184,7 @@ class ComputeEngineHook(GoogleBaseHook):
     def get_instance_template(self, resource_id: str, project_id: str) -> Dict:
         """
         Retrieves instance template by project_id and resource_id.
+
         Must be called with keyword arguments rather than positional.
 
         :param resource_id: Name of the instance template
@@ -210,7 +214,8 @@ class ComputeEngineHook(GoogleBaseHook):
         request_id: Optional[str] = None,
     ) -> None:
         """
-        Inserts instance template using body specified
+        Inserts instance template using body specified.
+
         Must be called with keyword arguments rather than positional.
 
         :param body: Instance template representation as object according to
@@ -251,6 +256,7 @@ class ComputeEngineHook(GoogleBaseHook):
     ) -> Dict:
         """
         Retrieves Instance Group Manager by project_id, zone and resource_id.
+
         Must be called with keyword arguments rather than positional.
 
         :param zone: Google Cloud zone where the Instance Group Manager exists
@@ -284,7 +290,8 @@ class ComputeEngineHook(GoogleBaseHook):
         request_id: Optional[str] = None,
     ) -> None:
         """
-        Patches Instance Group Manager with the specified body.
+        Patches Instance Group Manager with the specified.
+
         Must be called with keyword arguments rather than positional.
 
         :param zone: Google Cloud zone where the Instance Group Manager exists
