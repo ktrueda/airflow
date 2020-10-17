@@ -74,7 +74,9 @@ class BaseOperatorMeta(abc.ABCMeta):
 
     def __call__(cls, *args, **kwargs):
         """
-        Called when you call BaseOperator(). In this way we are able to perform an action
+        Called when you call BaseOperator().
+
+        In this way we are able to perform an action
         after initializing an operator no matter where  the ``super().__init__`` is called
         (before or after assign of new attributes in a custom operator).
         """
@@ -91,6 +93,8 @@ class BaseOperatorMeta(abc.ABCMeta):
 @functools.total_ordering
 class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta):
     """
+    BaseOperator.
+
     Abstract base class for all operators. Since operators create objects that
     become nodes in the dag, BaseOperator contains many recursive methods for
     dag crawling behavior. To derive this class, you are expected to override
@@ -511,9 +515,9 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
     # including lineage information
     def __or__(self, other):
         """
-        Called for [This Operator] | [Operator], The inlets of other
-        will be set to pickup the outlets from this operator. Other will
-        be set as a downstream task of this operator.
+        Called for [This Operator] | [Operator], The inlets of other will be set to pickup the outlets from this operator.
+
+        Other will be set as a downstream task of this operator.
         """
         if isinstance(other, BaseOperator):
             if not self._outlets and not self.supports_lineage:
@@ -529,8 +533,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def __gt__(self, other):
         """
-        Called for [Operator] > [Outlet], so that if other is an attr annotated object
-        it is set as an outlet of this Operator.
+        Called for [Operator] > [Outlet], so that if other is an attr annotated object it is set as an outlet of this Operator.
         """
         if not isinstance(other, Iterable):
             other = [other]
@@ -544,8 +547,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def __lt__(self, other):
         """
-        Called for [Inlet] > [Operator] or [Operator] < [Inlet], so that if other is
-        an attr annotated object it is set as an inlet to this operator
+        Called for [Inlet] > [Operator] or [Operator] < [Inlet], so that if other is an attr annotated object it is set as an inlet to this operator
         """
         if not isinstance(other, Iterable):
             other = [other]
@@ -607,8 +609,9 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
     @dag.setter
     def dag(self, dag: Any):
         """
-        Operators can be assigned to one DAG, one time. Repeat assignments to
-        that same DAG are ok.
+        Operators can be assigned to one DAG, one time.
+
+        Repeat assignments to that same DAG are ok.
         """
         from airflow.models.dag import DAG
         if dag is None:
@@ -644,8 +647,9 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
     @property
     def deps(self) -> Set[BaseTIDep]:
         """
-        Returns the set of dependencies for the operator. These differ from execution
-        context dependencies in that they are specific to tasks and can be
+        Returns the set of dependencies for the operator.
+
+        These differ from execution context dependencies in that they are specific to tasks and can be
         extended/overridden by subclasses.
         """
         return {
@@ -657,8 +661,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def prepare_for_execution(self) -> "BaseOperator":
         """
-        Lock task for execution to disable custom action in __setattr__ and
-        returns a copy of the task
+        Lock task for execution to disable custom action in __setattr__ and returns a copy of the task
         """
         other = copy.copy(self)
         other._lock_for_execution = True  # pylint: disable=protected-access
@@ -666,8 +669,9 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def set_xcomargs_dependencies(self) -> None:
         """
-        Resolves upstream dependencies of a task. In this way passing an ``XComArg``
-        as value for a template field will result in creating upstream relation between
+        Resolves upstream dependencies of a task.
+
+        In this way passing an ``XComArg`` as value for a template field will result in creating upstream relation between
         two tasks.
 
         **Example**: ::
@@ -708,8 +712,9 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
     @property
     def priority_weight_total(self) -> int:
         """
-        Total priority weight for the task. It might include all upstream or downstream tasks.
-        depending on the weight rule.
+        Total priority weight for the task.
+
+        It might include all upstream or downstream tasks. depending on the weight rule.
 
           - WeightRule.ABSOLUTE - only own weight
           - WeightRule.DOWNSTREAM - adds priority weight of all downstream tasks
@@ -772,6 +777,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
     def execute(self, context: Any):
         """
         This is the main method to derive when creating an operator.
+
         Context is the same dictionary used as when rendering jinja templates.
 
         Refer to get_template_context for more context.
@@ -782,22 +788,23 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
     def post_execute(self, context: Any, result: Any = None):
         """
         This hook is triggered right after self.execute() is called.
+
         It is passed the execution context and any results returned by the
         operator.
         """
 
     def on_kill(self) -> None:
         """
-        Override this method to cleanup subprocesses when a task instance
-        gets killed. Any use of the threading, subprocess or multiprocessing
+        Override this method to cleanup subprocesses when a task instance gets killed.
+
+        Any use of the threading, subprocess or multiprocessing
         module within an operator needs to be cleaned up or it will leave
         ghost processes behind.
         """
 
     def __deepcopy__(self, memo):
         """
-        Hack sorting double chained task lists by task_id to avoid hitting
-        max_depth on deepcopy operations.
+        Hack sorting double chained task lists by task_id to avoid hitting max_depth on deepcopy operations.
         """
         sys.setrecursionlimit(5000)  # TODO fix this in a better way
         cls = self.__class__
@@ -853,8 +860,9 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
         seen_oids: Optional[Set] = None
     ) -> Any:
         """
-        Render a templated string. The content can be a collection holding multiple templated strings and will
-        be templated recursively.
+        Render a templated string.
+
+        The content can be a collection holding multiple templated strings and will be templated recursively.
 
         :param content: Content to template. Only strings can be templated (may be inside collection).
         :type content: Any
@@ -925,8 +933,9 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def prepare_template(self) -> None:
         """
-        Hook that is triggered after the templated fields get replaced
-        by their content. If you need your operator to alter the
+        Hook that is triggered after the templated fields get replaced by their content.
+
+        If you need your operator to alter the
         content of the file before the template is rendered,
         it should override this method to do so.
         """
@@ -984,8 +993,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
               downstream: bool = False,
               session: Session = None):
         """
-        Clears the state of task instances associated with the task, following
-        the parameters specified.
+        Clears the state of task instances associated with the task, following the parameters specified.
         """
         qry = session.query(TaskInstance).filter(TaskInstance.dag_id == self.dag_id)
 
@@ -1016,8 +1024,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
                            end_date: Optional[datetime] = None,
                            session: Session = None) -> List[TaskInstance]:
         """
-        Get a set of task instance related to this task for a specific date
-        range.
+        Get a set of task instance related to this task for a specific date range.
         """
         end_date = end_date or timezone.utcnow()
         return session.query(TaskInstance)\
@@ -1092,8 +1099,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def get_direct_relative_ids(self, upstream: bool = False) -> Set[str]:
         """
-        Get set of the direct relative ids to the current task, upstream or
-        downstream.
+        Get set of the direct relative ids to the current task, upstream or downstream.
         """
         if upstream:
             return self._upstream_task_ids
@@ -1102,8 +1108,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def get_direct_relatives(self, upstream: bool = False) -> List["BaseOperator"]:
         """
-        Get list of the direct relatives to the current task, upstream or
-        downstream.
+        Get list of the direct relatives to the current task, upstream or downstream.
         """
         if upstream:
             return self.upstream_list
@@ -1191,15 +1196,17 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def set_downstream(self, task_or_task_list: Union[TaskMixin, Sequence[TaskMixin]]) -> None:
         """
-        Set a task or a task list to be directly downstream from the current
-        task. Required by TaskMixin.
+        Set a task or a task list to be directly downstream from the current task.
+
+        Required by TaskMixin.
         """
         self._set_relatives(task_or_task_list, upstream=False)
 
     def set_upstream(self, task_or_task_list: Union[TaskMixin, Sequence[TaskMixin]]) -> None:
         """
-        Set a task or a task list to be directly upstream from the current
-        task. Required by TaskMixin.
+        Set a task or a task list to be directly upstream from the current task.
+
+        Required by TaskMixin.
         """
         self._set_relatives(task_or_task_list, upstream=True)
 
@@ -1289,8 +1296,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def get_extra_links(self, dttm: datetime, link_name: str) -> Optional[Dict[str, Any]]:
         """
-        For an operator, gets the URL that the external links specified in
-        `extra_links` should point to.
+        For an operator, gets the URL that the external links specified in `extra_links` should point to.
 
         :raise ValueError: The error message of a ValueError will be passed on through to
             the fronted to show up as a tooltip on the disabled link
@@ -1330,6 +1336,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 def chain(*tasks: Union[BaseOperator, Sequence[BaseOperator]]):
     r"""
     Given a number of tasks, builds a dependency chain.
+
     Support mix airflow.models.BaseOperator and List[airflow.models.BaseOperator].
     If you want to chain between two List[airflow.models.BaseOperator], have to
     make sure they have same length.

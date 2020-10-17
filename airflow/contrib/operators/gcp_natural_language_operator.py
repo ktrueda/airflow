@@ -37,6 +37,7 @@ warnings.warn(
 class CloudLanguageAnalyzeEntitiesOperator(CloudNaturalLanguageAnalyzeEntitiesOperator):
     """
     This class is deprecated.
+
     Please use
     `airflow.providers.google.cloud.operators.natural_language.CloudNaturalLanguageAnalyzeEntitiesOperator`.
     """
@@ -56,6 +57,7 @@ class CloudLanguageAnalyzeEntitiesOperator(CloudNaturalLanguageAnalyzeEntitiesOp
 class CloudLanguageAnalyzeEntitySentimentOperator(CloudNaturalLanguageAnalyzeEntitySentimentOperator):
     """
     This class is deprecated.
+
     Please use
     `airflow.providers.google.cloud.operators.natural_language
     .CloudNaturalLanguageAnalyzeEntitySentimentOperator`.
@@ -76,6 +78,7 @@ class CloudLanguageAnalyzeEntitySentimentOperator(CloudNaturalLanguageAnalyzeEnt
 class CloudLanguageAnalyzeSentimentOperator(CloudNaturalLanguageAnalyzeSentimentOperator):
     """
     This class is deprecated.
+
     Please use
     `airflow.providers.google.cloud.operators.natural_language.CloudNaturalLanguageAnalyzeSentimentOperator`.
     """
@@ -94,6 +97,7 @@ class CloudLanguageAnalyzeSentimentOperator(CloudNaturalLanguageAnalyzeSentiment
 class CloudLanguageClassifyTextOperator(CloudNaturalLanguageClassifyTextOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.natural_language
     .CloudNaturalLanguageClassifyTextOperator`.
     """

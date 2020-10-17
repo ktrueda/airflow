@@ -46,7 +46,9 @@ class CloudSqlBaseOperator(CloudSQLBaseOperator):
 
 class CloudSqlInstanceCreateOperator(CloudSQLCreateInstanceOperator):
     """
-    This class is deprecated. Please use `airflow.providers.google.cloud.operators.sql
+    This class is deprecated.
+
+    Please use `airflow.providers.google.cloud.operators.sql
     .CloudSQLCreateInstanceOperator`.
     """
 
@@ -57,7 +59,9 @@ class CloudSqlInstanceCreateOperator(CloudSQLCreateInstanceOperator):
 
 class CloudSqlInstanceDatabaseCreateOperator(CloudSQLCreateInstanceDatabaseOperator):
     """
-    This class is deprecated. Please use `airflow.providers.google.cloud.operators.sql
+    This class is deprecated.
+
+    Please use `airflow.providers.google.cloud.operators.sql
     .CloudSQLCreateInstanceDatabaseOperator`.
     """
 
@@ -68,7 +72,9 @@ class CloudSqlInstanceDatabaseCreateOperator(CloudSQLCreateInstanceDatabaseOpera
 
 class CloudSqlInstanceDatabaseDeleteOperator(CloudSQLDeleteInstanceDatabaseOperator):
     """
-    This class is deprecated. Please use `airflow.providers.google.cloud.operators.sql
+    This class is deprecated.
+
+    Please use `airflow.providers.google.cloud.operators.sql
     .CloudSQLDeleteInstanceDatabaseOperator`.
     """
 
@@ -79,7 +85,9 @@ class CloudSqlInstanceDatabaseDeleteOperator(CloudSQLDeleteInstanceDatabaseOpera
 
 class CloudSqlInstanceDatabasePatchOperator(CloudSQLPatchInstanceDatabaseOperator):
     """
-    This class is deprecated. Please use `airflow.providers.google.cloud.operators.sql
+    This class is deprecated.
+
+    Please use `airflow.providers.google.cloud.operators.sql
     .CloudSQLPatchInstanceDatabaseOperator`.
     """
 
@@ -90,7 +98,9 @@ class CloudSqlInstanceDatabasePatchOperator(CloudSQLPatchInstanceDatabaseOperato
 
 class CloudSqlInstanceDeleteOperator(CloudSQLDeleteInstanceOperator):
     """
-    This class is deprecated. Please use `airflow.providers.google.cloud.operators.sql
+    This class is deprecated.
+
+    Please use `airflow.providers.google.cloud.operators.sql
     .CloudSQLDeleteInstanceOperator`.
     """
 
@@ -101,7 +111,9 @@ class CloudSqlInstanceDeleteOperator(CloudSQLDeleteInstanceOperator):
 
 class CloudSqlInstanceExportOperator(CloudSQLExportInstanceOperator):
     """
-    This class is deprecated. Please use `airflow.providers.google.cloud.operators.sql
+    This class is deprecated.
+
+    Please use `airflow.providers.google.cloud.operators.sql
     .CloudSQLExportInstanceOperator`.
     """
 
@@ -112,7 +124,9 @@ class CloudSqlInstanceExportOperator(CloudSQLExportInstanceOperator):
 
 class CloudSqlInstanceImportOperator(CloudSQLImportInstanceOperator):
     """
-    This class is deprecated. Please use `airflow.providers.google.cloud.operators.sql
+    This class is deprecated.
+
+    Please use `airflow.providers.google.cloud.operators.sql
     .CloudSQLImportInstanceOperator`.
     """
 
@@ -123,7 +137,9 @@ class CloudSqlInstanceImportOperator(CloudSQLImportInstanceOperator):
 
 class CloudSqlInstancePatchOperator(CloudSQLInstancePatchOperator):
     """
-    This class is deprecated. Please use `airflow.providers.google.cloud.operators
+    This class is deprecated.
+
+    Please use `airflow.providers.google.cloud.operators
     .sql.CloudSQLInstancePatchOperator`.
     """
 
@@ -134,7 +150,9 @@ class CloudSqlInstancePatchOperator(CloudSQLInstancePatchOperator):
 
 class CloudSqlQueryOperator(CloudSQLExecuteQueryOperator):
     """
-    This class is deprecated. Please use `airflow.providers.google.cloud.operators
+    This class is deprecated.
+
+    Please use `airflow.providers.google.cloud.operators
     .sql.CloudSQLExecuteQueryOperator`.
     """
 
