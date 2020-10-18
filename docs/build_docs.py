@@ -297,7 +297,7 @@ def assert_file_not_contains(file_path: str, pattern: str, message: str) -> None
 
 def filter_file_list_by_pattern(file_paths: Iterable[str], pattern: str) -> List[str]:
     """
-    Filters file list to thoose tha content matches the pattern
+    Filters file list to those tha content matches the pattern
 
     :param file_paths: file paths to check
     :param pattern: pattern to match
