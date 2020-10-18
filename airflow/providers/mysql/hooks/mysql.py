@@ -197,7 +197,9 @@ class MySqlHook(DbApiHook):
         cell: object, conn: Optional[Connection] = None
     ) -> object:  # pylint: disable=signature-differs   # noqa: D403
         """
-        MySQLdb converts an argument to a literal when passing those separately to execute. Hence, this method does nothing.
+        MySQLdb converts an argument to a literal when passing those separately to execute.
+
+        Hence, this method does nothing.
 
         :param cell: The cell to insert into the table
         :type cell: object
