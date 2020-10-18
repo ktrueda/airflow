@@ -1016,8 +1016,9 @@ class DataprocJobBaseOperator(BaseOperator):
 
 class DataprocSubmitPigJobOperator(DataprocJobBaseOperator):
     """
-    Start a Pig query Job on a Cloud DataProc cluster. The parameters of the operation will be passed to the cluster.
+    Start a Pig query Job on a Cloud DataProc cluster.
 
+    The parameters of the operation will be passed to the cluster.
     It's a good practice to define dataproc_* parameters in the default_args of the dag
     like the cluster name and UDFs.
 
