@@ -33,6 +33,7 @@ warnings.warn(
 class CheckOperator(SQLCheckOperator):
     """
     This class is deprecated.
+
     Please use `airflow.operators.sql.SQLCheckOperator`.
     """
 
@@ -48,6 +49,7 @@ class CheckOperator(SQLCheckOperator):
 class IntervalCheckOperator(SQLIntervalCheckOperator):
     """
     This class is deprecated.
+
     Please use `airflow.operators.sql.SQLIntervalCheckOperator`.
     """
 
@@ -63,6 +65,7 @@ class IntervalCheckOperator(SQLIntervalCheckOperator):
 class ThresholdCheckOperator(SQLThresholdCheckOperator):
     """
     This class is deprecated.
+
     Please use `airflow.operators.sql.SQLThresholdCheckOperator`.
     """
 
@@ -78,6 +81,7 @@ class ThresholdCheckOperator(SQLThresholdCheckOperator):
 class ValueCheckOperator(SQLValueCheckOperator):
     """
     This class is deprecated.
+
     Please use `airflow.operators.sql.SQLValueCheckOperator`.
     """
 

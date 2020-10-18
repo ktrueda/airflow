@@ -17,8 +17,7 @@
 # under the License.
 
 """
-Defines the base entities that can be used for providing lineage
-information.
+Defines the base entities that can be used for providing lineage information.
 """
 from typing import Any, Dict, List, Optional
 

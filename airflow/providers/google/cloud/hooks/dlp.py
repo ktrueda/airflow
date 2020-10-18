@@ -17,8 +17,7 @@
 # under the License.
 
 """
-This module contains a CloudDLPHook
-which allows you to connect to Google Cloud DLP service.
+This module contains a CloudDLPHook which allows you to connect to Google Cloud DLP service.
 """
 
 import re
@@ -59,6 +58,7 @@ DLP_JOB_PATH_PATTERN = "^projects/[^/]+/dlpJobs/(?P<job>.*?)$"
 class CloudDLPHook(GoogleBaseHook):
     """
     Hook for Google Cloud Data Loss Prevention (DLP) APIs.
+
     Cloud DLP allows clients to detect the presence of Personally Identifiable
     Information (PII) and other privacy-sensitive data in user-supplied,
     unstructured data streams, like text blocks or images. The service also
@@ -153,8 +153,7 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> DeidentifyTemplate:
         """
-        Creates a deidentify template for re-using frequently used configuration for
-        de-identifying content, images, and storage.
+        Creates a deidentify template for re-using frequently used configuration for de-identifying content, images, and storage.
 
         :param organization_id: (Optional) The organization ID. Required to set this
             field if parent resource is an organization.
@@ -294,8 +293,7 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> InspectTemplate:
         """
-        Creates an inspect template for re-using frequently used configuration for
-        inspecting content, images, and storage.
+        Creates an inspect template for re-using frequently used configuration for inspecting content, images, and storage.
 
         :param organization_id: (Optional) The organization ID. Required to set this
             field if parent resource is an organization.
@@ -351,8 +349,7 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> JobTrigger:
         """
-        Creates a job trigger to run DLP actions such as scanning storage for sensitive
-        information on a set schedule.
+        Creates a job trigger to run DLP actions such as scanning storage for sensitive information on a set schedule.
 
         :param project_id: (Optional) Google Cloud project ID where the
             DLP Instance exists. If set to None or missing, the default
@@ -455,8 +452,9 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> DeidentifyContentResponse:
         """
-        De-identifies potentially sensitive info from a content item. This method has limits
-        on input size and output size.
+        De-identifies potentially sensitive info from a content item.
+
+        This method has limits on input size and output size.
 
         :param project_id: (Optional) Google Cloud project ID where the
             DLP Instance exists. If set to None or missing, the default
@@ -556,8 +554,10 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> None:
         """
-        Deletes a long-running DLP job. This method indicates that the client is no longer
-        interested in the DLP job result. The job will be cancelled if possible.
+        Deletes a long-running DLP job.
+
+        This method indicates that the client is no longer　interested in the DLP job result.
+        The job will be cancelled if possible.
 
         :param dlp_job_id: The ID of the DLP job resource to be cancelled.
         :type dlp_job_id: str
@@ -948,8 +948,9 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> InspectContentResponse:
         """
-        Finds potentially sensitive info in content. This method has limits on input size,
-        processing time, and output size.
+        Finds potentially sensitive info in content.
+
+        This method has limits on input size, processing time, and output size.
 
         :param project_id: (Optional) Google Cloud project ID where the
             DLP Instance exists. If set to None or missing, the default
@@ -1324,8 +1325,9 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> RedactImageResponse:
         """
-        Redacts potentially sensitive info from an image. This method has limits on
-        input size, processing time, and output size.
+        Redacts potentially sensitive info from an image.
+
+        This method has limits on input size, processing time, and output size.
 
         :param project_id: (Optional) Google Cloud project ID where the
             DLP Instance exists. If set to None or missing, the default

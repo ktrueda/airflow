@@ -16,8 +16,7 @@
 # specific language governing permissions and limitations
 # under the License.
 """
-This module contains Azure Data Lake Storage to
-Google Cloud Storage operator.
+This module contains Azure Data Lake Storage to Google Cloud Storage operator.
 """
 import os
 import warnings

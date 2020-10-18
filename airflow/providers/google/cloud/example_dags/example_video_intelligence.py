@@ -17,8 +17,7 @@
 # under the License.
 
 """
-Example Airflow DAG that demonstrates operators for the Google Cloud Video Intelligence service in the Google
-Cloud Platform.
+Example Airflow DAG that demonstrates operators for the Google Cloud Video Intelligence service in the Google Cloud Platform.
 
 This DAG relies on the following OS environment variables:
 

@@ -68,6 +68,7 @@ INVALID_REASONS = [
 def is_soft_quota_exception(exception: Exception):
     """
     API for Google services does not have a standardized way to report quota violation errors.
+
     The function has been adapted by trial and error to the following services:
 
     * Google Translate
@@ -88,8 +89,7 @@ def is_soft_quota_exception(exception: Exception):
 
 def is_operation_in_progress_exception(exception: Exception):
     """
-    Some of the calls return 429 (too many requests!) or 409 errors (Conflict)
-    in case of operation in progress.
+    Some of the calls return 429 (too many requests!) or 409 errors (Conflict) in case of operation in progress.
 
     * Google Cloud SQL
     """
@@ -118,8 +118,9 @@ RT = TypeVar('RT')  # pylint: disable=invalid-name
 
 class GoogleBaseHook(BaseHook):
     """
-    A base hook for Google cloud-related hooks. Google cloud has a shared REST
-    API client that is built in the same way no matter which service you use.
+    A base hook for Google cloud-related hooks.
+
+    Google cloud has a shared REST API client that is built in the same way no matter which service you use.
     This class helps construct and authorize the credentials needed to then
     call googleapiclient.discovery.build() to actually discover and build a client
     for a Google cloud service.
@@ -222,8 +223,7 @@ class GoogleBaseHook(BaseHook):
 
     def _authorize(self) -> google_auth_httplib2.AuthorizedHttp:
         """
-        Returns an authorized HTTP object to be used to build a Google cloud
-        service hook connection.
+        Returns an authorized HTTP object to be used to build a Google cloud service hook connection.
         """
         credentials = self._get_credentials()
         http = build_http()
@@ -233,8 +233,10 @@ class GoogleBaseHook(BaseHook):
 
     def _get_field(self, f: str, default: Any = None) -> Any:
         """
-        Fetches a field from extras, and returns it. This is some Airflow
-        magic. The google_cloud_platform hook type adds custom UI elements
+        Fetches a field from extras, and returns it.
+
+        This is some Airflow magic.
+        The google_cloud_platform hook type adds custom UI elements
         to the hook page, which allow admins to specify service_account,
         key_path, etc. They get formatted as shown below.
         """
@@ -306,8 +308,7 @@ class GoogleBaseHook(BaseHook):
     @staticmethod
     def quota_retry(*args, **kwargs) -> Callable:
         """
-        A decorator that provides a mechanism to repeat requests in response to exceeding a temporary quote
-        limit.
+        A decorator that provides a mechanism to repeat requests in response to exceeding a temporary quote limit.
         """
 
         def decorator(fun: Callable):
@@ -325,9 +326,7 @@ class GoogleBaseHook(BaseHook):
     @staticmethod
     def operation_in_progress_retry(*args, **kwargs) -> Callable[[T], T]:
         """
-        A decorator that provides a mechanism to repeat requests in response to
-        operation in progress (HTTP 409)
-        limit.
+        A decorator that provides a mechanism to repeat requests in response to operation in progress (HTTP 409) limit.
         """
 
         def decorator(fun: T):
@@ -345,8 +344,9 @@ class GoogleBaseHook(BaseHook):
     @staticmethod
     def fallback_to_default_project_id(func: Callable[..., RT]) -> Callable[..., RT]:
         """
-        Decorator that provides fallback for Google Cloud project id. If
-        the project is None it will be replaced with the project_id from the
+        Decorator that provides fallback for Google Cloud project id.
+
+        If the project is None it will be replaced with the project_id from the
         service account the Hook is authenticated with. Project id can be specified
         either via project_id kwarg or via first parameter in positional args.
 
@@ -377,8 +377,7 @@ class GoogleBaseHook(BaseHook):
     @staticmethod
     def provide_gcp_credential_file(func: T) -> T:
         """
-        Function decorator that provides a Google Cloud credentials for application supporting Application
-        Default Credentials (ADC) strategy.
+        Function decorator that provides a Google Cloud credentials for application supporting Application Default Credentials (ADC) strategy.
 
         It is recommended to use ``provide_gcp_credential_file_as_context`` context manager to limit the
         scope when authorization data is available. Using context manager also
@@ -395,8 +394,7 @@ class GoogleBaseHook(BaseHook):
     @contextmanager
     def provide_gcp_credential_file_as_context(self):
         """
-        Context manager that provides a Google Cloud credentials for application supporting `Application
-        Default Credentials (ADC) strategy <https://cloud.google.com/docs/authentication/production>`__.
+        Context manager that provides a Google Cloud credentials for application supporting `Application Default Credentials (ADC) strategy <https://cloud.google.com/docs/authentication/production>`__.
 
         It can be used to provide credentials for external programs (e.g. gcloud) that expect authorization
         file in ``GOOGLE_APPLICATION_CREDENTIALS`` environment variable.
@@ -482,6 +480,7 @@ class GoogleBaseHook(BaseHook):
     def download_content_from_request(file_handle, request, chunk_size):
         """
         Download media resources.
+
         Note that  the Python file object is compatible with io.Base and can be used with this class also.
 
         :param file_handle: io.Base or file object. The stream in which to write the downloaded

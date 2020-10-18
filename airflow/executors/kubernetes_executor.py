@@ -327,6 +327,7 @@ class AirflowKubernetesScheduler(LoggingMixin):
     def run_next(self, next_job: KubernetesJobType) -> None:
         """
         The run_next command will check the task_queue for any un-run jobs.
+
         It will then create a unique job-id, launch that job in the cluster,
         and store relevant info in the current_jobs map so we can track the job's
         status
@@ -380,6 +381,7 @@ class AirflowKubernetesScheduler(LoggingMixin):
     def sync(self) -> None:
         """
         The sync function checks the status of all currently running kubernetes jobs.
+
         If a job is completed, its status is placed in the result queue to
         be sent back to the scheduler.
 
@@ -423,6 +425,8 @@ class AirflowKubernetesScheduler(LoggingMixin):
     @staticmethod
     def _make_safe_pod_id(safe_dag_id: str, safe_task_id: str, safe_uuid: str) -> str:
         r"""
+        _make_safe_pod_id.
+
         Kubernetes pod names must be <= 253 chars and must pass the following regex for
         validation
         ``^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$``
@@ -465,8 +469,8 @@ class AirflowKubernetesScheduler(LoggingMixin):
 
 def _strip_unsafe_kubernetes_special_chars(string: str) -> str:
     """
-    Kubernetes only supports lowercase alphanumeric characters, "-" and "." in
-    the pod name.
+    Kubernetes only supports lowercase alphanumeric characters, "-" and "." in the pod name.
+
     However, there are special rules about how "-" and "." can be used so let's
     only keep
     alphanumeric chars  see here for detail:
@@ -480,8 +484,9 @@ def _strip_unsafe_kubernetes_special_chars(string: str) -> str:
 
 def create_pod_id(dag_id: str, task_id: str) -> str:
     """
-    Generates the kubernetes safe pod_id. Note that this is
-    NOT the full ID that will be launched to k8s. We will add a uuid
+    Generates the kubernetes safe pod_id.
+
+    Note that this is NOT the full ID that will be launched to k8s. We will add a uuid
     to ensure uniqueness.
 
     :param dag_id: DAG ID
@@ -509,9 +514,9 @@ class KubernetesExecutor(BaseExecutor, LoggingMixin):
     @provide_session
     def clear_not_launched_queued_tasks(self, session=None) -> None:
         """
-        If the airflow scheduler restarts with pending "Queued" tasks, the tasks may or
-        may not
-        have been launched. Thus on starting up the scheduler let's check every
+        If the airflow scheduler restarts with pending "Queued" tasks, the tasks may or may not have been launched.
+
+        Thus on starting up the scheduler let's check every
         "Queued" task to
         see if it has been launched (ie: if there is a corresponding pod on kubernetes)
 

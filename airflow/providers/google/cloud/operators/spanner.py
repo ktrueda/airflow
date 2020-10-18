@@ -28,8 +28,7 @@ from airflow.utils.decorators import apply_defaults
 
 class SpannerDeployInstanceOperator(BaseOperator):
     """
-    Creates a new Cloud Spanner instance, or if an instance with the same instance_id
-    exists in the specified project, updates the Cloud Spanner instance.
+    Creates a new Cloud Spanner instance, or if an instance with the same instance_id exists in the specified project, updates the Cloud Spanner instance.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -126,8 +125,7 @@ class SpannerDeployInstanceOperator(BaseOperator):
 
 class SpannerDeleteInstanceOperator(BaseOperator):
     """
-    Deletes a Cloud Spanner instance. If an instance does not exist,
-    no action is taken and the operator succeeds.
+    Deletes a Cloud Spanner instance. If an instance does not exist, no action is taken and the operator succeeds.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -311,8 +309,7 @@ class SpannerQueryDatabaseInstanceOperator(BaseOperator):
 
 class SpannerDeployDatabaseInstanceOperator(BaseOperator):
     """
-    Creates a new Cloud Spanner database, or if database exists,
-    the operator does nothing.
+    Creates a new Cloud Spanner database, or if database exists, the operator does nothing.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:

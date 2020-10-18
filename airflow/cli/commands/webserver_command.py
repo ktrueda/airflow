@@ -46,6 +46,8 @@ log = logging.getLogger(__name__)
 
 class GunicornMonitor(LoggingMixin):
     """
+    GunicornMonitor
+
     Runs forever, monitoring the child processes of @gunicorn_master_proc and
     restarting workers occasionally or when files in the plug-in directory
     has been modified.
@@ -104,8 +106,7 @@ class GunicornMonitor(LoggingMixin):
 
     def _generate_plugin_state(self) -> Dict[str, float]:
         """
-        Generate dict of filenames and last modification time of all files in settings.PLUGINS_FOLDER
-        directory.
+        Generate dict of filenames and last modification time of all files in settings.PLUGINS_FOLDER directory.
         """
         if not settings.PLUGINS_FOLDER:
             return {}
@@ -190,7 +191,9 @@ class GunicornMonitor(LoggingMixin):
 
     def _reload_gunicorn(self) -> None:
         """
-        Send signal to reload the gunciron configuration. When gunciorn receive signals, it reload the
+        Send signal to reload the gunciron configuration.
+
+        When gunciorn receive signals, it reload the
         configuration, start the new worker processes with a new configuration and gracefully
         shutdown older workers.
         """

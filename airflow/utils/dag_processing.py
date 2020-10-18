@@ -91,6 +91,7 @@ class AbstractDagFileProcessorProcess(metaclass=ABCMeta):
     def exit_code(self) -> Optional[int]:
         """
         After the process is finished, this can be called to get the return code
+
         :return: the exit code of the process
         :rtype: int
         """
@@ -101,6 +102,7 @@ class AbstractDagFileProcessorProcess(metaclass=ABCMeta):
     def done(self) -> bool:
         """
         Check if the process launched to process this file is done.
+
         :return: whether the process is finished running
         :rtype: bool
         """
@@ -121,6 +123,8 @@ class AbstractDagFileProcessorProcess(metaclass=ABCMeta):
     @abstractmethod
     def start_time(self) -> datetime:
         """
+        start_time.
+
         :return: When this started to process the file
         :rtype: datetime
         """
@@ -130,6 +134,8 @@ class AbstractDagFileProcessorProcess(metaclass=ABCMeta):
     @abstractmethod
     def file_path(self) -> str:
         """
+        file_path.
+
         :return: the path to the file that this is processing
         :rtype: unicode
         """
@@ -172,7 +178,9 @@ class DagParsingSignal(enum.Enum):
 
 class DagFileProcessorAgent(LoggingMixin, MultiprocessingStartMethodMixin):
     """
-    Agent for DAG file processing. It is responsible for all DAG parsing
+    Agent for DAG file processing.
+
+    It is responsible for all DAG parsing
     related jobs in scheduler process. Mainly it can spin up DagFileProcessorManager
     in a subprocess, collect DAG parsing results from it and communicate
     signal/DAG parsing stat with it.
@@ -266,6 +274,7 @@ class DagFileProcessorAgent(LoggingMixin, MultiprocessingStartMethodMixin):
     def run_single_parsing_loop(self) -> None:
         """
         Should only be used when launched DAG file processor manager in sync mode.
+
         Send agent heartbeat signal to the manager, requesting that it runs one
         processing "loop".
 
@@ -454,8 +463,7 @@ class DagFileProcessorAgent(LoggingMixin, MultiprocessingStartMethodMixin):
 
     def terminate(self):
         """
-        Send termination signal to DAG parsing processor manager
-        and expect it to terminate all DAG file processors.
+        Send termination signal to DAG parsing processor manager and expect it to terminate all DAG file processors.
         """
         if self._process and self._process.is_alive():
             self.log.info("Sending termination message to manager.")
@@ -467,6 +475,7 @@ class DagFileProcessorAgent(LoggingMixin, MultiprocessingStartMethodMixin):
     def end(self):
         """
         Terminate (and then kill) the manager process launched.
+
         :return:
         """
         if not self._process:
@@ -482,9 +491,9 @@ class DagFileProcessorAgent(LoggingMixin, MultiprocessingStartMethodMixin):
 
 class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instance-attributes
     """
-    Given a list of DAG definition files, this kicks off several processors
-    in parallel to process them and put the results to a multiprocessing.Queue
-    for DagFileProcessorAgent to harvest. The parallelism is limited and as the
+    Given a list of DAG definition files, this kicks off several processors in parallel to process them and put the results to a multiprocessing.Queue for DagFileProcessorAgent to harvest.
+
+    The parallelism is limited and as the
     processors finish, more are launched. The files are processed over and
     over again, but no more often than the specified interval.
 
@@ -604,8 +613,9 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def start(self):
         """
-        Use multiple processes to parse and generate tasks for the
-        DAGs in parallel. By processing them in separate processes,
+        Use multiple processes to parse and generate tasks for the DAGs in parallel.
+
+        By processing them in separate processes,
         we can get parallelism and isolation from potentially harmful
         user code.
         """
@@ -879,6 +889,8 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def get_pid(self, file_path):
         """
+        get_pid.
+
         :param file_path: the path to the file that's being processed
         :type file_path: unicode
         :return: the PID of the process processing the given file or None if
@@ -891,6 +903,8 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def get_all_pids(self):
         """
+        get_all_pids
+
         :return: a list of the PIDs for the processors that are running
         :rtype: List[int]
         """
@@ -898,6 +912,8 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def get_last_runtime(self, file_path):
         """
+        get_last_runtime.
+
         :param file_path: the path to the file that was processed
         :type file_path: unicode
         :return: the runtime (in seconds) of the process of the last run, or
@@ -909,6 +925,8 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def get_last_dag_count(self, file_path):
         """
+        get_last_dag_count.
+
         :param file_path: the path to the file that was processed
         :type file_path: unicode
         :return: the number of dags loaded from that file, or None if the file
@@ -920,6 +938,8 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def get_last_error_count(self, file_path):
         """
+        get_last_error_count.
+
         :param file_path: the path to the file that was processed
         :type file_path: unicode
         :return: the number of import errors from processing, or None if the file
@@ -931,6 +951,8 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def get_last_finish_time(self, file_path):
         """
+        get_last_finish_time.
+
         :param file_path: the path to the file that was processed
         :type file_path: unicode
         :return: the finish time of the process of the last run, or None if the
@@ -942,6 +964,8 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def get_start_time(self, file_path):
         """
+        get_start_time.
+
         :param file_path: the path to the file that's being processed
         :type file_path: unicode
         :return: the start time of the process that's processing the
@@ -954,6 +978,8 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def get_run_count(self, file_path):
         """
+        get_run_count.
+
         :param file_path: the path to the file that's being processed
         :type file_path: unicode
         :return: the number of times the given file has been parsed
@@ -1113,8 +1139,7 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
     @provide_session
     def _find_zombies(self, session):
         """
-        Find zombie task instances, which are tasks haven't heartbeated for too long
-        and update the current zombie list.
+        Find zombie task instances, which are tasks haven't heartbeated for too long and update the current zombie list.
         """
         now = timezone.utcnow()
         if not self._last_zombie_query_time or \
@@ -1185,6 +1210,7 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
     def terminate(self):
         """
         Stops all running processors
+
         :return: None
         """
         for processor in self._processors.values():
@@ -1193,8 +1219,7 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
 
     def end(self):
         """
-        Kill all child processes on exit since we don't want to leave
-        them as orphaned.
+        Kill all child processes on exit since we don't want to leave them as orphaned.
         """
         pids_to_kill = self.get_all_pids()
         if pids_to_kill:

@@ -31,7 +31,8 @@ warnings.warn(
 
 class FileToGoogleCloudStorageOperator(LocalFilesystemToGCSOperator):
     """
-    This class is deprecated.
+    This class is deprecated
+
     Please use `airflow.providers.google.cloud.transfers.local_to_gcs.LocalFilesystemToGCSOperator`.
     """
 

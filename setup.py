@@ -59,6 +59,7 @@ def airflow_test_suite():
 class CleanCommand(Command):
     """
     Command to tidy up the project root.
+
     Registered as cmdclass in setup() so it can be called with ``python setup.py extra_clean``.
     """
 
@@ -80,6 +81,7 @@ class CleanCommand(Command):
 class CompileAssets(Command):
     """
     Compile and build the frontend assets using yarn and webpack.
+
     Registered as cmdclass in setup() so it can be called with ``python setup.py compile_assets``.
     """
 
@@ -100,6 +102,7 @@ class CompileAssets(Command):
 class ListExtras(Command):
     """
     List all available extras
+
     Registered as cmdclass in setup() so it can be called with ``python setup.py list_extras``.
     """
 
@@ -119,8 +122,9 @@ class ListExtras(Command):
 
 def git_version(version_: str) -> str:
     """
-    Return a version to identify the state of the underlying git repo. The version will
-    indicate whether the head of the current git-backed working directory is tied to a
+    Return a version to identify the state of the underlying git repo.
+
+    The version will indicate whether the head of the current git-backed working directory is tied to a
     release tag or not : it will indicate the former with a 'release:{version}' prefix
     and the latter with a 'dev0' prefix. Following the prefix will be a sha of the current
     branch head. Finally, a "dirty" suffix is appended to indicate that uncommitted

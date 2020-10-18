@@ -163,8 +163,9 @@ class DbApiHook(BaseHook):
 
     def run(self, sql, autocommit=False, parameters=None):
         """
-        Runs a command or a list of commands. Pass a list of sql
-        statements to the sql parameter to get them to execute
+        Runs a command or a list of commands.
+
+        Pass a list of sql statements to the sql parameter to get them to execute
         sequentially
 
         :param sql: the sql statement to be executed (str) or a list of
@@ -213,6 +214,7 @@ class DbApiHook(BaseHook):
     def get_autocommit(self, conn):
         """
         Get autocommit setting for the provided connection.
+
         Return True if conn.autocommit is set to True.
         Return False if conn.autocommit is not set or set to False or conn
         does not support autocommit.
@@ -234,6 +236,7 @@ class DbApiHook(BaseHook):
     def _generate_insert_sql(table, values, target_fields, replace, **kwargs):
         """
         Static helper method that generate the INSERT SQL statement.
+
         The REPLACE variant is specific to MySQL syntax.
 
         :param table: Name of the target table
@@ -268,8 +271,7 @@ class DbApiHook(BaseHook):
     def insert_rows(self, table, rows, target_fields=None, commit_every=1000,
                     replace=False, **kwargs):
         """
-        A generic way to insert a set of tuples into a table,
-        a new transaction is created every commit_every rows
+        A generic way to insert a set of tuples into a table, a new transaction is created every commit_every rows
 
         :param table: Name of the target table
         :type table: str

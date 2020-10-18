@@ -55,6 +55,7 @@ api_experimental = Blueprint('api_experimental', __name__)
 def add_deprecation_headers(response: Response):
     """
     Add `Deprecation HTTP Header Field
+
     <https://tools.ietf.org/id/draft-dalal-deprecation-header-03.html>`__.
     """
     response.headers['Deprecation'] = 'true'
@@ -75,8 +76,7 @@ api_experimental.after_request(add_deprecation_headers)
 @requires_authentication
 def trigger_dag(dag_id):
     """
-    Trigger a new dag run for a Dag with an execution date of now unless
-    specified in the data.
+    Trigger a new dag run for a Dag with an execution date of now unless specified in the data.
     """
     data = request.get_json(force=True)
 
@@ -150,6 +150,7 @@ def delete_dag(dag_id):
 def dag_runs(dag_id):
     """
     Returns a list of Dag Runs for a specific DAG ID.
+
     :query param state: a query string parameter '?state=queued|running|success...'
 
     :param dag_id: String identifier of a DAG
@@ -244,6 +245,7 @@ def dag_is_paused(dag_id):
 def task_instance_info(dag_id, execution_date, task_id):
     """
     Returns a JSON with a task instance's public instance variables.
+
     The format for the exec_date is expected to be
     "YYYY-mm-DDTHH:MM:SS", for example: "2016-11-16T11:34:15". This will
     of course need to have been encoded for URL in the request.
@@ -284,6 +286,7 @@ def task_instance_info(dag_id, execution_date, task_id):
 def dag_run_status(dag_id, execution_date):
     """
     Returns a JSON with a dag_run's public instance variables.
+
     The format for the exec_date is expected to be
     "YYYY-mm-DDTHH:MM:SS", for example: "2016-11-16T11:34:15". This will
     of course need to have been encoded for URL in the request.

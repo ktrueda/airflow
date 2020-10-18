@@ -29,6 +29,7 @@ from airflow.hooks.base_hook import BaseHook
 class MongoHook(BaseHook):
     """
     PyMongo Wrapper to Interact With Mongo Database
+
     Mongo Connection Documentation
     https://docs.mongodb.com/manual/reference/connection-string/index.html
     You can specify connection string options in extra field of your connection
@@ -118,6 +119,7 @@ class MongoHook(BaseHook):
     ) -> pymongo.command_cursor.CommandCursor:
         """
         Runs an aggregation pipeline and returns the results
+
         https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.aggregate
         https://api.mongodb.com/python/current/examples/aggregation.html
         """
@@ -135,6 +137,7 @@ class MongoHook(BaseHook):
     ) -> pymongo.cursor.Cursor:
         """
         Runs a mongo find query and returns the results
+
         https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.find
         """
         collection = self.get_collection(mongo_collection, mongo_db=mongo_db)
@@ -149,6 +152,7 @@ class MongoHook(BaseHook):
     ) -> pymongo.results.InsertOneResult:
         """
         Inserts a single document into a mongo collection
+
         https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.insert_one
         """
         collection = self.get_collection(mongo_collection, mongo_db=mongo_db)
@@ -160,6 +164,7 @@ class MongoHook(BaseHook):
     ) -> pymongo.results.InsertManyResult:
         """
         Inserts many docs into a mongo collection.
+
         https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.insert_many
         """
         collection = self.get_collection(mongo_collection, mongo_db=mongo_db)
@@ -176,6 +181,7 @@ class MongoHook(BaseHook):
     ) -> pymongo.results.UpdateResult:
         """
         Updates a single document in a mongo collection.
+
         https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.update_one
 
         :param mongo_collection: The name of the collection to update.
@@ -203,6 +209,7 @@ class MongoHook(BaseHook):
     ) -> pymongo.results.UpdateResult:
         """
         Updates one or more documents in a mongo collection.
+
         https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.update_many
 
         :param mongo_collection: The name of the collection to update.
@@ -230,6 +237,7 @@ class MongoHook(BaseHook):
     ) -> pymongo.results.UpdateResult:
         """
         Replaces a single document in a mongo collection.
+
         https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.replace_one
 
         .. note::
@@ -310,6 +318,7 @@ class MongoHook(BaseHook):
     ) -> pymongo.results.DeleteResult:
         """
         Deletes a single document in a mongo collection.
+
         https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.delete_one
 
         :param mongo_collection: The name of the collection to delete from.
@@ -330,6 +339,7 @@ class MongoHook(BaseHook):
     ) -> pymongo.results.DeleteResult:
         """
         Deletes one or more documents in a mongo collection.
+
         https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.delete_many
 
         :param mongo_collection: The name of the collection to delete from.

@@ -29,6 +29,7 @@ from airflow.utils.decorators import apply_defaults
 class MongoToS3Operator(BaseOperator):
     """
     Mongo -> S3
+
         A more specific baseOperator meant to move data
         from mongo via pymongo to s3 via boto
 
@@ -105,16 +106,14 @@ class MongoToS3Operator(BaseOperator):
     @staticmethod
     def _stringify(iterable: Iterable, joinable: str = '\n') -> str:
         """
-        Takes an iterable (pymongo Cursor or Array) containing dictionaries and
-        returns a stringified version using python join
+        Takes an iterable (pymongo Cursor or Array) containing dictionaries and returns a stringified version using python join.
         """
         return joinable.join([json.dumps(doc, default=json_util.default) for doc in iterable])
 
     @staticmethod
     def transform(docs: Any) -> Any:
         """
-        Processes pyMongo cursor and returns an iterable with each element being
-                a JSON serializable dictionary
+        Processes pyMongo cursor and returns an iterable with each element being a JSON serializable.
 
         Base transform() assumes no processing is needed
         ie. docs is a pyMongo cursor of documents and cursor just

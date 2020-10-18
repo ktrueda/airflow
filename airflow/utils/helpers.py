@@ -92,6 +92,7 @@ def is_container(obj):
 def as_tuple(obj):
     """
     If obj is a container, returns obj as a tuple.
+
     Otherwise, returns a tuple containing obj.
     """
     if is_container(obj):
@@ -121,8 +122,7 @@ def reduce_in_chunks(
     chunk_size: int = 0
 ):
     """
-    Reduce the given list of items by splitting it into chunks
-    of the given size and passing each chunk through the reducer
+    Reduce the given list of items by splitting it into chunks of the given size and passing each chunk through the reducer
     """
     if len(iterable) == 0:
         return initializer
@@ -153,8 +153,7 @@ def parse_template_string(template_string):
 
 def render_log_filename(ti, try_number, filename_template):
     """
-    Given task instance, try_number, filename_template, return the rendered log
-    filename
+    Given task instance, try_number, filename_template, return the rendered log filename
 
     :param ti: task instance
     :param try_number: try_number of the task

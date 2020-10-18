@@ -103,8 +103,8 @@ class BaseSerialization:
     @classmethod
     def from_dict(cls, serialized_obj: Dict[Encoding, Any]) -> \
             Union['BaseSerialization', dict, list, set, tuple]:
-        """Deserializes a python dict stored with type decorators and
-        reconstructs all DAGs and operators it contains.
+        """
+        Deserializes a python dict stored with type decorators and　reconstructs all DAGs and operators it contains.
         """
         return cls._deserialize(serialized_obj)
 
@@ -453,7 +453,8 @@ class SerializedBaseOperator(BaseOperator, BaseSerialization):
         encoded_op_links: list
     ) -> Dict[str, BaseOperatorLink]:
         """
-        Deserialize Operator Links if the Classes  are registered in Airflow Plugins.
+        Deserialize Operator Links if the Classes are registered in Airflow Plugins.
+
         Error is raised if the OperatorLink is not found in Plugins too.
 
         :param encoded_op_links: Serialized Operator Link
@@ -520,8 +521,10 @@ class SerializedBaseOperator(BaseOperator, BaseSerialization):
         operator_extra_links: Iterable[BaseOperatorLink]
     ):
         """
-        Serialize Operator Links. Store the import path of the OperatorLink and the arguments
-        passed to it. Example
+        Serialize Operator Links.
+
+        Store the import path of the OperatorLink and the arguments passed to it.
+        Example
         ``[{'airflow.providers.google.cloud.operators.bigquery.BigQueryConsoleLink': {}}]``
 
         :param operator_extra_links: Operator Link

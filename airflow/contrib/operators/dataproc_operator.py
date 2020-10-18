@@ -37,6 +37,7 @@ warnings.warn(
 class DataprocClusterCreateOperator(DataprocCreateClusterOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocCreateClusterOperator`.
     """
 
@@ -52,6 +53,7 @@ class DataprocClusterCreateOperator(DataprocCreateClusterOperator):
 class DataprocClusterDeleteOperator(DataprocDeleteClusterOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocDeleteClusterOperator`.
     """
 
@@ -67,6 +69,7 @@ class DataprocClusterDeleteOperator(DataprocDeleteClusterOperator):
 class DataprocClusterScaleOperator(DataprocScaleClusterOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocScaleClusterOperator`.
     """
 
@@ -82,6 +85,7 @@ class DataprocClusterScaleOperator(DataprocScaleClusterOperator):
 class DataProcHadoopOperator(DataprocSubmitHadoopJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocSubmitHadoopJobOperator`.
     """
 
@@ -98,6 +102,7 @@ class DataProcHadoopOperator(DataprocSubmitHadoopJobOperator):
 class DataProcHiveOperator(DataprocSubmitHiveJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocSubmitHiveJobOperator`.
     """
 
@@ -114,6 +119,7 @@ class DataProcHiveOperator(DataprocSubmitHiveJobOperator):
 class DataProcJobBaseOperator(DataprocJobBaseOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocJobBaseOperator`.
     """
 
@@ -129,6 +135,7 @@ class DataProcJobBaseOperator(DataprocJobBaseOperator):
 class DataProcPigOperator(DataprocSubmitPigJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocSubmitPigJobOperator`.
     """
 
@@ -144,6 +151,7 @@ class DataProcPigOperator(DataprocSubmitPigJobOperator):
 class DataProcPySparkOperator(DataprocSubmitPySparkJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocSubmitPySparkJobOperator`.
     """
 
@@ -160,6 +168,7 @@ class DataProcPySparkOperator(DataprocSubmitPySparkJobOperator):
 class DataProcSparkOperator(DataprocSubmitSparkJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocSubmitSparkJobOperator`.
     """
 
@@ -176,6 +185,7 @@ class DataProcSparkOperator(DataprocSubmitSparkJobOperator):
 class DataProcSparkSqlOperator(DataprocSubmitSparkSqlJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.dataproc.DataprocSubmitSparkSqlJobOperator`.
     """
 
@@ -192,6 +202,7 @@ class DataProcSparkSqlOperator(DataprocSubmitSparkSqlJobOperator):
 class DataprocWorkflowTemplateInstantiateInlineOperator(DataprocInstantiateInlineWorkflowTemplateOperator):
     """
     This class is deprecated.
+
     Please use
     `airflow.providers.google.cloud.operators.dataproc.DataprocInstantiateInlineWorkflowTemplateOperator`.
     """
@@ -210,6 +221,7 @@ class DataprocWorkflowTemplateInstantiateInlineOperator(DataprocInstantiateInlin
 class DataprocWorkflowTemplateInstantiateOperator(DataprocInstantiateWorkflowTemplateOperator):
     """
     This class is deprecated.
+
     Please use
     `airflow.providers.google.cloud.operators.dataproc.DataprocInstantiateWorkflowTemplateOperator`.
     """

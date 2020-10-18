@@ -31,6 +31,7 @@ warnings.warn(
 class GcpTranslateSpeechOperator(CloudTranslateSpeechOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.translate_speech.CloudTranslateSpeechOperator`.
     """
 

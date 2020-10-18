@@ -35,8 +35,8 @@ AIRFLOW_VAR_NAME_FORMAT_MAPPING = {
 
 def context_to_airflow_vars(context, in_env_var_format=False):
     """
-    Given a context, this function provides a dictionary of values that can be used to
-    externally reconstruct relations between dags, dag_runs, tasks and task_instances.
+    Given a context, this function provides a dictionary of values that can be used to　externally reconstruct relations between dags, dag_runs, tasks and task_instances.
+
     Default to abc.def.ghi format and can be made to ABC_DEF_GHI format if
     in_env_var_format is set to True.
 

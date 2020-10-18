@@ -70,8 +70,7 @@ class QuboleSensor(BaseSensorOperator):
 
 class QuboleFileSensor(QuboleSensor):
     """
-    Wait for a file or folder to be present in cloud storage
-    and check for its presence via QDS APIs
+    Wait for a file or folder to be present in cloud storage and check for its presence via QDS APIs.
 
     :param qubole_conn_id: Connection id which consists of qds auth_token
     :type qubole_conn_id: str
@@ -93,8 +92,7 @@ class QuboleFileSensor(QuboleSensor):
 
 class QubolePartitionSensor(QuboleSensor):
     """
-    Wait for a Hive partition to show up in QHS (Qubole Hive Service)
-    and check for its presence via QDS APIs
+    Wait for a Hive partition to show up in QHS (Qubole Hive Service) and check for its presence via QDS APIs.
 
     :param qubole_conn_id: Connection id which consists of qds auth_token
     :type qubole_conn_id: str

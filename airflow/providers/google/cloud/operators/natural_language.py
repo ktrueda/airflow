@@ -34,8 +34,7 @@ MetaData = Sequence[Tuple[str, str]]
 
 class CloudNaturalLanguageAnalyzeEntitiesOperator(BaseOperator):
     """
-    Finds named entities in the text along with entity types,
-    salience, mentions for each entity, and other properties.
+    Finds named entities in the text along with entity types, salience, mentions for each entity, and other properties.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -113,8 +112,7 @@ class CloudNaturalLanguageAnalyzeEntitiesOperator(BaseOperator):
 
 class CloudNaturalLanguageAnalyzeEntitySentimentOperator(BaseOperator):
     """
-    Finds entities, similar to AnalyzeEntities in the text and analyzes sentiment associated with each
-    entity and its mentions.
+    Finds entities, similar to AnalyzeEntities in the text and analyzes sentiment associated with each entity and its mentions.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:

@@ -17,8 +17,7 @@
 # under the License.
 #
 """
-This module contains a Salesforce Hook which allows you to connect to your Salesforce instance,
-retrieve data from it, and write that data to a file for other uses.
+This module contains a Salesforce Hook which allows you to connect to your Salesforce instance, retrieve data from it, and write that data to a file for other uses.
 
 .. note:: this hook also relies on the simple_salesforce package:
       https://github.com/simple-salesforce/simple-salesforce
@@ -106,6 +105,7 @@ class SalesforceHook(BaseHook):
     def describe_object(self, obj: str) -> dict:
         """
         Get the description of an object from Salesforce.
+
         This description is the object's schema and
         some extra metadata that Salesforce stores for each object.
 
@@ -136,6 +136,7 @@ class SalesforceHook(BaseHook):
     def get_object_from_salesforce(self, obj: str, fields: Iterable[str]) -> dict:
         """
         Get all instances of the `object` from Salesforce.
+
         For each model, only get the fields specified in fields.
 
         All we really do underneath the hood is run:

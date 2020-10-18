@@ -187,8 +187,7 @@ class AWSDataSyncHook(AwsBaseHook):
         destination_location_arns: list,
     ) -> list:
         """
-        Return list of TaskArns for which use any one of the specified
-        source LocationArns and any one of the specified destination LocationArns.
+        Return list of TaskArns for which use any one of the specified source LocationArns and any one of the specified destination LocationArns.
 
         :param list source_location_arns: List of source LocationArns.
         :param list destination_location_arns: List of destination LocationArns.
@@ -215,6 +214,7 @@ class AWSDataSyncHook(AwsBaseHook):
     def start_task_execution(self, task_arn: str, **kwargs) -> str:
         r"""
         Start a TaskExecution for the specified task_arn.
+
         Each task can have at most one TaskExecution.
 
         :param str task_arn: TaskArn
@@ -283,6 +283,7 @@ class AWSDataSyncHook(AwsBaseHook):
     def wait_for_task_execution(self, task_execution_arn: str, max_iterations: int = 2 * 180) -> bool:
         """
         Wait for Task Execution status to be complete (SUCCESS/ERROR).
+
         The ``task_execution_arn`` must exist, or a boto3 ClientError will be raised.
 
         :param str task_execution_arn: TaskExecutionArn
