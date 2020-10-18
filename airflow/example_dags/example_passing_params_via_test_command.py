@@ -40,8 +40,10 @@ dag = DAG(
 
 def my_py_command(test_mode, params):
     """
+    my_py_command
+
     Print out the "foo" param passed in via
-    `airflow tasks test example_passing_params_via_test_command run_this <date>
+    `airflow test example_passing_params_via_test_command run_this <date>
     -t '{"foo":"bar"}'`
     """
     if test_mode:
@@ -74,6 +76,8 @@ also_run_this = BashOperator(
 
 def print_env_vars(test_mode):
     """
+    print_env_vars
+
     Print out the "foo" param passed in via
     `airflow tasks test example_passing_params_via_test_command env_var_test_task <date>
     --env-vars '{"foo":"bar"}'`

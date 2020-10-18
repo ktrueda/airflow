@@ -16,6 +16,8 @@
 # specific language governing permissions and limitations
 # under the License.
 """
+task_group.py
+
 A TaskGroup is a collection of closely related tasks on the same DAG that should be grouped
 together when the DAG is displayed graphically.
 """
@@ -32,7 +34,9 @@ if TYPE_CHECKING:
 
 class TaskGroup(TaskMixin):
     """
-    A collection of tasks. When set_downstream() or set_upstream() are called on the
+    A collection of tasks.
+
+    When set_downstream() or set_upstream() are called on the
     TaskGroup, it is applied across all tasks within the group if necessary.
 
     :param group_id: a unique, meaningful id for the TaskGroup. group_id must not conflict
@@ -195,6 +199,7 @@ class TaskGroup(TaskMixin):
     ) -> None:
         """
         Call set_upstream/set_downstream for all root/leaf tasks within this TaskGroup.
+
         Update upstream_group_ids/downstream_group_ids/upstream_task_ids/downstream_task_ids.
         """
         if upstream:
@@ -248,6 +253,8 @@ class TaskGroup(TaskMixin):
 
     def get_roots(self) -> Generator["BaseOperator", None, None]:
         """
+        get_roots
+
         Returns a generator of tasks that are root tasks, i.e. those with no upstream
         dependencies within the TaskGroup.
         """
@@ -257,6 +264,8 @@ class TaskGroup(TaskMixin):
 
     def get_leaves(self) -> Generator["BaseOperator", None, None]:
         """
+        get_leaves
+
         Returns a generator of tasks that are leaf tasks, i.e. those with no downstream
         dependencies within the TaskGroup
         """
@@ -266,8 +275,9 @@ class TaskGroup(TaskMixin):
 
     def child_id(self, label):
         """
-        Prefix label with group_id if prefix_group_id is True. Otherwise return the label
-        as-is.
+        Prefix label with group_id if prefix_group_id is True.
+
+        Otherwise return the label as-is.
         """
         if self.prefix_group_id and self.group_id:
             return f"{self.group_id}.{label}"
@@ -277,6 +287,8 @@ class TaskGroup(TaskMixin):
     @property
     def upstream_join_id(self) -> str:
         """
+        upstream_join_id
+
         If this TaskGroup has immediate upstream TaskGroups or tasks, a dummy node called
         upstream_join_id will be created in Graph View to join the outgoing edges from this
         TaskGroup to reduce the total number of edges needed to be displayed.
@@ -286,6 +298,8 @@ class TaskGroup(TaskMixin):
     @property
     def downstream_join_id(self) -> str:
         """
+        downstream_join_id
+
         If this TaskGroup has immediate downstream TaskGroups or tasks, a dummy node called
         downstream_join_id will be created in Graph View to join the outgoing edges from this
         TaskGroup to reduce the total number of edges needed to be displayed.

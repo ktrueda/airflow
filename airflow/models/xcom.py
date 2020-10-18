@@ -63,6 +63,8 @@ class BaseXCom(Base, LoggingMixin):
     @reconstructor
     def init_on_load(self):
         """
+        init_on_load
+
         Called by the ORM after the instance has been loaded from the DB or otherwise reconstituted
         i.e automatically deserialize Xcom value when loading from DB.
         """
@@ -92,6 +94,7 @@ class BaseXCom(Base, LoggingMixin):
             session=None):
         """
         Store an XCom value.
+
         TODO: "pickling" has been deprecated and JSON is preferred.
         "pickling" will be removed in Airflow 2.0.
 
@@ -130,8 +133,9 @@ class BaseXCom(Base, LoggingMixin):
                 include_prior_dates: bool = False,
                 session: Session = None) -> Optional[Any]:
         """
-        Retrieve an XCom value, optionally meeting certain criteria. Returns None
-        of there are no results.
+        Retrieve an XCom value, optionally meeting certain criteria.
+
+        Returns None of there are no results.
 
         :param execution_date: Execution date for the task
         :type execution_date: pendulum.datetime

@@ -30,6 +30,7 @@ warnings.warn(
 class GcpSpeechToTextRecognizeSpeechOperator(CloudSpeechToTextRecognizeSpeechOperator):
     """
     This class is deprecated.
+
     Please use
     `airflow.providers.google.cloud.operators.speech_to_text.CloudSpeechToTextRecognizeSpeechOperator`.
     """

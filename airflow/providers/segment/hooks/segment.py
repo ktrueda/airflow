@@ -17,6 +17,8 @@
 # under the License.
 #
 """
+segment.py
+
 This module contains a Segment Hook
 which allows you to connect to your Segment account,
 retrieve data from it or write to that file.
@@ -32,8 +34,7 @@ from airflow.hooks.base_hook import BaseHook
 
 class SegmentHook(BaseHook):
     """
-    Create new connection to Segment
-    and allows you to pull data out of Segment or write to it.
+    Create new connection to Segment and allows you to pull data out of Segment or write to it.
 
     You can then use that file with other
     Airflow operators to move the data around or interact with segment.

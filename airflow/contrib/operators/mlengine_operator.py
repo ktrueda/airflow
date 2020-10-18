@@ -33,6 +33,7 @@ warnings.warn(
 class MLEngineBatchPredictionOperator(MLEngineStartBatchPredictionJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.mlengine.MLEngineStartBatchPredictionJobOperator`.
     """
 
@@ -49,6 +50,7 @@ class MLEngineBatchPredictionOperator(MLEngineStartBatchPredictionJobOperator):
 class MLEngineModelOperator(MLEngineManageModelOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.mlengine.MLEngineManageModelOperator`.
     """
 
@@ -64,6 +66,7 @@ class MLEngineModelOperator(MLEngineManageModelOperator):
 class MLEngineTrainingOperator(MLEngineStartTrainingJobOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.mlengine.MLEngineStartTrainingJobOperator`.
     """
 
@@ -80,6 +83,7 @@ class MLEngineTrainingOperator(MLEngineStartTrainingJobOperator):
 class MLEngineVersionOperator(MLEngineManageVersionOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.mlengine.MLEngineManageVersionOperator`.
     """
 

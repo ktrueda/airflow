@@ -160,6 +160,7 @@ for more details.
 def find_existing_guide_operator_names() -> Set[str]:
     """
     Find names of existing operators.
+
     :return names of existing operators.
     """
     operator_names = set()
@@ -175,6 +176,7 @@ def find_existing_guide_operator_names() -> Set[str]:
 def extract_ast_class_def_by_name(ast_tree, class_name):
     """
     Extracts class definition by name
+
     :param ast_tree: AST tree
     :param class_name: name of the class.
     :return: class node found
@@ -189,6 +191,7 @@ def extract_ast_class_def_by_name(ast_tree, class_name):
         def visit_ClassDef(self, node):  # pylint: disable=invalid-name
             """
             Visit class definition.
+
             :param node: node.
             :return:
             """
@@ -263,6 +266,7 @@ def check_guide_links_in_operator_descriptions() -> None:
 def assert_file_not_contains(file_path: str, pattern: str, message: str) -> None:
     """
     Asserts that file does not contain the pattern. Return message error if it does.
+
     :param file_path: file
     :param pattern: pattern
     :param message: message to return
@@ -279,6 +283,7 @@ def assert_file_not_contains(file_path: str, pattern: str, message: str) -> None
 def filter_file_list_by_pattern(file_paths: Iterable[str], pattern: str) -> List[str]:
     """
     Filters file list to those tha content matches the pattern
+
     :param file_paths: file paths to check
     :param pattern: pattern to match
     :return: list of files matching the pattern
@@ -296,6 +301,7 @@ def filter_file_list_by_pattern(file_paths: Iterable[str], pattern: str) -> List
 def find_modules(deprecated_only: bool = False) -> Set[str]:
     """
     Finds all modules.
+
     :param deprecated_only: whether only deprecated modules should be found.
     :return: set of all modules found
     """
@@ -475,6 +481,7 @@ def check_google_guides():
 def prepare_code_snippet(file_path: str, line_no: int, context_lines_count: int = 5) -> str:
     """
     Prepares code snippet.
+
     :param file_path: file path
     :param line_no: line number
     :param context_lines_count: number of lines of context.
@@ -517,6 +524,7 @@ def prepare_code_snippet(file_path: str, line_no: int, context_lines_count: int 
 def parse_sphinx_warnings(warning_text: str) -> List[DocBuildError]:
     """
     Parses warnings from Sphinx.
+
     :param warning_text: warning to parse
     :return: list of DocBuildErrors.
     """
@@ -687,6 +695,7 @@ def build_sphinx_docs() -> None:
 def print_build_errors_and_exit(message) -> None:
     """
     Prints build errors and exists.
+
     :param message:
     :return:
     """

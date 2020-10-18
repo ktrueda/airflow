@@ -17,9 +17,10 @@
 # under the License.
 
 """
+tasks.py
+
 This module contains a CloudTasksHook
 which allows you to connect to Google Cloud Tasks service,
-performing actions to queues or tasks.
 """
 from typing import Dict, List, Optional, Sequence, Tuple, Union
 
@@ -33,8 +34,9 @@ from airflow.providers.google.common.hooks.base_google import GoogleBaseHook
 
 class CloudTasksHook(GoogleBaseHook):
     """
-    Hook for Google Cloud Tasks APIs. Cloud Tasks allows developers to manage
-    the execution of background work in their applications.
+    Hook for Google Cloud Tasks APIs.
+
+    Cloud Tasks allows developers to manage the execution of background work in their applications.
 
     All the methods in the hook where project_id is used must be called with
     keyword arguments rather than positional.

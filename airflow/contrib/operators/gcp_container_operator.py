@@ -32,6 +32,7 @@ warnings.warn(
 class GKEClusterCreateOperator(GKECreateClusterOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.container.GKECreateClusterOperator`.
     """
 
@@ -47,6 +48,7 @@ class GKEClusterCreateOperator(GKECreateClusterOperator):
 class GKEClusterDeleteOperator(GKEDeleteClusterOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.container.GKEDeleteClusterOperator`.
     """
 
@@ -62,6 +64,7 @@ class GKEClusterDeleteOperator(GKEDeleteClusterOperator):
 class GKEPodOperator(GKEStartPodOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.container.GKEStartPodOperator`.
     """
 

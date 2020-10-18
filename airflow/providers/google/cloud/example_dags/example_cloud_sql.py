@@ -17,6 +17,8 @@
 # under the License.
 
 """
+example_cloud_sql.py
+
 Example Airflow DAG that creates, patches and deletes a Cloud SQL instance, and also
 creates, patches and deletes a database inside the instance, in Google Cloud.
 

@@ -42,6 +42,8 @@ def date_range(
     delta: Optional[Union[str, timedelta, relativedelta]] = None,
 ) -> List[datetime]:
     """
+    date_range
+
     Get a set of dates as a list based on a start, end and delta, delta
     can be something that can be added to `datetime.datetime`
     or a cron expression as a `str`
@@ -131,8 +133,11 @@ def date_range(
 
 def round_time(dt, delta, start_date=timezone.make_aware(datetime.min)):
     """
+    round_time
+
     Returns the datetime of the form start_date + i * delta
     which is closest to dt for any non-negative integer i.
+
     Note that delta may be a datetime.timedelta or a dateutil.relativedelta
     >>> round_time(datetime(2015, 1, 1, 6), timedelta(days=1))
     datetime.datetime(2015, 1, 1, 0, 0)
@@ -211,8 +216,8 @@ def round_time(dt, delta, start_date=timezone.make_aware(datetime.min)):
 
 def infer_time_unit(time_seconds_arr):
     """
-    Determine the most appropriate time unit for an array of time durations
-    specified in seconds.
+    Determine the most appropriate time unit for an array of time durations specified in seconds.
+
     e.g. 5400 seconds => 'minutes', 36000 seconds => 'hours'
     """
     if len(time_seconds_arr) == 0:
@@ -241,8 +246,9 @@ def scale_time_units(time_seconds_arr, unit):
 
 def days_ago(n, hour=0, minute=0, second=0, microsecond=0):
     """
-    Get a datetime object representing `n` days ago. By default the time is
-    set to midnight.
+    Get a datetime object representing `n` days ago.
+
+    By default the time is set to midnight.
     """
     today = timezone.utcnow().replace(
         hour=hour,

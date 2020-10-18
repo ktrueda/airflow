@@ -25,6 +25,8 @@ from airflow.models.skipmixin import SkipMixin
 
 class BaseBranchOperator(BaseOperator, SkipMixin):
     """
+    BaseBranchOperator
+
     This is a base class for creating operators with branching functionality,
     similarly to BranchPythonOperator.
 
@@ -39,6 +41,8 @@ class BaseBranchOperator(BaseOperator, SkipMixin):
 
     def choose_branch(self, context: Dict) -> Union[str, Iterable[str]]:
         """
+        choose_branch
+
         Subclasses should implement this, running whatever logic is
         necessary to choose a branch and returning a task_id or list of
         task_ids.

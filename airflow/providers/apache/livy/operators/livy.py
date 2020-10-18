@@ -27,6 +27,8 @@ from airflow.utils.decorators import apply_defaults
 
 class LivyOperator(BaseOperator):
     """
+    LivyOperator
+
     This operator wraps the Apache Livy batch REST API, allowing to submit a Spark
     application to the underlying cluster.
 

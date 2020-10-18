@@ -45,8 +45,9 @@ from airflow.utils.types import DagRunType
 
 class DagRun(Base, LoggingMixin):
     """
-    DagRun describes an instance of a Dag. It can be created
-    by the scheduler (for regular runs) or by an external trigger
+    DagRun describes an instance of a Dag.
+
+    It can be created by the scheduler (for regular runs) or by an external trigger
     """
 
     __tablename__ = "dag_run"
@@ -362,8 +363,7 @@ class DagRun(Base, LoggingMixin):
         execute_callbacks: bool = True
     ) -> Tuple[List[TI], Optional[callback_requests.DagCallbackRequest]]:
         """
-        Determines the overall state of the DagRun based on the state
-        of its TaskInstances.
+        Determines the overall state of the DagRun based on the state of its TaskInstances.
 
         :param session: Sqlalchemy ORM Session
         :type session: Session
@@ -533,8 +533,9 @@ class DagRun(Base, LoggingMixin):
     @provide_session
     def verify_integrity(self, session: Session = None):
         """
-        Verifies the DagRun by checking for removed tasks or tasks that are not in the
-        database yet. It will set state to removed or add the task if required.
+        Verifies the DagRun by checking for removed tasks or tasks that are not in the database yet.
+
+        It will set state to removed or add the task if required.
 
         :param session: Sqlalchemy ORM Session
         :type session: Session

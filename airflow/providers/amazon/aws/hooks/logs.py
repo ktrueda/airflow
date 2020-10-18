@@ -17,6 +17,8 @@
 # under the License.
 
 """
+log.py
+
 This module contains a hook (AwsLogsHook) with some very basic
 functionality for interacting with AWS CloudWatch.
 """
@@ -49,6 +51,8 @@ class AwsLogsHook(AwsBaseHook):
         start_from_head: bool = True,
     ) -> Generator:
         """
+        get_log_events
+
         A generator for log items in a single stream. This will yield all the
         items that are available at the current moment.
 

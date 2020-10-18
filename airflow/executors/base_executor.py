@@ -48,8 +48,10 @@ EventBufferValueType = Tuple[Optional[str], Any]
 
 class BaseExecutor(LoggingMixin):
     """
+    BaseExecutor
+
     Class to derive in order to interface with executor-type systems
-    like Celery, Kubernetes, Local, Sequential and the likes.
+    like Celery, Kubernetes, Local, Sequential and the likes..
 
     :param parallelism: how many jobs should run at one time. Set to
         ``0`` for infinity
@@ -127,6 +129,7 @@ class BaseExecutor(LoggingMixin):
     def sync(self) -> None:
         """
         Sync will get called periodically by the heartbeat method.
+
         Executors should override this to perform gather statuses.
         """
 
@@ -217,7 +220,9 @@ class BaseExecutor(LoggingMixin):
 
     def get_event_buffer(self, dag_ids=None) -> Dict[TaskInstanceKey, EventBufferValueType]:
         """
-        Returns and flush the event buffer. In case dag_ids is specified
+        Returns and flush the event buffer.
+
+        In case dag_ids is specified
         it will only return and flush events for the given dag_ids. Otherwise
         it returns and flushes all events.
 
@@ -252,6 +257,8 @@ class BaseExecutor(LoggingMixin):
 
     def end(self) -> None:  # pragma: no cover
         """
+        End
+
         This method is called when the caller is done submitting job and
         wants to wait synchronously for the job submitted previously to be
         all done.

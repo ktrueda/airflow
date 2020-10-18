@@ -15,8 +15,8 @@
 # specific language governing permissions and limitations
 # under the License.
 """
-This module provides an interface between the previous Pod
-API and outputs a kubernetes.client.models.V1Pod.
+This module provides an interface between the previous Pod API and outputs a kubernetes.client.models.V1Pod.
+
 The advantage being that the full Kubernetes API
 is supported and no serialization need be written.
 """
@@ -62,6 +62,8 @@ class PodDefaults:
 
 def make_safe_label_value(string):
     """
+    make_safe_label_value
+
     Valid label values must be 63 characters or less and must be empty or begin and
     end with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
     dots (.), and alphanumerics between.
@@ -325,6 +327,8 @@ class PodGenerator:
     @staticmethod
     def make_unique_pod_id(dag_id):
         r"""
+        make_unique_pod_id
+
         Kubernetes pod names must be <= 253 chars and must pass the following regex for
         validation
         ``^[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*$``

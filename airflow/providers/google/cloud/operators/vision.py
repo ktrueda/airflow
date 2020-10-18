@@ -342,9 +342,9 @@ class CloudVisionUpdateProductSetOperator(BaseOperator):
 
 class CloudVisionDeleteProductSetOperator(BaseOperator):
     """
-    Permanently deletes a `ProductSet`. `Products` and `ReferenceImages` in the
-    `ProductSet` are not deleted. The actual image files are not deleted from Google
-    Cloud Storage.
+    Permanently deletes a `ProductSet`. `Products` and `ReferenceImages` in the  `ProductSet` are not deleted.
+
+    The actual image files are not deleted from Google Cloud Storage.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -630,6 +630,8 @@ class CloudVisionGetProductOperator(BaseOperator):
 
 class CloudVisionUpdateProductOperator(BaseOperator):
     """
+    CloudVisionUpdateProductOperator
+
     Makes changes to a Product resource. Only the display_name, description, and labels fields can be
     updated right now.
 
@@ -1661,6 +1663,8 @@ def prepare_additional_parameters(
     additional_properties: Optional[Dict], language_hints: Any, web_detection_params: Any
 ) -> Optional[Dict]:
     """
+    prepare_additional_parameters
+
     Creates additional_properties parameter based on language_hints, web_detection_params and
     additional_properties parameters specified by the user
     """

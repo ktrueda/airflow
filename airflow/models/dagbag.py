@@ -59,6 +59,8 @@ class FileLoadStat(NamedTuple):
 
 class DagBag(BaseDagBag, LoggingMixin):
     """
+    DagBag.
+
     A dagbag is a collection of dags, parsed out of a folder tree and has high
     level configuration settings, like what database to use as a backend and
     what executor to use to fire off tasks. This makes it easier to run
@@ -222,6 +224,8 @@ class DagBag(BaseDagBag, LoggingMixin):
 
     def process_file(self, filepath, only_if_updated=True, safe_mode=True):
         """
+        process_file
+
         Given a path to a python module or zip file, this method imports
         the module and look for dag objects within it.
         """
@@ -376,6 +380,7 @@ class DagBag(BaseDagBag, LoggingMixin):
     def bag_dag(self, dag, root_dag):
         """
         Adds the DAG into the bag, recurses into sub dags.
+
         Throws AirflowDagCycleException if a cycle is detected in this dag or its subdags
         """
         test_cycle(dag)  # throws if a task cycle is found
@@ -416,6 +421,8 @@ class DagBag(BaseDagBag, LoggingMixin):
             include_smart_sensor=conf.getboolean('smart_sensor', 'USE_SMART_SENSOR'),
             safe_mode=conf.getboolean('core', 'DAG_DISCOVERY_SAFE_MODE')):
         """
+        collect_dags
+
         Given a file path or a folder, this method looks for python modules,
         imports them and adds them to the dagbag collection.
 

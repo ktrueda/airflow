@@ -38,6 +38,7 @@ warnings.warn(
 class CloudVisionAnnotateImageOperator(CloudVisionImageAnnotateOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionImageAnnotateOperator`.
     """
 
@@ -53,6 +54,7 @@ class CloudVisionAnnotateImageOperator(CloudVisionImageAnnotateOperator):
 class CloudVisionDetectDocumentTextOperator(CloudVisionTextDetectOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionTextDetectOperator`.
     """
 
@@ -68,6 +70,7 @@ class CloudVisionDetectDocumentTextOperator(CloudVisionTextDetectOperator):
 class CloudVisionProductCreateOperator(CloudVisionCreateProductOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionCreateProductOperator`.
     """
 
@@ -83,6 +86,7 @@ class CloudVisionProductCreateOperator(CloudVisionCreateProductOperator):
 class CloudVisionProductDeleteOperator(CloudVisionDeleteProductOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionDeleteProductOperator`.
     """
 
@@ -98,6 +102,7 @@ class CloudVisionProductDeleteOperator(CloudVisionDeleteProductOperator):
 class CloudVisionProductGetOperator(CloudVisionGetProductOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionGetProductOperator`.
     """
 
@@ -113,6 +118,7 @@ class CloudVisionProductGetOperator(CloudVisionGetProductOperator):
 class CloudVisionProductSetCreateOperator(CloudVisionCreateProductSetOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionCreateProductSetOperator`.
     """
 
@@ -129,6 +135,7 @@ class CloudVisionProductSetCreateOperator(CloudVisionCreateProductSetOperator):
 class CloudVisionProductSetDeleteOperator(CloudVisionDeleteProductSetOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionDeleteProductSetOperator`.
     """
 
@@ -145,6 +152,7 @@ class CloudVisionProductSetDeleteOperator(CloudVisionDeleteProductSetOperator):
 class CloudVisionProductSetGetOperator(CloudVisionGetProductSetOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionGetProductSetOperator`.
     """
 
@@ -161,6 +169,7 @@ class CloudVisionProductSetGetOperator(CloudVisionGetProductSetOperator):
 class CloudVisionProductSetUpdateOperator(CloudVisionUpdateProductSetOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionUpdateProductSetOperator`.
     """
 
@@ -177,6 +186,7 @@ class CloudVisionProductSetUpdateOperator(CloudVisionUpdateProductSetOperator):
 class CloudVisionProductUpdateOperator(CloudVisionUpdateProductOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionUpdateProductOperator`.
     """
 
@@ -193,6 +203,7 @@ class CloudVisionProductUpdateOperator(CloudVisionUpdateProductOperator):
 class CloudVisionReferenceImageCreateOperator(CloudVisionCreateReferenceImageOperator):
     """
     This class is deprecated.
+
     Please use `airflow.providers.google.cloud.operators.vision.CloudVisionCreateReferenceImageOperator`.
     """
 

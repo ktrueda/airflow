@@ -17,6 +17,8 @@
 # under the License.
 
 """
+example_cassandra_dag.py
+
 Example Airflow DAG to check if a Cassandra Table and a Records exists
 or not using `CassandraTableSensor` and `CassandraRecordSensor`.
 """

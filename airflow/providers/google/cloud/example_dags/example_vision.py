@@ -17,6 +17,8 @@
 # under the License.
 
 """
+example_vision.py
+
 Example Airflow DAG that creates, gets, updates and deletes Products and Product Sets in the Google Cloud
 Vision service.
 

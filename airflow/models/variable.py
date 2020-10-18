@@ -33,6 +33,8 @@ from airflow.utils.session import provide_session
 
 class Variable(Base, LoggingMixin):
     """
+    Variable
+
     Variables are a generic way to store and retrieve arbitrary content or settings
     as a simple key value store within Airflow.
     """
@@ -84,6 +86,8 @@ class Variable(Base, LoggingMixin):
     @classmethod
     def setdefault(cls, key, default, deserialize_json=False):
         """
+        Setdefault
+
         Like a Python builtin dict object, setdefault returns the current value
         for a key, and if it isn't there, stores the default value and returns it.
 

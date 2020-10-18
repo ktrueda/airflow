@@ -32,6 +32,8 @@ T = TypeVar('T', bound=Callable)  # pylint: disable=invalid-name
 
 def apply_defaults(func: T) -> T:
     """
+    apply_defaults
+
     Function decorator that Looks for an argument named "default_args", and
     fills the unspecified arguments from it.
 

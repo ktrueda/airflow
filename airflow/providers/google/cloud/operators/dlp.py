@@ -18,6 +18,8 @@
 
 # pylint: disable=R0913, C0302
 """
+dlp.py
+
 This module contains various Google Cloud DLP operators
 which allow you to perform basic operations using
 Cloud DLP.
@@ -128,6 +130,8 @@ class CloudDLPCancelDLPJobOperator(BaseOperator):
 
 class CloudDLPCreateDeidentifyTemplateOperator(BaseOperator):
     """
+    CloudDLPCreateDeidentifyTemplateOperator
+
     Creates a DeidentifyTemplate for re-using frequently used configuration for
     de-identifying content, images, and storage.
 
@@ -344,6 +348,8 @@ class CloudDLPCreateDLPJobOperator(BaseOperator):
 
 class CloudDLPCreateInspectTemplateOperator(BaseOperator):
     """
+    CloudDLPCreateInspectTemplateOperator
+
     Creates an InspectTemplate for re-using frequently used configuration for
     inspecting content, images, and storage.
 
@@ -450,6 +456,8 @@ class CloudDLPCreateInspectTemplateOperator(BaseOperator):
 
 class CloudDLPCreateJobTriggerOperator(BaseOperator):
     """
+    CloudDLPCreateJobTriggerOperator
+
     Creates a job trigger to run DLP actions such as scanning storage for sensitive
     information on a set schedule.
 
@@ -657,8 +665,9 @@ class CloudDLPCreateStoredInfoTypeOperator(BaseOperator):
 
 class CloudDLPDeidentifyContentOperator(BaseOperator):
     """
-    De-identifies potentially sensitive info from a ContentItem. This method has limits
-    on input size and output size.
+    De-identifies potentially sensitive info from a ContentItem.
+
+    This method has limits on input size and output size.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -859,7 +868,9 @@ class CloudDLPDeleteDeidentifyTemplateOperator(BaseOperator):
 
 class CloudDLPDeleteDLPJobOperator(BaseOperator):
     """
-    Deletes a long-running DlpJob. This method indicates that the client is no longer
+    Deletes a long-running DlpJob.
+
+    This method indicates that the client is no longer
     interested in the DlpJob result. The job will be cancelled if possible.
 
     .. seealso::
@@ -1633,8 +1644,9 @@ class CloudDLPGetStoredInfoTypeOperator(BaseOperator):
 
 class CloudDLPInspectContentOperator(BaseOperator):
     """
-    Finds potentially sensitive info in content. This method has limits on
-    input size, processing time, and output size.
+    Finds potentially sensitive info in content.
+
+    This method has limits on input size, processing time, and output size.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -2287,8 +2299,9 @@ class CloudDLPListStoredInfoTypesOperator(BaseOperator):
 
 class CloudDLPRedactImageOperator(BaseOperator):
     """
-    Redacts potentially sensitive info from an image. This method has limits on
-    input size, processing time, and output size.
+    Redacts potentially sensitive info from an image.
+
+    This method has limits on input size, processing time, and output size.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
