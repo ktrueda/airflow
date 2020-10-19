@@ -90,9 +90,8 @@ class BaseDagBag:
     @abstractmethod
     def dag_ids(self):
         """
-        dag_ids.
+        A list of DAG IDs in this bag
 
-        :return: a list of DAG IDs in this bag
         :rtype: List[unicode]
         """
         raise NotImplementedError()
