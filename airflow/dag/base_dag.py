@@ -30,9 +30,8 @@ class BaseDag(metaclass=ABCMeta):
     @abstractmethod
     def dag_id(self):
         """
-        dag_id.
+        The DAG ID
 
-        :return: the DAG ID
         :rtype: unicode
         """
         raise NotImplementedError()
