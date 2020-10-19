@@ -221,7 +221,7 @@ def task_run(args, dag=None):
 @cli_utils.action_logging
 def task_failed_deps(args):
     """
-    task_failed_deps.
+    List which dependencies are failing (stopping execution) for a given TaskInstance.
 
     Returns the unmet dependencies for a task instance from the perspective of the
     scheduler (i.e. why a task instance doesn't get scheduled and then queued by the
