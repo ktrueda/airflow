@@ -168,7 +168,10 @@ class OdbcHook(DbApiHook):
     @property
     def connect_kwargs(self) -> dict:
         """
-        Returns effective kwargs to be passed to ``pyodbc.connect`` after merging between conn extra, ``connect_kwargs`` and hook init.
+        connect_kwargs
+
+        Returns effective kwargs to be passed to ``pyodbc.connect`` after merging between conn extra,
+        ``connect_kwargs`` and hook init.
 
         Hook ``connect_kwargs`` precedes ``connect_kwargs`` from conn extra.
 

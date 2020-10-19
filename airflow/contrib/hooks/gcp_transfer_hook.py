@@ -34,7 +34,8 @@ class GCPTransferServiceHook(CloudDataTransferServiceHook):
     """
     This class is deprecated.
 
-    Please use `airflow.providers.google.cloud.hooks.cloud_storage_transfer_service.CloudDataTransferServiceHook`.
+    Please use `airflow.providers.google.cloud.hooks.cloud_storage_transfer_service.
+    CloudDataTransferServiceHook`.
     """
 
     def __init__(self, *args, **kwargs):

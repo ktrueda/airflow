@@ -223,7 +223,11 @@ class ExternalTaskSensor(BaseSensorOperator):
 
     def _handle_execution_date_fn(self, context):
         """
-        This function is to handle backwards compatibility with how this operator was previously where it only passes the execution date, but also allow for the newer implementation to pass all context through as well, to allow for more sophisticated returns of dates to return.
+        _handle_execution_date_fn
+
+        This function is to handle backwards compatibility with how this operator was previously where
+        it only passes the execution date, but also allow for the newer implementation to pass all
+        context through as well, to allow for more sophisticated returns of dates to return.
 
         Namely, this function check the number of arguments in the execution_date_fn
         signature and if its 1, treat the legacy way, if it's 2, pass the context as

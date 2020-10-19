@@ -50,7 +50,10 @@ EventBufferValueType = Tuple[Optional[str], Any]
 
 class BaseExecutor(LoggingMixin):
     """
-    Class to derive in order to interface with executor-type systems like Celery, Kubernetes, Local, Sequential and the likes.
+    BaseExecutor
+
+    Class to derive in order to interface with executor-type systems like Celery, Kubernetes,
+    Local, Sequential and the likes.
 
     :param parallelism: how many jobs should run at one time. Set to
         ``0`` for infinity
@@ -260,7 +263,10 @@ class BaseExecutor(LoggingMixin):
 
     def end(self) -> None:  # pragma: no cover
         """
-        This method is called when the caller is done submitting job and wants to wait synchronously for the job submitted previously to be all done.
+        End
+
+        This method is called when the caller is done submitting job and wants to wait synchronously
+        for the job submitted previously to be all done.
         """
         raise NotImplementedError()
 

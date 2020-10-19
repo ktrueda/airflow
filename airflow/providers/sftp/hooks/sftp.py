@@ -129,7 +129,10 @@ class SFTPHook(SSHHook):
 
     def describe_directory(self, path: str) -> Dict[str, Dict[str, str]]:
         """
-        Returns a dictionary of {filename: {attributes}} for all files on the remote system (where the MLSD command is supported).
+        describe_directory
+
+        Returns a dictionary of {filename: {attributes}} for all files on the remote system (where
+        the MLSD command is supported).
 
         :param path: full path to the remote directory
         :type path: str

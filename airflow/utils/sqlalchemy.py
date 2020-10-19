@@ -40,7 +40,10 @@ using_mysql = conf.get('core', 'sql_alchemy_conn').lower().startswith('mysql')
 # pylint: enable=unused-argument
 class UtcDateTime(TypeDecorator):
     """
-    Almost equivalent to :class:`~sqlalchemy.types.DateTime` with ``timezone=True`` option, but it differs from that by:
+    UtcDateTime
+
+    Almost equivalent to :class:`~sqlalchemy.types.DateTime` with ``timezone=True`` option,
+    but it differs from that by:
 
     - Never silently take naive :class:`~datetime.datetime`, instead it
       always raise :exc:`ValueError` unless time zone aware value.

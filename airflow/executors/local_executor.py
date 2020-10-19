@@ -156,7 +156,10 @@ class LocalWorker(LocalWorkerBase):
 
 class QueuedLocalWorker(LocalWorkerBase):
     """
-    LocalWorker implementation that is waiting for tasks from a queue and will continue executing commands as they become available in the queue.
+    QueuedLocalWorker
+
+    LocalWorker implementation that is waiting for tasks from a queue and will continue executing
+    commands as they become available in the queue.
 
     It will terminate execution once the poison token is found.
 
@@ -252,7 +255,10 @@ class LocalExecutor(BaseExecutor):
 
         def end(self) -> None:
             """
-            This method is called when the caller is done submitting job and wants to wait synchronously for the job submitted previously to be all done.
+            End
+
+            This method is called when the caller is done submitting job and wants to wait synchronously
+            for the job submitted previously to be all done.
             """
             while self.executor.workers_active > 0:
                 self.executor.sync()

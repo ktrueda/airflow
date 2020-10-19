@@ -81,7 +81,10 @@ class MSSQLToGCSOperator(BaseSQLToGCSOperator):
     @classmethod
     def convert_type(cls, value, schema_type):
         """
-        Takes a value from MSSQL, and converts it to a value that's safe for JSON/Google Cloud Storage/BigQuery.
+        convert_type
+
+        Takes a value from MSSQL, and converts it to a value that's safe for JSON/Google Cloud
+        Storage/BigQuery.
         """
         if isinstance(value, decimal.Decimal):
             return float(value)

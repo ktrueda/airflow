@@ -62,7 +62,10 @@ class BaseTIDep:
 
     def _get_dep_statuses(self, ti, session, dep_context):
         """
-        Abstract method that returns an iterable of TIDepStatus objects that describe whether the given task instance has this dependency met.
+        _get_dep_statuses
+
+        Abstract method that returns an iterable of TIDepStatus objects that describe whether the
+        given task instance has this dependency met.
 
         For example a subclass could return an iterable of TIDepStatus objects, each one
         representing if each of the passed in task's upstream tasks succeeded or not.
@@ -79,7 +82,10 @@ class BaseTIDep:
     @provide_session
     def get_dep_statuses(self, ti, session, dep_context=None):
         """
-        Wrapper around the private _get_dep_statuses method that contains some global checks for all dependencies.
+        get_dep_statuses
+
+        Wrapper around the private _get_dep_statuses method that contains some global checks for
+        all dependencies.
 
         :param ti: the task instance to get the dependency status for
         :type ti: airflow.models.TaskInstance
@@ -148,7 +154,10 @@ class BaseTIDep:
 
 class TIDepStatus(NamedTuple):
     """
-    Dependency status for a specific task instance indicating whether or not the task instance passed the dependency.
+    TIDepStatus
+
+    Dependency status for a specific task instance indicating whether or not the task instance
+    passed the dependency.
     """
 
     dep_name: str

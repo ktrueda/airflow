@@ -153,7 +153,11 @@ def execute_in_subprocess(cmd: List[str]):
 
 def execute_interactive(cmd: List[str], **kwargs):
     """
-    Runs the new command as a subprocess and ensures that the terminal's state is restored to its original state after the process is completed e.g. if the subprocess hides the cursor, it will be restored after the process is completed.
+    execute_interactive
+
+    Runs the new command as a subprocess and ensures that the terminal's state is restored to its
+    original state after the process is completed e.g. if the subprocess hides the cursor, it will
+    be restored after the process is completed.
     """
     log.info("Executing cmd: %s", " ".join([shlex.quote(c) for c in cmd]))
 

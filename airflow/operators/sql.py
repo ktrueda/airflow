@@ -229,7 +229,10 @@ class SQLValueCheckOperator(BaseOperator):
 
 class SQLIntervalCheckOperator(BaseOperator):
     """
-    Checks that the values of metrics given as SQL expressions are within a certain tolerance of the ones from days_back before.
+    SQLIntervalCheckOperator
+
+    Checks that the values of metrics given as SQL expressions are within a certain tolerance
+    of the ones from days_back before.
 
     Note that this is an abstract class and get_db_hook
     needs to be defined. Whereas a get_db_hook is hook that gets a

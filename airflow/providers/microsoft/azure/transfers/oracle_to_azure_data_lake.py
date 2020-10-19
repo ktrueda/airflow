@@ -32,7 +32,8 @@ class OracleToAzureDataLakeOperator(BaseOperator):
     """
     Moves data from Oracle to Azure Data Lake.
 
-    The operator runs the query against Oracle and stores the file locally before loading it into Azure Data Lake.
+    The operator runs the query against Oracle and stores the file locally before loading it
+    into Azure Data Lake.
 
 
     :param filename: file name to be used by the csv file.

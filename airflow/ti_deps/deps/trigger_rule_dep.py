@@ -36,7 +36,10 @@ class TriggerRuleDep(BaseTIDep):
     @staticmethod
     def _get_states_count_upstream_ti(ti, finished_tasks):
         """
-        This function returns the states of the upstream tis for a specific ti in order to determine whether this ti can run in this iteration
+        _get_states_count_upstream_ti
+
+        This function returns the states of the upstream tis for a specific ti in order to determine
+        whether this ti can run in this iteration
 
         :param ti: the ti that we want to calculate deps for
         :type ti: airflow.models.TaskInstance

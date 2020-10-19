@@ -16,7 +16,10 @@
 # specific language governing permissions and limitations
 # under the License.
 """
-A TaskGroup is a collection of closely related tasks on the same DAG that should be grouped together when the DAG is displayed graphically.
+task_group.py
+
+A TaskGroup is a collection of closely related tasks on the same DAG that should be grouped
+together when the DAG is displayed graphically.
 """
 
 from typing import TYPE_CHECKING, Dict, Generator, List, Optional, Sequence, Set, Union
@@ -267,7 +270,10 @@ class TaskGroup(TaskMixin):
 
     def get_roots(self) -> Generator["BaseOperator", None, None]:
         """
-        Returns a generator of tasks that are root tasks, i.e. those with no upstream dependencies within the TaskGroup.
+        get_roots
+
+        Returns a generator of tasks that are root tasks, i.e. those with no upstream dependencies
+        within the TaskGroup.
         """
         for task in self:
             if not any(self.has_task(parent) for parent in task.get_direct_relatives(upstream=True)):
@@ -275,7 +281,10 @@ class TaskGroup(TaskMixin):
 
     def get_leaves(self) -> Generator["BaseOperator", None, None]:
         """
-        Returns a generator of tasks that are leaf tasks, i.e. those with no downstream dependencies within the TaskGroup
+        get_leaves
+
+        Returns a generator of tasks that are leaf tasks, i.e. those with no downstream dependencies
+        within the TaskGroup
         """
         for task in self:
             if not any(self.has_task(child) for child in task.get_direct_relatives(upstream=False)):
@@ -295,14 +304,22 @@ class TaskGroup(TaskMixin):
     @property
     def upstream_join_id(self) -> str:
         """
-        If this TaskGroup has immediate upstream TaskGroups or tasks, a dummy node called upstream_join_id will be created in Graph View to join the outgoing edges from this TaskGroup to reduce the total number of edges needed to be displayed.
+        upstream_join_id
+
+        If this TaskGroup has immediate upstream TaskGroups or tasks, a dummy node called upstream_join_id
+        will be created in Graph View to join the outgoing edges from this TaskGroup to reduce the
+        total number of edges needed to be displayed.
         """
         return f"{self.group_id}.upstream_join_id"
 
     @property
     def downstream_join_id(self) -> str:
         """
-        If this TaskGroup has immediate downstream TaskGroups or tasks, a dummy node called downstream_join_id will be created in Graph View to join the outgoing edges from this TaskGroup to reduce the total number of edges needed to be displayed.
+        downstream_join_id
+
+        If this TaskGroup has immediate downstream TaskGroups or tasks, a dummy node called
+        downstream_join_id will be created in Graph View to join the outgoing edges from this
+        TaskGroup to reduce the total number of edges needed to be displayed.
         """
         return f"{self.group_id}.downstream_join_id"
 

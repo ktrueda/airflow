@@ -463,7 +463,10 @@ class DagFileProcessorAgent(LoggingMixin, MultiprocessingStartMethodMixin):
 
     def terminate(self):
         """
-        Send termination signal to DAG parsing processor manager and expect it to terminate all DAG file processors.
+        Terminate
+
+        Send termination signal to DAG parsing processor manager and expect it to terminate all
+        DAG file processors.
         """
         if self._process and self._process.is_alive():
             self.log.info("Sending termination message to manager.")
@@ -491,7 +494,11 @@ class DagFileProcessorAgent(LoggingMixin, MultiprocessingStartMethodMixin):
 
 class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instance-attributes
     """
-    Given a list of DAG definition files, this kicks off several processors in parallel to process them and put the results to a multiprocessing.Queue for DagFileProcessorAgent to harvest.
+    DagFileProcessorManager
+
+    Given a list of DAG definition files, this kicks off several processors in parallel to
+    process them and put the results to a multiprocessing.Queue for DagFileProcessorAgent
+    to harvest.
 
     The parallelism is limited and as the
     processors finish, more are launched. The files are processed over and
@@ -1139,7 +1146,10 @@ class DagFileProcessorManager(LoggingMixin):  # pylint: disable=too-many-instanc
     @provide_session
     def _find_zombies(self, session):
         """
-        Find zombie task instances, which are tasks haven't heartbeated for too long and update the current zombie list.
+        _find_zombies
+
+        Find zombie task instances, which are tasks haven't heartbeated for too long and
+        update the current zombie list.
         """
         now = timezone.utcnow()
         if not self._last_zombie_query_time or \

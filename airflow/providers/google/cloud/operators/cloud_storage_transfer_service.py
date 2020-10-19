@@ -161,7 +161,10 @@ class TransferJobValidator:
 
     def validate_body(self) -> None:
         """
-        Validates the body. Checks if body specifies `transferSpec` if yes, then check if AWS credentials are passed correctly and no more than 1 data source was selected.
+        validate_body
+
+        Validates the body. Checks if body specifies `transferSpec` if yes, then check if AWS
+        credentials are passed correctly and no more than 1 data source was selected.
 
         :raises: AirflowException
         """
@@ -754,7 +757,10 @@ class CloudDataTransferServiceCancelOperationOperator(BaseOperator):
 
 class CloudDataTransferServiceS3ToGCSOperator(BaseOperator):
     """
-    Synchronizes an S3 bucket with a Google Cloud Storage bucket using the Google Cloud Storage Transfer Service.
+    CloudDataTransferServiceS3ToGCSOperator
+
+    Synchronizes an S3 bucket with a Google Cloud Storage bucket using the Google Cloud Storage Transfer
+    Service.
 
     .. warning::
 

@@ -28,7 +28,10 @@ from airflow.utils.decorators import apply_defaults
 
 class QuboleCheckOperator(CheckOperator, QuboleOperator):
     """
-    Performs checks against Qubole Commands. ``QuboleCheckOperator`` expects a command that will be executed on QDS.
+    QuboleCheckOperator
+
+    Performs checks against Qubole Commands. ``QuboleCheckOperator`` expects a command that will
+    be executed on QDS.
 
     By default, each value on first row of the result of this Qubole Command
     is evaluated using python ``bool`` casting. If any of the

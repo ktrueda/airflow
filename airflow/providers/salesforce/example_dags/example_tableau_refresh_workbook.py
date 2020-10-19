@@ -19,7 +19,8 @@
 This is an example dag that performs two refresh operations on a Tableau Workbook aka Extract.
 
 The first one waits until it succeeds. The second does not wait since this is an asynchronous
-operation and we don't know when the operation actually finishes. That's why we have another task that checks only that.
+operation and we don't know when the operation actually finishes. That's why we have another
+task that checks only that.
 """
 from datetime import timedelta
 

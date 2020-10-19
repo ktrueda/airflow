@@ -316,7 +316,10 @@ class CloudMemorystoreExportInstanceOperator(BaseOperator):
 
 class CloudMemorystoreFailoverInstanceOperator(BaseOperator):
     """
-    Initiates a failover of the master node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance.
+    CloudMemorystoreFailoverInstanceOperator
+
+    Initiates a failover of the master node to current replica node for a specific STANDARD tier
+    Cloud Memorystore for Redis instance.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -881,7 +884,10 @@ class CloudMemorystoreScaleInstanceOperator(BaseOperator):
 
 class CloudMemorystoreCreateInstanceAndImportOperator(BaseOperator):
     """
-    Creates a Redis instance based on the specified tier and memory size and import a Redis RDB snapshot file from Cloud Storage into a this instance.
+    CloudMemorystoreCreateInstanceAndImportOperator
+
+    Creates a Redis instance based on the specified tier and memory size and import a Redis RDB
+    snapshot file from Cloud Storage into a this instance.
 
     By default, the instance is accessible from the project's `default network
     <https://cloud.google.com/compute/docs/networks-and-firewalls#networks>`__.

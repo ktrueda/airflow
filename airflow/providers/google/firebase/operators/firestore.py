@@ -25,7 +25,10 @@ from airflow.utils.decorators import apply_defaults
 
 class CloudFirestoreExportDatabaseOperator(BaseOperator):
     """
-    Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage.
+    CloudFirestoreExportDatabaseOperator
+
+    Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage
+    system, such as Google Cloud Storage.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:

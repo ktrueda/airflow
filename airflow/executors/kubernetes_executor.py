@@ -514,7 +514,10 @@ class KubernetesExecutor(BaseExecutor, LoggingMixin):
     @provide_session
     def clear_not_launched_queued_tasks(self, session=None) -> None:
         """
-        If the airflow scheduler restarts with pending "Queued" tasks, the tasks may or may not have been launched.
+        clear_not_launched_queued_tasks
+
+        If the airflow scheduler restarts with pending "Queued" tasks, the tasks may or may not
+        have been launched.
 
         Thus on starting up the scheduler let's check every
         "Queued" task to

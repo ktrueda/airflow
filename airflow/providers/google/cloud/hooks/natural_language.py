@@ -93,7 +93,10 @@ class CloudNaturalLanguageHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> AnalyzeEntitiesResponse:
         """
-        Finds named entities in the text along with entity types, salience, mentions for each entity, and other properties.
+        analyze_entities
+
+        Finds named entities in the text along with entity types, salience, mentions for each
+        entity, and other properties.
 
         :param document: Input document.
             If a dict is provided, it must be of the same form as the protobuf message Document
@@ -126,7 +129,10 @@ class CloudNaturalLanguageHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> AnalyzeEntitySentimentResponse:
         """
-        Finds entities, similar to AnalyzeEntities in the text and analyzes sentiment associated with each entity and its mentions.
+        analyze_entity_sentiment
+
+        Finds entities, similar to AnalyzeEntities in the text and analyzes sentiment associated
+        with each entity and its mentions.
 
         :param document: Input document.
             If a dict is provided, it must be of the same form as the protobuf message Document
@@ -192,7 +198,10 @@ class CloudNaturalLanguageHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> AnalyzeSyntaxResponse:
         """
-        Analyzes the syntax of the text and provides sentence boundaries and tokenization along with part of speech tags, dependency trees, and other properties.
+        analyze_syntax
+
+        Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
+        part of speech tags, dependency trees, and other properties.
 
         :param document: Input document.
             If a dict is provided, it must be of the same form as the protobuf message Document
@@ -226,7 +235,10 @@ class CloudNaturalLanguageHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> AnnotateTextResponse:
         """
-        A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and analyzeSyntax provide in one call.
+        annotate_text
+
+        A convenience method that provides all the features that analyzeSentiment, analyzeEntities,
+        and analyzeSyntax provide in one call.
 
         :param document: Input document.
             If a dict is provided, it must be of the same form as the protobuf message Document

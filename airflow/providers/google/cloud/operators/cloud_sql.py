@@ -634,7 +634,10 @@ class CloudSQLCreateInstanceDatabaseOperator(CloudSQLBaseOperator):
 
 class CloudSQLPatchInstanceDatabaseOperator(CloudSQLBaseOperator):
     """
-    Updates a resource containing information about a database inside a Cloud SQL instance using patch semantics.
+    CloudSQLPatchInstanceDatabaseOperator
+
+    Updates a resource containing information about a database inside a Cloud SQL instance using patch
+    semantics.
 
     See: https://cloud.google.com/sql/docs/mysql/admin-api/how-tos/performance#patch
 

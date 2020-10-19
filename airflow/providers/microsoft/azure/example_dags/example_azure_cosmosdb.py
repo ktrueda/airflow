@@ -17,7 +17,10 @@
 # under the License.
 
 """
-This is only an example DAG to highlight usage of AzureCosmosDocumentSensor to detect if a document now exists.
+example_azure_cosmosdb.py
+
+This is only an example DAG to highlight usage of AzureCosmosDocumentSensor to detect if a
+document now exists.
 
 You can trigger this manually with `airflow dags trigger example_cosmosdb_sensor`.
 

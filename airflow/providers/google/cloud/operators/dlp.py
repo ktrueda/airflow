@@ -18,7 +18,10 @@
 
 # pylint: disable=R0913, C0302
 """
-This module contains various Google Cloud DLP operator which allow you to perform basic operations using Cloud DLP.
+dlp.py
+
+This module contains various Google Cloud DLP operator which allow you to perform basic
+operations using Cloud DLP.
 """
 from typing import Dict, Optional, Sequence, Tuple, Union
 
@@ -126,7 +129,10 @@ class CloudDLPCancelDLPJobOperator(BaseOperator):
 
 class CloudDLPCreateDeidentifyTemplateOperator(BaseOperator):
     """
-    Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying content, images, and storage.
+    CloudDLPCreateDeidentifyTemplateOperator
+
+    Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
+    content, images, and storage.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -341,7 +347,10 @@ class CloudDLPCreateDLPJobOperator(BaseOperator):
 
 class CloudDLPCreateInspectTemplateOperator(BaseOperator):
     """
-    Creates an InspectTemplate for re-using frequently used configuration for inspecting content, images, and storage.
+    CloudDLPCreateInspectTemplateOperator
+
+    Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
+    images, and storage.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -446,7 +455,10 @@ class CloudDLPCreateInspectTemplateOperator(BaseOperator):
 
 class CloudDLPCreateJobTriggerOperator(BaseOperator):
     """
-    Creates a job trigger to run DLP actions such as scanning storage for sensitive information on a set schedule.
+    CloudDLPCreateJobTriggerOperator
+
+    Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
+    a set schedule.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:

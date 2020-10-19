@@ -356,7 +356,10 @@ class AirflowSecurityManager(SecurityManager, LoggingMixin):
 
     def has_access(self, permission, resource, user=None) -> bool:
         """
-        Verify whether a given user could perform certain permission (e.g can_read, can_write) on the given resource.
+        has_access
+
+        Verify whether a given user could perform certain permission (e.g can_read, can_write)
+        on the given resource.
 
         :param permission: permission on resource (e.g can_read, can_edit).
         :type permission: str

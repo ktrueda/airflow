@@ -124,7 +124,10 @@ def task_instance_mutation_hook(task_instance):  # pylint: disable=unused-argume
 
 def pod_mutation_hook(pod):  # pylint: disable=unused-argument
     """
-    This setting allows altering ``kubernetes.client.models.V1Pod`` object before they are passed to the Kubernetes client by the ``PodLauncher`` for scheduling.
+    pod_mutation_hook
+
+    This setting allows altering ``kubernetes.client.models.V1Pod`` object before they are passed
+    to the Kubernetes client by the ``PodLauncher`` for scheduling.
 
     To define a pod mutation hook, add a ``airflow_local_settings`` module
     to your PYTHONPATH that defines this ``pod_mutation_hook`` function.

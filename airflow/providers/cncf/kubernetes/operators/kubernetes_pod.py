@@ -306,7 +306,11 @@ class KubernetesPodOperator(BaseOperator):  # pylint: disable=too-many-instance-
         self, labels: dict, try_numbers_match: bool, launcher: Any, pod: k8s.V1Pod
     ) -> Tuple[State, Optional[str]]:
         """
-        In cases where the Scheduler restarts while a KubernetesPodOperator task is running, this function will either continue to monitor the existing pod or launch a new pod based on the `reattach_on_restart` parameter.
+        handle_pod_overlap
+
+        In cases where the Scheduler restarts while a KubernetesPodOperator task is running, this
+        function will either continue to monitor the existing pod or launch a new pod based on the
+        `reattach_on_restart` parameter.
 
         :param labels: labels used to determine if a pod is repeated
         :type labels: dict

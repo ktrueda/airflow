@@ -437,7 +437,10 @@ class SmartSensorOperator(BaseOperator, SkipMixin):
     @provide_session
     def _mark_multi_state(self, operator, poke_hash, encoded_poke_context, state, session=None):
         """
-        Mark state for multiple tasks in the task_instance table to a new state if they have the same signature as the poke_hash.
+        _mark_multi_state
+
+        Mark state for multiple tasks in the task_instance table to a new state if they have the
+        same signature as the poke_hash.
 
         :param operator: The sensor's operator class name.
         :param poke_hash: The hash code generated from sensor's poke context.

@@ -153,7 +153,10 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> DeidentifyTemplate:
         """
-        Creates a deidentify template for re-using frequently used configuration for de-identifying content, images, and storage.
+        create_deidentify_template
+
+        Creates a deidentify template for re-using frequently used configuration for de-identifying
+        content, images, and storage.
 
         :param organization_id: (Optional) The organization ID. Required to set this
             field if parent resource is an organization.
@@ -293,7 +296,10 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> InspectTemplate:
         """
-        Creates an inspect template for re-using frequently used configuration for inspecting content, images, and storage.
+        create_inspect_template
+
+        Creates an inspect template for re-using frequently used configuration for inspecting content,
+        images, and storage.
 
         :param organization_id: (Optional) The organization ID. Required to set this
             field if parent resource is an organization.
@@ -349,7 +355,10 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> JobTrigger:
         """
-        Creates a job trigger to run DLP actions such as scanning storage for sensitive information on a set schedule.
+        create_job_trigger
+
+        Creates a job trigger to run DLP actions such as scanning storage for sensitive information
+        on a set schedule.
 
         :param project_id: (Optional) Google Cloud project ID where the
             DLP Instance exists. If set to None or missing, the default

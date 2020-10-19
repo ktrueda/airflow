@@ -280,7 +280,10 @@ class GCSListObjectsOperator(BaseOperator):
 
 class GCSDeleteObjectsOperator(BaseOperator):
     """
-    Deletes objects from a Google Cloud Storage bucket, either from an explicit list of object names or all objects matching a prefix.
+    GCSDeleteObjectsOperator
+
+    Deletes objects from a Google Cloud Storage bucket, either from an explicit list of object
+    names or all objects matching a prefix.
 
     :param bucket_name: The GCS bucket to delete from
     :type bucket_name: str

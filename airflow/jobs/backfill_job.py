@@ -287,7 +287,10 @@ class BackfillJob(BaseJob):
     @provide_session
     def _get_dag_run(self, run_date: datetime, dag: DAG, session: Session = None):
         """
-        Returns a dag run for the given run date, which will be matched to an existing dag run if available or create a new dag run otherwise.
+        _get_dag_run
+
+        Returns a dag run for the given run date, which will be matched to an existing dag run if
+        available or create a new dag run otherwise.
 
         If the max_active_runs
         limit is reached, this function will return None.
@@ -708,7 +711,10 @@ class BackfillJob(BaseJob):
     def _execute_for_run_dates(self, run_dates, ti_status, executor, pickle_id,
                                start_date, session=None):
         """
-        Computes the dag runs and their respective task instances for the given run dates and executes the task instances.
+        _execute_for_run_dates
+
+        Computes the dag runs and their respective task instances for the given run dates and
+        executes the task instances.
 
         Returns a list of execution dates of the dag runs that were executed.
 
@@ -765,7 +771,10 @@ class BackfillJob(BaseJob):
     @provide_session
     def _execute(self, session=None):
         """
-        Initializes all components required to run a dag for a specified date range and calls helper method to execute the tasks.
+        _execute
+
+        Initializes all components required to run a dag for a specified date range and calls
+        helper method to execute the tasks.
         """
         ti_status = BackfillJob._DagRunTaskStatus()
 
@@ -844,7 +853,10 @@ class BackfillJob(BaseJob):
     @provide_session
     def reset_state_for_orphaned_tasks(self, filter_by_dag_run=None, session=None):
         """
-        This function checks if there are any tasks in the dagrun (or all) that have a schedule or queued states but are not known by the executor.
+        reset_state_for_orphaned_tasks
+
+        This function checks if there are any tasks in the dagrun (or all) that have a schedule or
+        queued states but are not known by the executor.
 
         If it finds those it will reset the state to None so they will get picked
         up again.  The batch option is for performance reasons as the queries

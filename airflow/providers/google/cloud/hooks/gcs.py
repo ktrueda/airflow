@@ -211,7 +211,10 @@ class GCSHook(GoogleBaseHook):
         destination_object: Optional[str] = None,
     ) -> None:
         """
-        Has the same functionality as copy, except that will work on files over 5 TB, as well as when copying between locations and/or storage classes.
+        Rewrite
+
+        Has the same functionality as copy, except that will work on files over 5 TB, as well as
+        when copying between locations and/or storage classes.
 
         destination_object can be omitted, in which case source_object is used.
 
@@ -1020,7 +1023,10 @@ class GCSHook(GoogleBaseHook):
 
 def gcs_object_is_directory(bucket: str) -> bool:
     """
-    Return True if given Google Cloud Storage URL (gs://<bucket>/<blob>) is a directory or an empty bucket. Otherwise return False.
+    gcs_object_is_directory
+
+    Return True if given Google Cloud Storage URL (gs://<bucket>/<blob>) is a directory or an
+    empty bucket. Otherwise return False.
     """
     _, blob = _parse_gcs_url(bucket)
 
@@ -1029,7 +1035,10 @@ def gcs_object_is_directory(bucket: str) -> bool:
 
 def _parse_gcs_url(gsurl: str) -> Tuple[str, str]:
     """
-    Given a Google Cloud Storage URL (gs://<bucket>/<blob>), returns a tuple containing the corresponding bucket and blob.
+    _parse_gcs_url
+
+    Given a Google Cloud Storage URL (gs://<bucket>/<blob>), returns a tuple containing the
+    corresponding bucket and blob.
     """
     parsed_url = urlparse(gsurl)
     if not parsed_url.netloc:

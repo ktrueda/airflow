@@ -17,7 +17,10 @@
 # under the License.
 
 """
-This module contains a CloudTasksHook which allows you to connect to Google Cloud Tasks service, performing actions to queues or tasks.
+tasks.py
+
+This module contains a CloudTasksHook which allows you to connect to Google Cloud Tasks service,
+performing actions to queues or tasks.
 """
 from typing import Dict, List, Optional, Sequence, Tuple, Union
 

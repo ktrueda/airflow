@@ -275,7 +275,10 @@ class CloudMemorystoreHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ):
         """
-        Initiates a failover of the master node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance.
+        failover_instance
+
+        Initiates a failover of the master node to current replica node for a specific STANDARD tier
+        Cloud Memorystore for Redis instance.
 
         :param location: The location of the Cloud Memorystore instance (for example europe-west1)
         :type location: str
@@ -404,7 +407,10 @@ class CloudMemorystoreHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ):
         """
-        Lists all Redis instances owned by a project in either the specified location (region) or all locations.
+        list_instances
+
+        Lists all Redis instances owned by a project in either the specified location (region) or
+        all locations.
 
         :param location: The location of the Cloud Memorystore instance (for example europe-west1)
 

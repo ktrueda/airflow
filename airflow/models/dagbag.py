@@ -231,7 +231,10 @@ class DagBag(BaseDagBag, LoggingMixin):
 
     def process_file(self, filepath, only_if_updated=True, safe_mode=True):
         """
-        Given a path to a python module or zip file, this method imports the module and look for dag objects within it.
+        process_file
+
+        Given a path to a python module or zip file, this method imports the module and look for
+        dag objects within it.
         """
         integrate_dag_plugins()
 
@@ -425,7 +428,10 @@ class DagBag(BaseDagBag, LoggingMixin):
             include_smart_sensor=conf.getboolean('smart_sensor', 'USE_SMART_SENSOR'),
             safe_mode=conf.getboolean('core', 'DAG_DISCOVERY_SAFE_MODE')):
         """
-        Given a file path or a folder, this method looks for python modules, imports them and adds them to the dagbag collection.
+        collect_dags
+
+        Given a file path or a folder, this method looks for python modules, imports them and adds them
+        to the dagbag collection.
 
         Note that if a ``.airflowignore`` file is found while processing
         the directory, it will behave much like a ``.gitignore``,

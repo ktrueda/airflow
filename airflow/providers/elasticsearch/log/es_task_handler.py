@@ -116,7 +116,10 @@ class ElasticsearchTaskHandler(FileTaskHandler, LoggingMixin):
     @staticmethod
     def _clean_execution_date(execution_date: datetime) -> str:
         """
-        Clean up an execution date so that it is safe to query in elasticsearch by removing reserved characters.
+        _clean_execution_date
+
+        Clean up an execution date so that it is safe to query in elasticsearch by removing reserved
+        characters.
 
         # https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#_reserved_characters
 

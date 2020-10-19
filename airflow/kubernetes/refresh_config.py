@@ -36,7 +36,10 @@ from kubernetes.config.kube_config import KUBE_CONFIG_DEFAULT_LOCATION, KubeConf
 
 class RefreshKubeConfigLoader(KubeConfigLoader):
     """
-    Patched KubeConfigLoader, this subclass takes expirationTimestamp into account and sets api key refresh callback hook in Configuration object
+    RefreshKubeConfigLoader
+
+    Patched KubeConfigLoader, this subclass takes expirationTimestamp into account and sets api
+    key refresh callback hook in Configuration object
     """
 
     def __init__(self, *args, **kwargs):
@@ -45,7 +48,10 @@ class RefreshKubeConfigLoader(KubeConfigLoader):
 
     def _load_from_exec_plugin(self):
         """
-        We override _load_from_exec_plugin method to also read and store expiration timestamp for aws-iam-authenticator.
+        _load_from_exec_plugin
+
+        We override _load_from_exec_plugin method to also read and store expiration timestamp
+        for aws-iam-authenticator.
 
         It will be later
         used for api token refresh.
@@ -96,7 +102,10 @@ class RefreshConfiguration(Configuration):
 
 def _get_kube_config_loader_for_yaml_file(filename, **kwargs) -> Optional[RefreshKubeConfigLoader]:
     """
-    Adapted from the upstream _get_kube_config_loader_for_yaml_file function, changed KubeConfigLoader to RefreshKubeConfigLoader
+    _get_kube_config_loader_for_yaml_file
+
+    Adapted from the upstream _get_kube_config_loader_for_yaml_file function, changed
+    KubeConfigLoader to RefreshKubeConfigLoader
     """
     with open(filename) as f:
         return RefreshKubeConfigLoader(

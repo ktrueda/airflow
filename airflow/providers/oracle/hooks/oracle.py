@@ -125,7 +125,10 @@ class OracleHook(DbApiHook):
         **kwargs,
     ) -> None:
         """
-        A generic way to insert a set of tuples into a table, the whole set of inserts is treated as one transaction Changes from standard DbApiHook implementation:
+        insert_rows
+
+        A generic way to insert a set of tuples into a table, the whole set of inserts is treated
+        as one transaction Changes from standard DbApiHook implementation:
 
         - Oracle SQL queries in cx_Oracle can not be terminated with a semicolon (`;`)
         - Replace NaN values with NULL using `numpy.nan_to_num` (not using

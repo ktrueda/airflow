@@ -236,7 +236,10 @@ class AwsBatchClientHook(AwsBaseHook):
 
     def check_job_success(self, job_id: str) -> bool:
         """
-        Check the final status of the batch job; return True if the job 'SUCCEEDED', else raise an AirflowException.
+        check_job_success
+
+        Check the final status of the batch job; return True if the job 'SUCCEEDED', else
+        raise an AirflowException.
 
         :param job_id: a batch job ID
         :type job_id: str
@@ -279,7 +282,10 @@ class AwsBatchClientHook(AwsBaseHook):
 
     def poll_for_job_running(self, job_id: str, delay: Union[int, float, None] = None) -> None:
         """
-        Poll for job running. The status that indicates a job is running or already complete are: 'RUNNING'|'SUCCEEDED'|'FAILED'.
+        poll_for_job_running
+
+        Poll for job running. The status that indicates a job is running or already complete
+        are: 'RUNNING'|'SUCCEEDED'|'FAILED'.
 
         So the status options that this will wait for are the transitions from:
         'SUBMITTED'>'PENDING'>'RUNNABLE'>'STARTING'>'RUNNING'|'SUCCEEDED'|'FAILED'

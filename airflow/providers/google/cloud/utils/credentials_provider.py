@@ -47,7 +47,10 @@ def build_gcp_conn(
     project_id: Optional[str] = None,
 ) -> str:
     """
-    Builds a uri that can be used as :envvar:`AIRFLOW_CONN_{CONN_ID}` with provided service key, scopes and project id.
+    build_gcp_conn
+
+    Builds a uri that can be used as :envvar:`AIRFLOW_CONN_{CONN_ID}` with provided service key,
+    scopes and project id.
 
     :param key_file_path: Path to service key.
     :type key_file_path: Optional[str]
@@ -329,7 +332,11 @@ def _get_target_principal_and_delegates(
     impersonation_chain: Optional[Union[str, Sequence[str]]] = None
 ) -> Tuple[Optional[str], Optional[Sequence[str]]]:
     """
-    Analyze contents of impersonation_chain and return target_principal (the service account to directly impersonate using short-term credentials, if any) and optional list of delegates required to get the access_token of target_principal.
+    _get_target_principal_and_delegates
+
+    Analyze contents of impersonation_chain and return target_principal (the service account to directly
+    impersonate using short-term credentials, if any) and optional list of delegates required to get
+    the access_token of target_principal.
 
     :param impersonation_chain: the service account to impersonate or a chained list leading to this
         account

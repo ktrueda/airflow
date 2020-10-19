@@ -367,7 +367,10 @@ class Airflow(AirflowBaseView):  # noqa: D101  pylint: disable=too-many-public-m
     @expose('/health')
     def health(self):
         """
-        An endpoint helping check the health status of the Airflow instance, including metadatabase and scheduler.
+        Health
+
+        An endpoint helping check the health status of the Airflow instance, including metadatabase
+        and scheduler.
         """
         payload = {
             'metadatabase': {'status': 'unhealthy'}
@@ -2266,7 +2269,7 @@ class Airflow(AirflowBaseView):  # noqa: D101  pylint: disable=too-many-public-m
               execution_date: The date of execution of the task
               link_name: The name of the link reference to find the actual URL for
 
-        Returns:
+        Returns
             200: {url: <url of link>, error: None} - returned when there was no problem
                 finding the URL
             404: {url: None, error: <error message>} - returned when the operator does

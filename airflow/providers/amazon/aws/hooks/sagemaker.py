@@ -283,7 +283,10 @@ class SageMakerHook(AwsBaseHook):  # pylint: disable=too-many-public-methods
 
     def multi_stream_iter(self, log_group, streams, positions=None):
         """
-        Iterate over the available events coming from a set of log streams in a single log group interleaving the events from each stream so they're yielded in timestamp order.
+        multi_stream_iter
+
+        Iterate over the available events coming from a set of log streams in a single log group
+        interleaving the events from each stream so they're yielded in timestamp order.
 
         :param log_group: The name of the log group.
         :type log_group: str
@@ -927,7 +930,10 @@ class SageMakerHook(AwsBaseHook):  # pylint: disable=too-many-public-methods
 
     def _list_request(self, partial_func, result_key: str, max_results: Optional[int] = None) -> List[Dict]:
         """
-        All AWS boto3 list_* requests return results in batches (if the key "NextToken" is contained in the result, there are more results to fetch).
+        _list_request
+
+        All AWS boto3 list_* requests return results in batches (if the key "NextToken" is contained in
+        the result, there are more results to fetch).
 
         The default AWS batch size is 10, and configurable up to 100.
         This function iteratively loads all results (or up to a given maximum).

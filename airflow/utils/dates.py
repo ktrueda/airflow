@@ -42,7 +42,10 @@ def date_range(
     delta: Optional[Union[str, timedelta, relativedelta]] = None,
 ) -> List[datetime]:
     """
-    Get a set of dates as a list based on a start, end and delta, delta can be something that can be added to `datetime.datetime` or a cron expression as a `str`.
+    date_range
+
+    Get a set of dates as a list based on a start, end and delta, delta can be something that can
+    be added to `datetime.datetime` or a cron expression as a `str`.
 
     .. code-block:: python
 
@@ -129,7 +132,10 @@ def date_range(
 
 def round_time(dt, delta, start_date=timezone.make_aware(datetime.min)):
     """
-    Returns the datetime of the form start_date + i * delta which is closest to dt for any non-negative integer i.
+    round_time
+
+    Returns the datetime of the form start_date + i * delta which is closest to dt for any
+    non-negative integer i.
 
     Note that delta may be a datetime.timedelta or a dateutil.relativedelta
     >>> round_time(datetime(2015, 1, 1, 6), timedelta(days=1))

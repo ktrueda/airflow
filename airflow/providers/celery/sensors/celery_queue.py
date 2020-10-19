@@ -28,8 +28,8 @@ class CeleryQueueSensor(BaseSensorOperator):
     """
     Waits for a Celery queue to be empty.
 
-    By default, in order to be considered empty, the queue must not have any tasks in the ``reserved``, ``scheduled``
-    or ``active`` states.
+    By default, in order to be considered empty, the queue must not have any tasks
+    in the ``reserved``, ``scheduled``　or ``active`` states.
 
     :param celery_queue: The name of the Celery queue to wait for.
     :type celery_queue: str
@@ -46,7 +46,10 @@ class CeleryQueueSensor(BaseSensorOperator):
 
     def _check_task_id(self, context: Dict[str, Any]) -> bool:
         """
-        Gets the returned Celery result from the Airflow task ID provided to the sensor, and returns True if the　celery result has been finished execution.
+        _check_task_id
+
+        Gets the returned Celery result from the Airflow task ID provided to the sensor, and
+        returns True if the　celery result has been finished execution.
 
         :param context: Airflow's execution context
         :type context: dict

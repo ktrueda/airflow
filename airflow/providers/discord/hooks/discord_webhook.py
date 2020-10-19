@@ -78,7 +78,10 @@ class DiscordWebhookHook(HttpHook):
 
     def _get_webhook_endpoint(self, http_conn_id: Optional[str], webhook_endpoint: Optional[str]) -> str:
         """
-        Given a Discord http_conn_id, return the default webhook endpoint or override if a webhook_endpoint is manually supplied.
+        _get_webhook_endpoint
+
+        Given a Discord http_conn_id, return the default webhook endpoint or override if a
+        webhook_endpoint is manually supplied.
 
         :param http_conn_id: The provided connection ID
         :param webhook_endpoint: The manually provided webhook endpoint

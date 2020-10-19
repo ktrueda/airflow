@@ -2207,7 +2207,10 @@ class BigQueryHook(GoogleBaseHook, DbApiHook):
 
 class BigQueryPandasConnector(GbqConnector):
     """
-    This connector behaves identically to GbqConnector (from Pandas), except that it allows the service to be injected, and disables a call to self.get_credentials().
+    BigQueryPandasConnector
+
+    This connector behaves identically to GbqConnector (from Pandas), except that it allows the
+    service to be injected, and disables a call to self.get_credentials().
 
     This allows Airflow to use BigQuery with Pandas
     without forcing a three legged OAuth connection. Instead, we can inject
@@ -2753,7 +2756,10 @@ class BigQueryCursor(BigQueryBaseCursor):
 
     def fetchmany(self, size: Optional[int] = None) -> list:
         """
-        Fetch the next set of rows of a query result, returning a sequence of sequences (e.g. a list of tuples).
+        Fetchmany
+
+        Fetch the next set of rows of a query result, returning a sequence of sequences (e.g. a list
+        of tuples).
 
         An empty sequence is returned when no more rows are
         available. The number of rows to fetch per call is specified by the parameter.
@@ -2776,7 +2782,10 @@ class BigQueryCursor(BigQueryBaseCursor):
 
     def fetchall(self) -> List[list]:
         """
-        Fetch all (remaining) rows of a query result, returning them as a sequence of sequences (e.g. a list of tuples).
+        Fetchall
+
+        Fetch all (remaining) rows of a query result, returning them as a sequence of sequences
+        (e.g. a list of tuples).
         """
         result = []
         while True:

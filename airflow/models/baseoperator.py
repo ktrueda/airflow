@@ -515,7 +515,10 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
     # including lineage information
     def __or__(self, other):
         """
-        Called for [This Operator] | [Operator], The inlets of other will be set to pickup the outlets from this operator.
+        __or__
+
+        Called for [This Operator] | [Operator], The inlets of other will be set to pickup the
+        outlets from this operator.
 
         Other will be set as a downstream task of this operator.
         """
@@ -533,7 +536,10 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def __gt__(self, other):
         """
-        Called for [Operator] > [Outlet], so that if other is an attr annotated object it is set as an outlet of this Operator.
+        __gt__
+
+        Called for [Operator] > [Outlet], so that if other is an attr annotated object it is set
+        as an outlet of this Operator.
         """
         if not isinstance(other, Iterable):
             other = [other]
@@ -547,7 +553,10 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def __lt__(self, other):
         """
-        Called for [Inlet] > [Operator] or [Operator] < [Inlet], so that if other is an attr annotated object it is set as an inlet to this operator
+        __lt__
+
+        Called for [Inlet] > [Operator] or [Operator] < [Inlet], so that if other is an attr
+        annotated object it is set as an inlet to this operator
         """
         if not isinstance(other, Iterable):
             other = [other]
@@ -671,8 +680,8 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
         """
         Resolves upstream dependencies of a task.
 
-        In this way passing an ``XComArg`` as value for a template field will result in creating upstream relation between
-        two tasks.
+        In this way passing an ``XComArg`` as value for a template field will result in creating
+        upstream relation between two tasks.
 
         **Example**: ::
 

@@ -121,7 +121,10 @@ class DatabricksHook(BaseHook):  # noqa
     @staticmethod
     def _parse_host(host: str) -> str:
         """
-        The purpose of this function is to be robust to improper connections settings provided by users, specifically in the host field.
+        _parse_host
+
+        The purpose of this function is to be robust to improper connections settings provided by
+        users, specifically in the host field.
 
         For example -- when users supply ``https://xx.cloud.databricks.com`` as the
         host, we must strip out the protocol to get the host.::
