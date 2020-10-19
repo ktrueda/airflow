@@ -99,9 +99,8 @@ class BaseDagBag:
     @abstractmethod
     def get_dag(self, dag_id):
         """
-        get_dag.
+        Get a DAG from this bag, if it exists, or else return None.
 
-        :return: whether the task exists in this bag
         :rtype: airflow.dag.base_dag.BaseDag
         """
         raise NotImplementedError()
