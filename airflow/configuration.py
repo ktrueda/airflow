@@ -985,7 +985,7 @@ def get_custom_secret_backend() -> Optional[BaseSecretsBackend]:
 
 def initialize_secrets_backends() -> List[BaseSecretsBackend]:
     """
-    initialize_secrets_backends
+    Initialize configured and built-in secrets backends 
 
     * import secrets backend classes
     * instantiate them and return them in a list
