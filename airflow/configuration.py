@@ -53,8 +53,11 @@ if not sys.warnoptions:
 
 def expand_env_var(env_var):
     """
-    Expands (potentially nested) env vars by repeatedly applying `expandvars` and `expanduser` until interpolation stops having any effect.
+    expand_env_var
 
+    Expands (potentially nested) env vars by repeatedly applying
+    `expandvars` and `expanduser` until interpolation stops having
+    any effect.
     """
     if not env_var:
         return env_var
@@ -227,8 +230,10 @@ class AirflowConfigParser(ConfigParser):  # pylint: disable=too-many-ancestors
 
     def _validate_config_dependencies(self):
         """
-        Validate that config values aren't invalid given other config values or system-level limitations and requirements.
+        _validate_config_dependencies
 
+        Validate that config values aren't invalid given other config values
+        or system-level limitations and requirements.
         """
         if (
                 self.get("core", "executor") not in ('DebugExecutor', 'SequentialExecutor') and
@@ -985,7 +990,7 @@ def get_custom_secret_backend() -> Optional[BaseSecretsBackend]:
 
 def initialize_secrets_backends() -> List[BaseSecretsBackend]:
     """
-    Initialize configured and built-in secrets backends 
+    Initialize configured and built-in secrets backends
 
     * import secrets backend classes
     * instantiate them and return them in a list

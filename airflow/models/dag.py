@@ -503,7 +503,10 @@ class DAG(BaseDag, LoggingMixin):
         date_last_automated_dagrun: Optional[pendulum.DateTime],
     ) -> Tuple[Optional[pendulum.DateTime], Optional[pendulum.DateTime]]:
         """
-        Get information about the next DagRun of this dag after ``date_last_automated_dagrun`` -- the execution date, and the earliest it could be scheduled
+        next_dagrun_info
+
+        Get information about the next DagRun of this dag after ``date_last_automated_dagrun`` -- the
+        execution date, and the earliest it could be scheduled
 
         :param date_last_automated_dagrun: The max(execution_date) of existing
             "automated" DagRuns for this dag (scheduled or backfill, but not
@@ -526,9 +529,10 @@ class DAG(BaseDag, LoggingMixin):
 
     def next_dagrun_after_date(self, date_last_automated_dagrun: Optional[pendulum.DateTime]):
         """
-        Get the next execution date after the given ``date_last_automated_dagrun``, according to schedule_interval, start_date, end_date etc.
+        next_dagrun_after_date
 
-        This doesn't check max active run or any other
+        Get the next execution date after the given ``date_last_automated_dagrun``, according to
+        schedule_interval, start_date, end_date etc.  This doesn't check max active run or any other
         "concurrency" type limits, it only performs calculations based on the various date and interval fields
         of this dag and it's tasks.
 
@@ -813,9 +817,10 @@ class DAG(BaseDag, LoggingMixin):
     @provide_session
     def handle_callback(self, dagrun, success=True, reason=None, session=None):
         """
-        Triggers the appropriate callback depending on the value of success, namely the on_failure_callback or on_success_callback.
+        handle_callback
 
-        This method gets the context of a
+        Triggers the appropriate callback depending on the value of success, namely the
+        on_failure_callback or on_success_callback. This method gets the context of a
         single TaskInstance part of this DagRun and passes that to the callable along
         with a 'reason', primarily to differentiate DagRun failures.
 
@@ -986,7 +991,10 @@ class DAG(BaseDag, LoggingMixin):
 
     def set_dependency(self, upstream_task_id, downstream_task_id):
         """
-        Simple utility method to set dependency between two tasks that already have been added to the DAG using add_task()
+        set_dependency
+
+        Simple utility method to set dependency between two tasks that
+        already have been added to the DAG using add_task()
         """
         self.get_task(upstream_task_id).set_downstream(
             self.get_task(downstream_task_id))
@@ -1739,7 +1747,10 @@ class DAG(BaseDag, LoggingMixin):
     @provide_session
     def bulk_write_to_db(cls, dags: Collection["DAG"], session=None):
         """
-        Ensure the DagModel rows for the given dags are up-to-date in the dag table in the DB, including calculated fields.
+        bulk_write_to_db
+
+        Ensure the DagModel rows for the given dags are up-to-date in the dag table in the DB, including
+        calculated fields.
 
         Note that this method can be called for both DAGs and SubDAGs. A SubDag is actually a SubDagOperator.
 

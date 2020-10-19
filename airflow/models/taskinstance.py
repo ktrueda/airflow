@@ -306,7 +306,10 @@ class TaskInstance(Base, LoggingMixin):     # pylint: disable=R0902,R0904
     @property
     def prev_attempted_tries(self):
         """
-        Based on this instance's try_number, this will calculate the number of previously attempted tries, defaulting to 0.
+        prev_attempted_tries
+
+        Based on this instance's try_number, this will calculate
+        the number of previously attempted tries, defaulting to 0.
         """
         # Expose this for the Task Tries and Gantt graph views.
         # Using `try_number` throws off the counts for non-running tasks.
@@ -860,7 +863,10 @@ class TaskInstance(Base, LoggingMixin):     # pylint: disable=R0902,R0904
 
     def next_retry_datetime(self):
         """
-        Get datetime of the next retry if the task instance fails. For exponential backoff, retry_delay is used as base and will be converted to seconds.
+        next_retry_datetime
+
+        Get datetime of the next retry if the task instance fails. For exponential
+        backoff, retry_delay is used as base and will be converted to seconds.
         """
         delay = self.task.retry_delay
         if self.task.retry_exponential_backoff:
