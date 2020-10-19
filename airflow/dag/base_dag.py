@@ -72,9 +72,8 @@ class BaseDag(metaclass=ABCMeta):
     @abstractmethod
     def pickle_id(self):
         """
-        pickle_id.
+        The pickle ID for this DAG, if it has one, otherwise None.
 
-        :return: The pickle ID for this DAG, if it has one. Otherwise None.
         :rtype: unicode
         """
         raise NotImplementedError
