@@ -108,8 +108,8 @@ class MongoToS3Operator(BaseOperator):
         """
         _stringify
 
-        Takes an iterable (pymongo Cursor or Array) containing dictionaries and returns a stringified
-        version using python join.
+        Takes an iterable (pymongo Cursor or Array) containing dictionaries and
+        returns a stringified version using python join
         """
         return joinable.join([json.dumps(doc, default=json_util.default) for doc in iterable])
 

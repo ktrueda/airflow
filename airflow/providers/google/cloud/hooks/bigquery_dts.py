@@ -69,9 +69,10 @@ class BiqQueryDataTransferServiceHook(GoogleBaseHook):
         """
         _disable_auto_scheduling
 
-        In the case of Airflow, the customer needs to create a transfer config with the automatic
-        scheduling disabled (UI, CLI or an Airflow operator) and then trigger a transfer run using
-        a specialized Airflow operator that will call start_manual_transfer_runs.
+        In the case of Airflow, the customer needs to create a transfer config
+        with the automatic scheduling disabled (UI, CLI or an Airflow operator) and
+        then trigger a transfer run using a specialized Airflow operator that will
+        call start_manual_transfer_runs.
 
         :param config: Data transfer configuration to create.
         :type config: Union[dict, google.cloud.bigquery_datatransfer_v1.types.TransferConfig]

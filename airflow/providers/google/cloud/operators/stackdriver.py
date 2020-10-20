@@ -834,8 +834,8 @@ class StackdriverUpsertNotificationChannelOperator(BaseOperator):
     """
     StackdriverUpsertNotificationChannelOperator
 
-    Creates a new notification or updates an existing notification channel identified the name
-    field in the alerts parameter.
+    Creates a new notification or updates an existing notification channel
+    identified the name field in the alerts parameter.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:

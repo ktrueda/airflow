@@ -61,7 +61,7 @@ class CloudFunctionsHook(GoogleBaseHook):
         _full_location
 
         Retrieve full location of the function in the form of
-        ``projects/<GCP_PROJECT_ID>/locations/<GCP_LOCATION>``.
+        ``projects/<GCP_PROJECT_ID>/locations/<GCP_LOCATION>``
 
         :param project_id: The Google Cloud Project project_id where the function belongs.
         :type project_id: str

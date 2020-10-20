@@ -67,8 +67,8 @@ def correct_maybe_zipped(fileloc):
     """
     correct_maybe_zipped
 
-    If the path contains a folder with a .zip suffix, then the folder is treated as a zip archive
-    and path to zip is returned.
+    If the path contains a folder with a .zip suffix, then
+    the folder is treated as a zip archive and path to zip is returned.
     """
     _, archive, _ = ZIP_REGEX.search(fileloc).groups()
     if archive and zipfile.is_zipfile(archive):

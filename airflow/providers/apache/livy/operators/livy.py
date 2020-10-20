@@ -31,8 +31,8 @@ class LivyOperator(BaseOperator):
     """
     LivyOperator
 
-    This operator wraps the Apache Livy batch REST API, allowing to submit a Spark application
-    to the underlying cluster.
+    This operator wraps the Apache Livy batch REST API, allowing to submit a Spark
+    application to the underlying cluster.
 
     :param file: path of the file containing the application to execute (required).
     :type file: str

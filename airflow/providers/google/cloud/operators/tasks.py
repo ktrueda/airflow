@@ -19,8 +19,9 @@
 """
 tasks.py
 
-This module contains various Google Cloud Tasks operators which allow you to perform basic
-operations using Cloud Tasks queues/tasks.
+This module contains various Google Cloud Tasks operators
+which allow you to perform basic operations using
+Cloud Tasks queues/tasks.
 """
 from typing import Dict, Optional, Sequence, Tuple, Union
 

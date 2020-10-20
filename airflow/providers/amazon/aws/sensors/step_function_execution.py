@@ -27,8 +27,8 @@ class StepFunctionExecutionSensor(BaseSensorOperator):
     """
     StepFunctionExecutionSensor
 
-    Asks for the state of the Step Function State Machine Execution until it reaches a failure state
-    or success state.
+    Asks for the state of the Step Function State Machine Execution until it
+    reaches a failure state or success state.
 
     If it fails, failing the task.
 

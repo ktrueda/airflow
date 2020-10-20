@@ -204,8 +204,8 @@ class AzureCosmosDBHook(BaseHook):
         """
         upsert_document
 
-        Inserts a new document (or updates an existing one) into an existing collection in the
-        CosmosDB database.
+        Inserts a new document (or updates an existing one) into an existing
+        collection in the CosmosDB database.
         """
         # Assign unique ID if one isn't provided
         if document_id is None:

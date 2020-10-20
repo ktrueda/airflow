@@ -544,8 +544,8 @@ class StackdriverHook(GoogleBaseHook):
         """
         upsert_channel
 
-        Creates a new notification or updates an existing notification channel identified the name field
-        in the alerts parameter.
+        Creates a new notification or updates an existing notification channel
+        identified the name field in the alerts parameter.
 
         :param channels: A JSON string or file that specifies all the alerts that needs
             to be either created or updated. For more details, see

@@ -112,7 +112,7 @@ class ComputeEngineHook(GoogleBaseHook):
     @GoogleBaseHook.fallback_to_default_project_id
     def stop_instance(self, zone: str, resource_id: str, project_id: str) -> None:
         """
-        Stops an instance defined by project_id, zone and resource_id.
+        Stops an instance defined by project_id, zone and resource_id
 
         Must be called with keyword arguments rather than positional.
 
@@ -214,7 +214,7 @@ class ComputeEngineHook(GoogleBaseHook):
         request_id: Optional[str] = None,
     ) -> None:
         """
-        Inserts instance template using body specified.
+        Inserts instance template using body specified
 
         Must be called with keyword arguments rather than positional.
 
@@ -290,7 +290,7 @@ class ComputeEngineHook(GoogleBaseHook):
         request_id: Optional[str] = None,
     ) -> None:
         """
-        Patches Instance Group Manager with the specified.
+        Patches Instance Group Manager with the specified body.
 
         Must be called with keyword arguments rather than positional.
 

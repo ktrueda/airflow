@@ -19,8 +19,8 @@
 """
 example_vision.py
 
-Example Airflow DAG that creates, gets, updates and deletes Products and Product Sets in the
-Google Cloud Vision service.
+Example Airflow DAG that creates, gets, updates and deletes Products and Product Sets in the Google Cloud
+Vision service.
 
 This DAG relies on the following OS environment variables
 

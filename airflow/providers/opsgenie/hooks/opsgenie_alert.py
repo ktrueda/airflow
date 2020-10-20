@@ -61,8 +61,8 @@ class OpsgenieAlertHook(HttpHook):
         """
         get_conn
 
-        Overwrite HttpHook get_conn because this hook just needs base_url and headers, and
-        does not need generic params.
+        Overwrite HttpHook get_conn because this hook just needs base_url
+        and headers, and does not need generic params
 
         :param headers: additional headers to be passed through as a dictionary
         :type headers: dict

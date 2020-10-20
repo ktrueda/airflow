@@ -19,8 +19,8 @@
 """
 log.py
 
-This module contains a hook (AwsLogsHook) with some very basic functionality for interacting with
-AWS CloudWatch.
+This module contains a hook (AwsLogsHook) with some very basic
+functionality for interacting with AWS CloudWatch.
 """
 from typing import Dict, Generator, Optional
 
@@ -53,8 +53,8 @@ class AwsLogsHook(AwsBaseHook):
         """
         get_log_events
 
-        A generator for log items in a single stream. This will yield all the items that are
-        available at the current moment.
+        A generator for log items in a single stream. This will yield all the
+        items that are available at the current moment.
 
         :param log_group: The name of the log group.
         :type log_group: str

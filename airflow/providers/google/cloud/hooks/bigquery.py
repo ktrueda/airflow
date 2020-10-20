@@ -2209,10 +2209,9 @@ class BigQueryPandasConnector(GbqConnector):
     """
     BigQueryPandasConnector
 
-    This connector behaves identically to GbqConnector (from Pandas), except that it allows the
-    service to be injected, and disables a call to self.get_credentials().
-
-    This allows Airflow to use BigQuery with Pandas
+    This connector behaves identically to GbqConnector (from Pandas), except
+    that it allows the service to be injected, and disables a call to
+    self.get_credentials(). This allows Airflow to use BigQuery with Pandas
     without forcing a three legged OAuth connection. Instead, we can inject
     service account credentials into the binding.
     """
@@ -2758,10 +2757,8 @@ class BigQueryCursor(BigQueryBaseCursor):
         """
         Fetchmany
 
-        Fetch the next set of rows of a query result, returning a sequence of sequences (e.g. a list
-        of tuples).
-
-        An empty sequence is returned when no more rows are
+        Fetch the next set of rows of a query result, returning a sequence of sequences
+        (e.g. a list of tuples). An empty sequence is returned when no more rows are
         available. The number of rows to fetch per call is specified by the parameter.
         If it is not given, the cursor's arraysize determines the number of rows to be
         fetched. The method should try to fetch as many rows as indicated by the size
@@ -2784,8 +2781,8 @@ class BigQueryCursor(BigQueryBaseCursor):
         """
         Fetchall
 
-        Fetch all (remaining) rows of a query result, returning them as a sequence of sequences
-        (e.g. a list of tuples).
+        Fetch all (remaining) rows of a query result, returning them as a sequence of
+        sequences (e.g. a list of tuples).
         """
         result = []
         while True:

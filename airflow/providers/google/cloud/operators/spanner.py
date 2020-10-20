@@ -30,8 +30,8 @@ class SpannerDeployInstanceOperator(BaseOperator):
     """
     SpannerDeployInstanceOperator
 
-    Creates a new Cloud Spanner instance, or if an instance with the same instance_id exists in
-    the specified project, updates the Cloud Spanner instance.
+    Creates a new Cloud Spanner instance, or if an instance with the same instance_id
+    exists in the specified project, updates the Cloud Spanner instance.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -130,8 +130,8 @@ class SpannerDeleteInstanceOperator(BaseOperator):
     """
     SpannerDeleteInstanceOperator
 
-    Deletes a Cloud Spanner instance. If an instance does not exist, no action is taken and the
-    operator succeeds.
+    Deletes a Cloud Spanner instance. If an instance does not exist,
+    no action is taken and the operator succeeds.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:

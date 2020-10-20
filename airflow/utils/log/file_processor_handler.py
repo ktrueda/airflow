@@ -108,8 +108,8 @@ class FileProcessorHandler(logging.Handler):
         """
         _symlink_latest_log_directory
 
-        Create symbolic link to the current day's log directory to allow easy access to the latest
-        scheduler log files.
+        Create symbolic link to the current day's log directory to
+        allow easy access to the latest scheduler log files.
 
         :return: None
         """

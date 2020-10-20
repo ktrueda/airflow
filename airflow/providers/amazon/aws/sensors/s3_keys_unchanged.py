@@ -32,11 +32,11 @@ class S3KeysUnchangedSensor(BaseSensorOperator):
     """
     S3KeysUnchangedSensor
 
-    Checks for changes in the number of objects at prefix in AWS S3 bucket and returns True if the
-    inactivity period has passed with no increase in the number of objects.
-
-    Note, this sensor will not behave correctly in reschedule mode, as the state of the listed
-    objects in the S3 bucket will be lost between rescheduled invocations.
+    Checks for changes in the number of objects at prefix in AWS S3
+    bucket and returns True if the inactivity period has passed with no
+    increase in the number of objects. Note, this sensor will not behave correctly
+    in reschedule mode, as the state of the listed objects in the S3 bucket will
+    be lost between rescheduled invocations.
 
     :param bucket_name: Name of the S3 bucket
     :type bucket_name: str
@@ -114,8 +114,8 @@ class S3KeysUnchangedSensor(BaseSensorOperator):
         """
         is_keys_unchanged
 
-        Checks whether new objects have been uploaded and the inactivity_period has passed and updates
-        the state of the sensor accordingly.
+        Checks whether new objects have been uploaded and the inactivity_period
+        has passed and updates the state of the sensor accordingly.
 
         :param current_objects: set of object ids in bucket during last poke.
         :type current_objects: set[str]

@@ -30,8 +30,9 @@ class DatadogHook(BaseHook, LoggingMixin):
     """
     DatadogHook
 
-    Uses datadog API to send metrics of practically anything measurable, so it's possible to
-    track # of db records inserted/deleted, records read from file and many other useful metrics.
+    Uses datadog API to send metrics of practically anything measurable,
+    so it's possible to track # of db records inserted/deleted, records read
+    from file and many other useful metrics.
 
     Depends on the datadog API, which has to be deployed on the same server where
     Airflow runs.
@@ -98,8 +99,8 @@ class DatadogHook(BaseHook, LoggingMixin):
         """
         query_metric
 
-        Queries datadog for a specific metric, potentially with some function applied to it and
-        returns the results.
+        Queries datadog for a specific metric, potentially with some
+        function applied to it and returns the results.
 
         :param query: The datadog query to execute (see datadog docs)
         :type query: str

@@ -30,8 +30,8 @@ class AzureFileShareToGCSOperator(BaseOperator):
     """
     AzureFileShareToGCSOperator
 
-    Synchronizes a Azure FileShare directory content (excluding subdirectories), possibly
-    filtered by a prefix, with a Google Cloud Storage destination path.
+    Synchronizes a Azure FileShare directory content (excluding subdirectories),
+    possibly filtered by a prefix, with a Google Cloud Storage destination path.
 
     :param share_name: The Azure FileShare share where to find the objects. (templated)
     :type share_name: str

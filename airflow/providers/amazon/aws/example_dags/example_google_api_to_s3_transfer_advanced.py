@@ -17,8 +17,8 @@
 """
 example_google_api_to_s3_transfer_advanced.py
 
-This is a more advanced example dag for using `GoogleApiToS3Transfer` which uses xcom to pass data
-between tasks to retrieve specific information about YouTube videos.
+This is a more advanced example dag for using `GoogleApiToS3Transfer` which uses xcom to pass data between
+tasks to retrieve specific information about YouTube videos:
 
 First it searches for up to 50 videos (due to pagination) in a given time range
 (YOUTUBE_VIDEO_PUBLISHED_AFTER, YOUTUBE_VIDEO_PUBLISHED_BEFORE) on a YouTube channel (YOUTUBE_CHANNEL_ID)

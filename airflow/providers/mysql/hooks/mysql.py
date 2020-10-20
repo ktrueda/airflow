@@ -128,8 +128,8 @@ class MySqlHook(DbApiHook):
         """
         get_conn
 
-        Establishes a connection to a mysql database by extracting the connection configuration from
-        the Airflow connection.
+        Establishes a connection to a mysql database
+        by extracting the connection configuration from the Airflow connection.
 
         .. note:: By default it connects to the database via the mysqlclient library.
             But you can also choose the mysql-connector-python library which lets you connect through ssl

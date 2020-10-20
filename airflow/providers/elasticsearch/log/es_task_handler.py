@@ -118,9 +118,8 @@ class ElasticsearchTaskHandler(FileTaskHandler, LoggingMixin):
         """
         _clean_execution_date
 
-        Clean up an execution date so that it is safe to query in elasticsearch by removing reserved
-        characters.
-
+        Clean up an execution date so that it is safe to query in elasticsearch
+        by removing reserved characters.
         # https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#_reserved_characters
 
         :param execution_date: execution date of the dag run.

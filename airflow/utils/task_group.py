@@ -272,8 +272,8 @@ class TaskGroup(TaskMixin):
         """
         get_roots
 
-        Returns a generator of tasks that are root tasks, i.e. those with no upstream dependencies
-        within the TaskGroup.
+        Returns a generator of tasks that are root tasks, i.e. those with no upstream
+        dependencies within the TaskGroup.
         """
         for task in self:
             if not any(self.has_task(parent) for parent in task.get_direct_relatives(upstream=True)):
@@ -283,8 +283,8 @@ class TaskGroup(TaskMixin):
         """
         get_leaves
 
-        Returns a generator of tasks that are leaf tasks, i.e. those with no downstream dependencies
-        within the TaskGroup
+        Returns a generator of tasks that are leaf tasks, i.e. those with no downstream
+        dependencies within the TaskGroup
         """
         for task in self:
             if not any(self.has_task(child) for child in task.get_direct_relatives(upstream=False)):
@@ -306,9 +306,9 @@ class TaskGroup(TaskMixin):
         """
         upstream_join_id
 
-        If this TaskGroup has immediate upstream TaskGroups or tasks, a dummy node called upstream_join_id
-        will be created in Graph View to join the outgoing edges from this TaskGroup to reduce the
-        total number of edges needed to be displayed.
+        If this TaskGroup has immediate upstream TaskGroups or tasks, a dummy node called
+        upstream_join_id will be created in Graph View to join the outgoing edges from this
+        TaskGroup to reduce the total number of edges needed to be displayed.
         """
         return f"{self.group_id}.upstream_join_id"
 

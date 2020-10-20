@@ -27,8 +27,9 @@ class PrestoToMySqlOperator(BaseOperator):
     """
     PrestoToMySqlOperator
 
-    Moves data from Presto to MySQL, note that for now the data is loaded into memory before being
-    pushed to MySQL, so this operator should be used for smallish amount of data.
+    Moves data from Presto to MySQL, note that for now the data is loaded
+    into memory before being pushed to MySQL, so this operator should
+    be used for smallish amount of data.
 
     :param sql: SQL query to execute against Presto. (templated)
     :type sql: str

@@ -37,7 +37,7 @@ EXCEPTIONS_LINK_MAP = {
 
 def common_error_handler(exception):
     """
-    Used to capture connexion exceptions and add link to the type field.
+    Used to capture connexion exceptions and add link to the type field
 
     :type exception: Exception
     """

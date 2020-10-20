@@ -827,10 +827,9 @@ class CloudSQLDatabaseHook(BaseHook):  # noqa
         """
         _generate_unique_path
 
-        We are not using mkdtemp here as the path generated with mkdtemp can be close to 60
-        characters and there is a limitation in length of socket path to around 100 characters
-        in total.
-
+        We are not using mkdtemp here as the path generated with mkdtemp
+        can be close to 60 characters and there is a limitation in
+        length of socket path to around 100 characters in total.
         We append project/location/instance to it later and postgres
         appends its own prefix, so we chose a shorter "/tmp/[8 random characters]"
         """

@@ -48,8 +48,9 @@ class CeleryQueueSensor(BaseSensorOperator):
         """
         _check_task_id
 
-        Gets the returned Celery result from the Airflow task ID provided to the sensor, and
-        returns True if the　celery result has been finished execution.
+        ets the returned Celery result from the Airflow task
+        ID provided to the sensor, and returns True if the
+        celery result has been finished execution.
 
         :param context: Airflow's execution context
         :type context: dict

@@ -26,7 +26,7 @@ from airflow.utils import timezone
 
 def format_datetime(value: str):
     """
-    Datetime format parser for args since connexion doesn't parse datetimes.
+    Datetime format parser for args since connexion doesn't parse datetimes
 
     https://github.com/zalando/connexion/issues/476
 

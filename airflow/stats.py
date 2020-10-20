@@ -122,9 +122,8 @@ def stat_name_default_handler(stat_name, max_length=250) -> str:
     """
     stat_name_default_handler
 
-    A function that validate the statsd stat name, apply changes to the stat name if necessary
-    and return the transformed stat name.
-
+    A function that validate the statsd stat name, apply changes to the stat name
+    if necessary and return the transformed stat name.
     """
     if not isinstance(stat_name, str):
         raise InvalidStatsNameException('The stat_name has to be a string')

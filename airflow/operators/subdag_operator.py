@@ -49,8 +49,8 @@ class SubDagOperator(BaseSensorOperator):
     """
     SubDagOperator
 
-    This runs a sub dag. By convention, a sub dag's dag_id should be prefixed by its parent and
-    a dot. As in `parent.child`.
+    This runs a sub dag. By convention, a sub dag's dag_id
+    should be prefixed by its parent and a dot. As in `parent.child`.
 
     Although SubDagOperator can occupy a pool/concurrency slot,
     user can specify the mode=reschedule so that the slot will be
@@ -130,8 +130,8 @@ class SubDagOperator(BaseSensorOperator):
         """
         _reset_dag_run_and_task_instances
 
-        Set the DagRun state to RUNNING and set the failed TaskInstances to None state for
-        scheduler to pick up.
+        Set the DagRun state to RUNNING and set the failed TaskInstances to None state
+        for scheduler to pick up.
 
         :param dag_run: DAG run
         :param execution_date: Execution date

@@ -74,8 +74,8 @@ class SageMakerBaseOperator(BaseOperator):
         """
         parse_config_integers
 
-        Parse the integer fields of training config to integers in case the config is rendered by
-        Jinja and all fields are str.
+        Parse the integer fields of training config to integers in case the config is rendered by Jinja and
+        all fields are str.
         """
         for field in self.integer_fields:
             self.parse_integer(self.config, field)

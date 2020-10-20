@@ -19,7 +19,8 @@
 """
 segment.py
 
-This module contains a Segment Hook which allows you to connect to your Segment account,
+This module contains a Segment Hook
+which allows you to connect to your Segment account,
 retrieve data from it or write to that file.
 
 NOTE:   this hook also relies on the Segment analytics package:

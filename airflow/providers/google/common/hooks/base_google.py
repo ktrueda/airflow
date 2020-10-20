@@ -91,8 +91,8 @@ def is_operation_in_progress_exception(exception: Exception):
     """
     is_operation_in_progress_exception
 
-    Some of the calls return 429 (too many requests!) or 409 errors (Conflict) in case of operation
-    in progress.
+    Some of the calls return 429 (too many requests!) or 409 errors (Conflict)
+    in case of operation in progress.
 
     * Google Cloud SQL
     """
@@ -313,8 +313,8 @@ class GoogleBaseHook(BaseHook):
         """
         quota_retry
 
-        A decorator that provides a mechanism to repeat requests in response to exceeding a
-        temporary quote limit.
+        A decorator that provides a mechanism to repeat requests in response to exceeding a temporary quote
+        limit.
         """
 
         def decorator(fun: Callable):
@@ -334,8 +334,9 @@ class GoogleBaseHook(BaseHook):
         """
         operation_in_progress_retry
 
-        A decorator that provides a mechanism to repeat requests in response to operation in
-        progress (HTTP 409) limit.
+        A decorator that provides a mechanism to repeat requests in response to
+        operation in progress (HTTP 409)
+        limit.
         """
 
         def decorator(fun: T):
@@ -408,9 +409,8 @@ class GoogleBaseHook(BaseHook):
         """
         provide_gcp_credential_file_as_context
 
-        Context manager that provides a Google Cloud credentials for application supporting
-        `Application Default Credentials (ADC) strategy
-        <https://cloud.google.com/docs/authentication/production>`__.
+        Context manager that provides a Google Cloud credentials for application supporting `Application
+        Default Credentials (ADC) strategy <https://cloud.google.com/docs/authentication/production>`__.
 
         It can be used to provide credentials for external programs (e.g. gcloud) that expect authorization
         file in ``GOOGLE_APPLICATION_CREDENTIALS`` environment variable.

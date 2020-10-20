@@ -42,8 +42,8 @@ class UtcDateTime(TypeDecorator):
     """
     UtcDateTime
 
-    Almost equivalent to :class:`~sqlalchemy.types.DateTime` with ``timezone=True`` option,
-    but it differs from that by:
+    Almost equivalent to :class:`~sqlalchemy.types.DateTime` with
+    ``timezone=True`` option, but it differs from that by:
 
     - Never silently take naive :class:`~datetime.datetime`, instead it
       always raise :exc:`ValueError` unless time zone aware value.

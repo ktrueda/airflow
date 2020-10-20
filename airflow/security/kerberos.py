@@ -142,10 +142,9 @@ def detect_conf_var() -> bool:
     """
     detect_conf_var
 
-    Return true if the ticket cache contains "conf" information as is found in ticket caches of
-    Kerberos 1.8.1 or later.
-
-    This is incompatible with the Sun Java Krb5LoginModule in Java6, so we need to take an action to work
+    Return true if the ticket cache contains "conf" information as is found
+    in ticket caches of Kerberos 1.8.1 or later. This is incompatible with the
+    Sun Java Krb5LoginModule in Java6, so we need to take an action to work
     around it.
     """
     ticket_cache = conf.get('kerberos', 'ccache')

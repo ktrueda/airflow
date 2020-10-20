@@ -334,9 +334,9 @@ def _get_target_principal_and_delegates(
     """
     _get_target_principal_and_delegates
 
-    Analyze contents of impersonation_chain and return target_principal (the service account to directly
-    impersonate using short-term credentials, if any) and optional list of delegates required to get
-    the access_token of target_principal.
+    Analyze contents of impersonation_chain and return target_principal (the service account
+    to directly impersonate using short-term credentials, if any) and optional list of delegates
+    required to get the access_token of target_principal.
 
     :param impersonation_chain: the service account to impersonate or a chained list leading to this
         account

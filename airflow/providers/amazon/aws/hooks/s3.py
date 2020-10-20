@@ -46,8 +46,8 @@ def provide_bucket_name(func: T) -> T:
     """
     provide_bucket_name
 
-    Function decorator that provides a bucket name taken from the connection in case no bucket
-    name has been passed to the function.
+    Function decorator that provides a bucket name taken from the connection
+    in case no bucket name has been passed to the function.
     """
     function_signature = signature(func)
 
@@ -71,8 +71,8 @@ def unify_bucket_name_and_key(func: T) -> T:
     """
     unify_bucket_name_and_key
 
-    Function decorator that unifies bucket name and key taken from the key in case no bucket name
-    and at least a key has been passed to the function.
+    Function decorator that unifies bucket name and key taken from the key
+    in case no bucket name and at least a key has been passed to the function.
     """
     function_signature = signature(func)
 

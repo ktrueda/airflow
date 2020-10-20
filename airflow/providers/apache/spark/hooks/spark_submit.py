@@ -184,9 +184,8 @@ class SparkSubmitHook(BaseHook, LoggingMixin):
         """
         _resolve_should_track_driver_status
 
-        Determines whether or not this hook should poll the spark driver status through subsequent
-        spark-submit status requests after the initial spark-submit request
-
+        Determines whether or not this hook should poll the spark driver status through
+        subsequent spark-submit status requests after the initial spark-submit request
         :return: if the driver status should be tracked
         """
         return 'spark://' in self._connection['master'] and self._connection['deploy_mode'] == 'cluster'

@@ -289,10 +289,8 @@ class BackfillJob(BaseJob):
         """
         _get_dag_run
 
-        Returns a dag run for the given run date, which will be matched to an existing dag run if
-        available or create a new dag run otherwise.
-
-        If the max_active_runs
+        Returns a dag run for the given run date, which will be matched to an existing
+        dag run if available or create a new dag run otherwise. If the max_active_runs
         limit is reached, this function will return None.
 
         :param run_date: the execution date for the dag run
@@ -713,8 +711,8 @@ class BackfillJob(BaseJob):
         """
         _execute_for_run_dates
 
-        Computes the dag runs and their respective task instances for the given run dates and
-        executes the task instances.
+        Computes the dag runs and their respective task instances for
+        the given run dates and executes the task instances.
 
         Returns a list of execution dates of the dag runs that were executed.
 
@@ -773,8 +771,8 @@ class BackfillJob(BaseJob):
         """
         _execute
 
-        Initializes all components required to run a dag for a specified date range and calls
-        helper method to execute the tasks.
+        Initializes all components required to run a dag for a specified date range and
+        calls helper method to execute the tasks.
         """
         ti_status = BackfillJob._DagRunTaskStatus()
 
@@ -855,10 +853,9 @@ class BackfillJob(BaseJob):
         """
         reset_state_for_orphaned_tasks
 
-        This function checks if there are any tasks in the dagrun (or all) that have a schedule or
-        queued states but are not known by the executor.
-
-        If it finds those it will reset the state to None so they will get picked
+        This function checks if there are any tasks in the dagrun (or all) that
+        have a schedule or queued states but are not known by the executor. If
+        it finds those it will reset the state to None so they will get picked
         up again.  The batch option is for performance reasons as the queries
         are made in sequence.
 

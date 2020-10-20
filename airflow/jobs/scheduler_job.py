@@ -551,10 +551,8 @@ class DagFileProcessor(LoggingMixin):
         """
         update_import_errors
 
-        For the DAGs in the given DagBag, record any associated import errors and clears errors for
-        files that no longer have them.
-
-        These are usually displayed through the
+        For the DAGs in the given DagBag, record any associated import errors and clears
+        errors for files that no longer have them. These are usually displayed through the
         Airflow UI so that users know that there are issues parsing DAGs.
 
         :param session: session for ORM operations
@@ -941,8 +939,8 @@ class SchedulerJob(BaseJob):  # pylint: disable=too-many-instance-attributes
         """
         _executable_task_instances_to_queued
 
-        Finds TIs that are ready for execution with respect to pool limits, dag concurrency, executor
-        state, and priority.
+        Finds TIs that are ready for execution with respect to pool limits,
+        dag concurrency, executor state, and priority.
 
         :param max_tis: Maximum number of TIs to queue in this loop.
         :type max_tis: int
@@ -1198,8 +1196,8 @@ class SchedulerJob(BaseJob):  # pylint: disable=too-many-instance-attributes
         """
         _change_state_for_tasks_failed_to_execute
 
-        If there are tasks left over in the executor, we set them back to SCHEDULED to avoid
-        creating hanging tasks.
+        If there are tasks left over in the executor,
+        we set them back to SCHEDULED to avoid creating hanging tasks.
 
         :param session: session for ORM operations
         """
@@ -1572,8 +1570,8 @@ class SchedulerJob(BaseJob):  # pylint: disable=too-many-instance-attributes
         """
         _create_dag_runs
 
-        Unconditionally create a DAG run for the given DAG, and update the dag_model's fields to
-        control if/when the next DAGRun should be created
+        Unconditionally create a DAG run for the given DAG, and update the dag_model's fields to control
+        if/when the next DAGRun should be created
         """
         for dag_model in dag_models:
             dag = self.dagbag.get_dag(dag_model.dag_id, session=session)
@@ -1787,8 +1785,8 @@ class SchedulerJob(BaseJob):  # pylint: disable=too-many-instance-attributes
         """
         adopt_or_reset_orphaned_tasks
 
-        Reset any TaskInstance still in QUEUED or SCHEDULED states that were enqueued by that is no
-        longer running.
+        Reset any TaskInstance still in QUEUED or SCHEDULED states that were
+        enqueued by a SchedulerJob that is no longer running.
 
         :return: the number of TIs reset
         :rtype: int

@@ -296,8 +296,8 @@ class CeleryExecutor(BaseExecutor):
         """
         _check_for_stalled_adopted_tasks
 
-        See if any of the tasks we adopted from another Executor run have not progressed after
-        the configured timeout.
+        See if any of the tasks we adopted from another Executor run have not
+        progressed after the configured timeout.
 
         If they haven't, they likely never made it to Celery, and we should
         just resend them. We do that by clearing the state and letting the

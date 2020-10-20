@@ -99,8 +99,8 @@ def default_action_log(log, **_):
     """
     default_action_log
 
-    A default action logger callback that behave same as www.utils.action_logging which uses
-    global session and pushes log ORM object.
+    A default action logger callback that behave same as www.utils.action_logging
+    which uses global session and pushes log ORM object.
 
     :param log: An log ORM instance
     :param **_: other keyword arguments that is not being used by this function

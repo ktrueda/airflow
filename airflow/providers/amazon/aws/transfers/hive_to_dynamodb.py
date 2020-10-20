@@ -33,8 +33,9 @@ class HiveToDynamoDBOperator(BaseOperator):
     """
     HiveToDynamoDBOperator
 
-    Moves data from Hive to DynamoDB, note that for now the data is loaded into memory before
-    being pushed to DynamoDB, so this operator should be used for smallish amount of data.
+    Moves data from Hive to DynamoDB, note that for now the data is loaded
+    into memory before being pushed to DynamoDB, so this operator should
+    be used for smallish amount of data.
 
     :param sql: SQL query to execute against the hive database. (templated)
     :type sql: str

@@ -38,8 +38,8 @@ class RefreshKubeConfigLoader(KubeConfigLoader):
     """
     RefreshKubeConfigLoader
 
-    Patched KubeConfigLoader, this subclass takes expirationTimestamp into account and sets api
-    key refresh callback hook in Configuration object
+    Patched KubeConfigLoader, this subclass takes expirationTimestamp into
+    account and sets api key refresh callback hook in Configuration object
     """
 
     def __init__(self, *args, **kwargs):
@@ -50,10 +50,8 @@ class RefreshKubeConfigLoader(KubeConfigLoader):
         """
         _load_from_exec_plugin
 
-        We override _load_from_exec_plugin method to also read and store expiration timestamp
-        for aws-iam-authenticator.
-
-        It will be later
+        We override _load_from_exec_plugin method to also read and store
+        expiration timestamp for aws-iam-authenticator. It will be later
         used for api token refresh.
         """
         if 'exec' not in self._user:

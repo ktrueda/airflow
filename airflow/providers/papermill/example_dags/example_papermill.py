@@ -19,9 +19,8 @@
 example_papermill.py
 
 This DAG will use Papermill to run the notebook "hello_world", based on the execution date
-it will create an output notebook "out-<date>".
-
-All fields, including the keys in the parameters, are templated.
+it will create an output notebook "out-<date>". All fields, including the keys in the parameters, are
+templated.
 """
 import os
 from datetime import timedelta

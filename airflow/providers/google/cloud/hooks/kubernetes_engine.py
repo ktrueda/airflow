@@ -88,8 +88,8 @@ class GKEHook(GoogleBaseHook):
         """
         wait_for_operation
 
-        Given an operation, continuously fetches the status from Google Cloud until either completionor an
-        error occurring.
+        Given an operation, continuously fetches the status from Google Cloud until either
+        completion or an error occurring
 
         :param operation: The Operation to wait for
         :type operation: google.cloud.container_V1.gapic.enums.Operation

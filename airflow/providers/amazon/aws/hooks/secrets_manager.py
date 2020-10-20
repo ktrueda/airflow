@@ -41,8 +41,8 @@ class SecretsManagerHook(AwsBaseHook):
         """
         get_secret
 
-        Retrieve secret value from AWS Secrets Manager as a str or bytes reflecting format it
-        stored in the AWS Secrets.
+        Retrieve secret value from AWS Secrets Manager as a str or bytes
+        reflecting format it stored in the AWS Secrets Manager
 
         :param secret_name: name of the secrets.
         :type secret_name: str

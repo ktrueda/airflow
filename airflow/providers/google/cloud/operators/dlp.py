@@ -20,8 +20,9 @@
 """
 dlp.py
 
-This module contains various Google Cloud DLP operator which allow you to perform basic
-operations using Cloud DLP.
+This module contains various Google Cloud DLP operators
+which allow you to perform basic operations using
+Cloud DLP.
 """
 from typing import Dict, Optional, Sequence, Tuple, Union
 
@@ -131,8 +132,8 @@ class CloudDLPCreateDeidentifyTemplateOperator(BaseOperator):
     """
     CloudDLPCreateDeidentifyTemplateOperator
 
-    Creates a DeidentifyTemplate for re-using frequently used configuration for de-identifying
-    content, images, and storage.
+    Creates a DeidentifyTemplate for re-using frequently used configuration for
+    de-identifying content, images, and storage.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -349,8 +350,8 @@ class CloudDLPCreateInspectTemplateOperator(BaseOperator):
     """
     CloudDLPCreateInspectTemplateOperator
 
-    Creates an InspectTemplate for re-using frequently used configuration for inspecting content,
-    images, and storage.
+    Creates an InspectTemplate for re-using frequently used configuration for
+    inspecting content, images, and storage.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -457,8 +458,8 @@ class CloudDLPCreateJobTriggerOperator(BaseOperator):
     """
     CloudDLPCreateJobTriggerOperator
 
-    Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-    a set schedule.
+    Creates a job trigger to run DLP actions such as scanning storage for sensitive
+    information on a set schedule.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:

@@ -43,8 +43,8 @@ def get_context_from_env_var() -> Dict[Any, Any]:
     """
     get_context_from_env_var
 
-    Extract context from env variable, e.g. dag_id, task_id and execution_date, so that they can
-    be used inside BashOperator and PythonOperator.
+    Extract context from env variable, e.g. dag_id, task_id and execution_date,
+    so that they can be used inside BashOperator and PythonOperator.
 
     :return: The context of interest.
     """
@@ -817,7 +817,7 @@ class HiveMetastoreHook(BaseHook):
 
 class HiveServer2Hook(DbApiHook):
     """
-    Wrapper around the pyhive library.
+    Wrapper around the pyhive library
 
     Notes
     * the default authMechanism is PLAIN, to override it you

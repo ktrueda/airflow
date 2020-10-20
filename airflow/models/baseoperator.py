@@ -517,10 +517,9 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
         """
         __or__
 
-        Called for [This Operator] | [Operator], The inlets of other will be set to pickup the
-        outlets from this operator.
-
-        Other will be set as a downstream task of this operator.
+        Called for [This Operator] | [Operator], The inlets of other
+        will be set to pickup the outlets from this operator. Other will
+        be set as a downstream task of this operator.
         """
         if isinstance(other, BaseOperator):
             if not self._outlets and not self.supports_lineage:
@@ -538,8 +537,8 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
         """
         __gt__
 
-        Called for [Operator] > [Outlet], so that if other is an attr annotated object it is set
-        as an outlet of this Operator.
+        Called for [Operator] > [Outlet], so that if other is an attr annotated object
+        it is set as an outlet of this Operator.
         """
         if not isinstance(other, Iterable):
             other = [other]
@@ -555,8 +554,8 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
         """
         __lt__
 
-        Called for [Inlet] > [Operator] or [Operator] < [Inlet], so that if other is an attr
-        annotated object it is set as an inlet to this operator
+        Called for [Inlet] > [Operator] or [Operator] < [Inlet], so that if other is
+        an attr annotated object it is set as an inlet to this operator
         """
         if not isinstance(other, Iterable):
             other = [other]

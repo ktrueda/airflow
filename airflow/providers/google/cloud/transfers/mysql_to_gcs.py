@@ -101,8 +101,8 @@ class MySQLToGCSOperator(BaseSQLToGCSOperator):
         """
         convert_type
 
-        Takes a value from MySQLdb, and converts it to a value that's safe for JSON/Google
-        Cloud Storage/BigQuery.
+        Takes a value from MySQLdb, and converts it to a value that's safe for
+        JSON/Google Cloud Storage/BigQuery.
 
         * Datetimes are converted to UTC seconds.
         * Decimals are converted to floats.

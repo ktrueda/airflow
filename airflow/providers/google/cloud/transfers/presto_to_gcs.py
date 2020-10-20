@@ -107,8 +107,8 @@ class _PrestoToGCSPrestoCursorAdapter:
         """
         Fetchone
 
-        Fetch the next row of a query result set, returning a single sequence, or ``None``
-        when no more data is available.
+        Fetch the next row of a query result set, returning a single sequence, or
+        ``None`` when no more data is available.
         """
         if self.rows:
             return self.rows.pop(0)
@@ -118,10 +118,8 @@ class _PrestoToGCSPrestoCursorAdapter:
         """
         Fetchmany
 
-        Fetch the next set of rows of a query result, returning a sequence of sequences (e.g. a list
-        of tuples).
-
-        An empty sequence is returned when no more rows are available.
+        Fetch the next set of rows of a query result, returning a sequence of sequences
+        (e.g. a list of tuples). An empty sequence is returned when no more rows are available.
         """
         if size is None:
             size = self.cursor.arraysize
@@ -139,10 +137,8 @@ class _PrestoToGCSPrestoCursorAdapter:
         """
         __next__
 
-        Return the next row from the currently executing SQL statement using the same semantics
-        as ``.fetchone()``.
-
-        A ``StopIteration`` exception is raised when the result set is exhausted.
+        Return the next row from the currently executing SQL statement using the same semantics as
+        ``.fetchone()``.  A ``StopIteration`` exception is raised when the result set is exhausted.
         :return:
         """
         result = self.fetchone()

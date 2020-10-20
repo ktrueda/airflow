@@ -255,8 +255,8 @@ class BaseSensorOperator(BaseOperator, SkipMixin):
         """
         Deps
 
-        Adds one additional dependency for all sensor operators that checks if a sensor task instance
-        can be rescheduled.
+        Adds one additional dependency for all sensor operators that
+        checks if a sensor task instance can be rescheduled.
         """
         if self.reschedule:
             return BaseOperator.deps.fget(self) | {ReadyToRescheduleDep()}
@@ -267,8 +267,8 @@ def poke_mode_only(cls):
     """
     poke_mode_only
 
-    Class Decorator for child classes of BaseSensorOperator to indicate that instances of this class
-    are only safe to use poke mode.
+    Class Decorator for child classes of BaseSensorOperator to indicate
+    that instances of this class are only safe to use poke mode.
 
     Will decorate all methods in the class to assert they did not change
     the mode from 'poke'.

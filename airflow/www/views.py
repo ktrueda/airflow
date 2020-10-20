@@ -369,8 +369,8 @@ class Airflow(AirflowBaseView):  # noqa: D101  pylint: disable=too-many-public-m
         """
         Health
 
-        An endpoint helping check the health status of the Airflow instance, including metadatabase
-        and scheduler.
+        An endpoint helping check the health status of the Airflow instance,
+        including metadatabase and scheduler.
         """
         payload = {
             'metadatabase': {'status': 'unhealthy'}

@@ -106,8 +106,8 @@ class BaseSerialization:
         """
         from_dict
 
-        Deserializes a python dict stored with type decorators and　reconstructs all DAGs
-        and operators it contains.
+        Deserializes a python dict stored with type decorators and
+        reconstructs all DAGs and operators it contains.
         """
         return cls._deserialize(serialized_obj)
 

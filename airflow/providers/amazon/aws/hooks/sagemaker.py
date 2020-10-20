@@ -932,11 +932,9 @@ class SageMakerHook(AwsBaseHook):  # pylint: disable=too-many-public-methods
         """
         _list_request
 
-        All AWS boto3 list_* requests return results in batches (if the key "NextToken" is contained in
-        the result, there are more results to fetch).
-
-        The default AWS batch size is 10, and configurable up to 100.
-        This function iteratively loads all results (or up to a given maximum).
+        All AWS boto3 list_* requests return results in batches (if the key "NextToken" is contained in the
+        result, there are more results to fetch). The default AWS batch size is 10, and configurable up to
+        100. This function iteratively loads all results (or up to a given maximum).
 
         Each boto3 list_* function returns the results in a list with a different name. The key of this
         structure must be given to iterate over the results, e.g. "TransformJobSummaries" for

@@ -189,8 +189,8 @@ class AWSDataSyncHook(AwsBaseHook):
         """
         get_task_arns_for_location_arns
 
-        Return list of TaskArns for which use any one of the specified source LocationArns and any
-        one of the specified destination LocationArns.
+        Return list of TaskArns for which use any one of the specified
+        source LocationArns and any one of the specified destination LocationArns.
 
         :param list source_location_arns: List of source LocationArns.
         :param list destination_location_arns: List of destination LocationArns.

@@ -37,7 +37,7 @@ class OracleHook(DbApiHook):
     # pylint: disable=c-extension-no-member
     def get_conn(self) -> 'OracleHook':
         """
-        Returns a oracle connection object.
+        Returns a oracle connection object
 
         Optional parameters for using a custom DSN connection
         (instead of using a server alias from tnsnames.ora)
@@ -127,8 +127,9 @@ class OracleHook(DbApiHook):
         """
         insert_rows
 
-        A generic way to insert a set of tuples into a table, the whole set of inserts is treated
-        as one transaction Changes from standard DbApiHook implementation:
+        A generic way to insert a set of tuples into a table,
+        the whole set of inserts is treated as one transaction
+        Changes from standard DbApiHook implementation:
 
         - Oracle SQL queries in cx_Oracle can not be terminated with a semicolon (`;`)
         - Replace NaN values with NULL using `numpy.nan_to_num` (not using

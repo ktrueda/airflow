@@ -177,8 +177,8 @@ class ExasolHook(DbApiHook):
         """
         _serialize_cell
 
-        Exasol will adapt all arguments to the execute() method internally, hence we return cell
-        without any conversion.
+        Exasol will adapt all arguments to the execute() method internally,
+        hence we return cell without any conversion.
 
         :param cell: The cell to insert into the table
         :type cell: object

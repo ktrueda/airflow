@@ -27,8 +27,8 @@ class CloudFirestoreExportDatabaseOperator(BaseOperator):
     """
     CloudFirestoreExportDatabaseOperator
 
-    Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage
-    system, such as Google Cloud Storage.
+    Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system,
+    such as Google Cloud Storage.
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:

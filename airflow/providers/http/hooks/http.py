@@ -190,11 +190,10 @@ class HttpHook(BaseHook):
 
     def run_with_advanced_retry(self, _retry_args: Dict[Any, Any], *args: Any, **kwargs: Any) -> Any:
         """
-        Runs Hook.
+        Runs Hook.run() with a Tenacity decorator attached to it.
 
-        run() with a Tenacity decorator attached to it. This is useful for
-        connectors which might be disturbed by intermittent issues and should not
-        instantly fail.
+        This is useful for connectors which might be disturbed by intermittent issues
+        and should not instantly fail.
 
         :param _retry_args: Arguments which define the retry behaviour.
             See Tenacity documentation at https://github.com/jd/tenacity
