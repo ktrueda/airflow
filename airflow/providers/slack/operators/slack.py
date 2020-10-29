@@ -90,7 +90,7 @@ class SlackAPIOperator(BaseOperator):
         slack.call(self.method, json=self.api_params)
 
 
-class SlackAPIPostOperator(SlackAPIOperator):   # noqa: D412
+class SlackAPIPostOperator(SlackAPIOperator):  # noqa: D412
     """
     Posts messages to a slack channel.
 
@@ -160,7 +160,7 @@ class SlackAPIPostOperator(SlackAPIOperator):   # noqa: D412
         }
 
 
-class SlackAPIFileOperator(SlackAPIOperator):   # noqa: D412
+class SlackAPIFileOperator(SlackAPIOperator):  # noqa: D412
     """
     Send a file to a slack channel
 
