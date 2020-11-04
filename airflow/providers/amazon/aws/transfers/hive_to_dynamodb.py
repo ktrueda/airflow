@@ -29,7 +29,7 @@ from airflow.utils.decorators import apply_defaults
 
 class HiveToDynamoDBOperator(BaseOperator):
     """
-    HiveToDynamoDBOperator
+    Class for moving data from Hive to DynamoDB.
 
     Moves data from Hive to DynamoDB, note that for now the data is loaded
     into memory before being pushed to DynamoDB, so this operator should

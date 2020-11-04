@@ -56,7 +56,7 @@ class CloudFunctionsHook(GoogleBaseHook):
     @staticmethod
     def _full_location(project_id: str, location: str) -> str:
         """
-        _full_location
+        Retrieve full location.
 
         Retrieve full location of the function in the form of
         ``projects/<GCP_PROJECT_ID>/locations/<GCP_LOCATION>``

@@ -2197,7 +2197,7 @@ class BigQueryHook(GoogleBaseHook, DbApiHook):
 
 class BigQueryPandasConnector(GbqConnector):
     """
-    BigQueryPandasConnector
+    BigQuery Pandas Connector class.
 
     This connector behaves identically to GbqConnector (from Pandas), except
     that it allows the service to be injected, and disables a call to
@@ -2745,7 +2745,7 @@ class BigQueryCursor(BigQueryBaseCursor):
 
     def fetchmany(self, size: Optional[int] = None) -> list:
         """
-        Fetchmany
+        Fetch the next set of rows of a query result.
 
         Fetch the next set of rows of a query result, returning a sequence of sequences
         (e.g. a list of tuples). An empty sequence is returned when no more rows are
@@ -2769,7 +2769,7 @@ class BigQueryCursor(BigQueryBaseCursor):
 
     def fetchall(self) -> List[list]:
         """
-        Fetch all
+        Fetch all (remaining) rows of a query result.
 
         Fetch all (remaining) rows of a query result, returning them as a sequence of
         sequences (e.g. a list of tuples).

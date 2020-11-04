@@ -320,7 +320,7 @@ class CloudMemorystoreExportInstanceOperator(BaseOperator):
 
 class CloudMemorystoreFailoverInstanceOperator(BaseOperator):
     """
-    CloudMemorystoreFailoverInstanceOperator
+    CloudMemorystore Failover Instance Operator class.
 
     Initiates a failover of the master node to current replica node for a specific STANDARD tier Cloud
     Memorystore for Redis instance.
@@ -888,7 +888,7 @@ class CloudMemorystoreScaleInstanceOperator(BaseOperator):
 
 class CloudMemorystoreCreateInstanceAndImportOperator(BaseOperator):
     """
-    CloudMemorystoreCreateInstanceAndImportOperator
+    Cloud Memorystore Create Instance And Import Operator class.
 
     Creates a Redis instance based on the specified tier and memory size and import a Redis RDB snapshot file
     from Cloud Storage into a this instance.
@@ -1449,7 +1449,7 @@ class CloudMemorystoreMemcachedGetInstanceOperator(BaseOperator):
 
 class CloudMemorystoreMemcachedListInstancesOperator(BaseOperator):
     """
-    CloudMemorystoreMemcachedListInstancesOperator
+    Cloud Memorystore Memcached List Instances Operator class.
 
     Lists all Memcached instances owned by a project in either the specified location (region) or all
         locations.

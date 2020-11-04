@@ -165,13 +165,11 @@ class BaseJob(Base, LoggingMixin):
 
     def heartbeat(self, only_if_necessary: bool = False):
         """
-        heartbeat.
+        This allows at the system level to monitor what is actually active.
 
         Heartbeats update the job's entry in the database with a timestamp
         for the latest_heartbeat and allows for the job to be killed
-        externally. This allows at the system level to monitor what is
-        actually active.
-
+        externally.
         For instance, an old heartbeat for SchedulerJob would mean something
         is wrong.
 

@@ -76,7 +76,7 @@ class ElasticsearchTaskHandler(FileTaskHandler, LoggingMixin):
         es_kwargs: Optional[dict] = conf.getsection("elasticsearch_configs"),
     ):
         """
-        __init__
+        __init__ of ElasticsearchTaskHandler.
 
         :param base_log_folder: base folder to store logs locally
         :param log_id_template: log id template
@@ -116,7 +116,7 @@ class ElasticsearchTaskHandler(FileTaskHandler, LoggingMixin):
     @staticmethod
     def _clean_execution_date(execution_date: datetime) -> str:
         """
-        _clean_execution_date
+        Clean up an execution data.
 
         Clean up an execution date so that it is safe to query in elasticsearch
         by removing reserved characters.

@@ -251,7 +251,7 @@ class SensorExceptionInfo:
 
     def should_fail_current_run(self):
         """
-        should_fail_current_run.
+        shouldfail_current_run.
 
         :return: Should the sensor fail
         :type: boolean
@@ -266,7 +266,7 @@ class SensorExceptionInfo:
     @property
     def is_infra_failure(self):
         """
-        is_infra_failure.
+        True if the exception is an infra failure otherwise false.
 
         :return: If the exception is an infra failure
         :type: boolean
@@ -275,7 +275,7 @@ class SensorExceptionInfo:
 
     def is_expired(self):
         """
-        is_expired.
+        True if it is expired otherwise false.
 
         :return: If current exception need to be kept.
         :type: boolean
@@ -423,7 +423,7 @@ class SmartSensorOperator(BaseOperator, SkipMixin):
     @provide_session
     def _mark_multi_state(self, operator, poke_hash, encoded_poke_context, state, session=None):
         """
-        _mark_multi_state
+        Mark state for multiple tasks in the task_instance table.
 
         Mark state for multiple tasks in the task_instance table to a new state if they have
         the same signature as the poke_hash.

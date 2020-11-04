@@ -73,7 +73,7 @@ class PodDefaults:
 
 def make_safe_label_value(string):
     """
-    make_safe_label_values.
+    Make validated label.
 
     Valid label values must be 63 characters or less and must be empty or begin and
     end with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
@@ -94,7 +94,7 @@ def make_safe_label_value(string):
 
 def datetime_to_label_safe_datestring(datetime_obj: datetime.datetime) -> str:
     """
-    datetime_to_label_safe_datestring
+    Transform datetime to string format Kubernetes like.
 
     Kubernetes doesn't like ":" in labels, since ISO datetime format uses ":" but
     not "_" let's
@@ -108,7 +108,7 @@ def datetime_to_label_safe_datestring(datetime_obj: datetime.datetime) -> str:
 
 def label_safe_datestring_to_datetime(string: str) -> datetime.datetime:
     """
-    label_safe_datestring_to_datetime
+    Transform transformed string to datetime.
 
     Kubernetes doesn't permit ":" in labels. ISO datetime format uses ":" but not
     "_", let's
@@ -253,7 +253,7 @@ class PodGenerator:
     @staticmethod
     def reconcile_pods(base_pod: k8s.V1Pod, client_pod: Optional[k8s.V1Pod]) -> k8s.V1Pod:
         """
-        reconcile_pods
+        Reconcile pods.
 
         :param base_pod: has the base attributes which are overwritten if they exist
             in the client pod and remain if they do not exist in the client_pod
@@ -304,7 +304,7 @@ class PodGenerator:
     def reconcile_specs(base_spec: Optional[k8s.V1PodSpec],
                         client_spec: Optional[k8s.V1PodSpec]) -> Optional[k8s.V1PodSpec]:
         """
-        reconcile_specs
+        Reconcile specs.
 
         :param base_spec: has the base attributes which are overwritten if they exist
             in the client_spec and remain if they do not exist in the client_spec
@@ -330,7 +330,7 @@ class PodGenerator:
     def reconcile_containers(base_containers: List[k8s.V1Container],
                              client_containers: List[k8s.V1Container]) -> List[k8s.V1Container]:
         """
-        reconcile_containers
+        Reconcile containers.
 
         :param base_containers: has the base attributes which are overwritten if they exist
             in the client_containers and remain if they do not exist in the client_containers
@@ -374,9 +374,9 @@ class PodGenerator:
         scheduler_job_id: str
     ) -> k8s.V1Pod:
         """
-        construct_pod.
+        Construct a pod by gathering and consolidating the configuration.
 
-        Construct a pod by gathering and consolidating the configuration from 3 places:
+        Configuration is from 3 places.
             - airflow.cfg
             - executor_config
             - dynamic arguments
@@ -440,7 +440,7 @@ class PodGenerator:
     @staticmethod
     def deserialize_model_file(path: str) -> k8s.V1Pod:
         """
-        deserialize_model_file
+        Deserialize model file and return V1Pod.
 
         :param path: Path to the file
         :return: a kubernetes.client.models.V1Pod
@@ -473,7 +473,7 @@ class PodGenerator:
     @staticmethod
     def make_unique_pod_id(pod_id):
         r"""
-        make_unique_pod_id
+        Make unique pod id str.
 
         Kubernetes pod names must be <= 253 chars and must pass the following regex for
         validation
@@ -493,7 +493,7 @@ class PodGenerator:
 
 def merge_objects(base_obj, client_obj):
     """
-    merge_objects
+    Merge objects.
 
     :param base_obj: has the base attributes which are overwritten if they exist
         in the client_obj and remain if they do not exist in the client_obj
@@ -524,7 +524,7 @@ def merge_objects(base_obj, client_obj):
 
 def extend_object_field(base_obj, client_obj, field_name):
     """
-    extend_object_field
+    Extend object field.
 
     :param base_obj: an object which has a property `field_name` that is a list
     :param client_obj: an object which has a property `field_name` that is a list.

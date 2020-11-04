@@ -24,7 +24,7 @@ from airflow.utils.decorators import apply_defaults
 
 class GenericTransfer(BaseOperator):
     """
-    GenericTransfer
+    Generic transfer class for moving data from connection to another.
 
     Moves data from a connection to another, assuming that they both
     provide the required methods in their respective hooks. The source hook

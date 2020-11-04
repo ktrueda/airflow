@@ -107,7 +107,7 @@ class GunicornMonitor(LoggingMixin):
 
     def _generate_plugin_state(self) -> Dict[str, float]:
         """
-        _generate_plugin_state
+        Generate plugin state.
 
         Generate dict of filenames and last modification time of all files in settings.PLUGINS_FOLDER
         directory.

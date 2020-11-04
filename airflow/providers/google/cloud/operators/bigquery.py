@@ -262,7 +262,7 @@ class BigQueryValueCheckOperator(ValueCheckOperator):
 
 class BigQueryIntervalCheckOperator(IntervalCheckOperator):
     """
-    BigQueryIntervalCheckOperator
+    BigQuery Interval Check Operator class.
 
     Checks that the values of metrics given as SQL expressions are within
     a certain tolerance of the ones from days_back before.
@@ -359,7 +359,7 @@ class BigQueryIntervalCheckOperator(IntervalCheckOperator):
 
 class BigQueryGetDataOperator(BaseOperator):
     """
-    BigQueryGetDataOperator
+    BigQuery Get Data Operator class.
 
     Fetches the data from a BigQuery table (alternatively fetch data for selected columns)
     and returns data in a python list. The number of elements in the returned list will

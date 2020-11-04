@@ -151,7 +151,7 @@ def execute_in_subprocess(cmd: List[str]):
 
 def execute_interactive(cmd: List[str], **kwargs):
     """
-    execute_interactive
+    Execute interactive.
 
     Runs the new command as a subprocess and ensures that the terminal's state is restored to its original
     state after the process is completed e.g. if the subprocess hides the cursor, it will be restored after

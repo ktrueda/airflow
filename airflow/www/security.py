@@ -315,7 +315,7 @@ class AirflowSecurityManager(SecurityManager, LoggingMixin):
 
     def has_access(self, permission, resource, user=None) -> bool:
         """
-        has_access
+        Verify whether a given user could perform certain permission on the given resource.
 
         Verify whether a given user could perform certain permission
         (e.g can_read, can_write) on the given resource.
@@ -367,7 +367,7 @@ class AirflowSecurityManager(SecurityManager, LoggingMixin):
 
     def has_all_dags_access(self):
         """
-        has_all_dags_access.
+        Check it has all dags access.
 
         Has all the dag access in any of the 3 cases:
         1. Role needs to be in (Admin, Viewer, User, Op).
@@ -430,7 +430,7 @@ class AirflowSecurityManager(SecurityManager, LoggingMixin):
     @provide_session
     def create_custom_dag_permission_view(self, session=None):
         """
-        create_custom_dag_permission_view.
+        Create custom dag permission view.
 
         Workflow:
         1. Fetch all the existing (permissions, view-menu) from Airflow DB.
@@ -549,7 +549,7 @@ class AirflowSecurityManager(SecurityManager, LoggingMixin):
 
     def sync_roles(self):
         """
-        sync_roles.
+        Sync roles.
 
         1. Init the default role(Admin, Viewer, User, Op, public)
            with related permissions.

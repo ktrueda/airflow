@@ -89,12 +89,12 @@ class BaseOperatorMeta(abc.ABCMeta):
 @functools.total_ordering
 class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta):
     """
-    BaseOperator.
+    Abstract base class for all operators.
 
-    Abstract base class for all operators. Since operators create objects that
-    become nodes in the dag, BaseOperator contains many recursive methods for
-    dag crawling behavior. To derive this class, you are expected to override
-    the constructor as well as the 'execute' method.
+    Since operators create objects that become nodes in the dag, BaseOperator
+    contains many recursive methods for dag crawling behavior. To derive this
+    class, you are expected to override the constructor as well as the 'execute'
+    method.
 
     Operators derived from this class should perform or trigger certain tasks
     synchronously (wait for completion). Example of operators could be an
@@ -511,7 +511,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
     # including lineage information
     def __or__(self, other):
         """
-        __or__
+        OR operator.
 
         Called for [This Operator] | [Operator], The inlets of other
         will be set to pickup the outlets from this operator. Other will
@@ -531,7 +531,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def __gt__(self, other):
         """
-        __gt__
+        GT Operator.
 
         Called for [Operator] > [Outlet], so that if other is an attr annotated object
         it is set as an outlet of this Operator.
@@ -548,7 +548,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def __lt__(self, other):
         """
-        __lt__
+        LT Operator.
 
         Called for [Inlet] > [Operator] or [Operator] < [Inlet], so that if other is
         an attr annotated object it is set as an inlet to this operator
@@ -792,7 +792,7 @@ class BaseOperator(Operator, LoggingMixin, TaskMixin, metaclass=BaseOperatorMeta
 
     def __deepcopy__(self, memo):
         """
-        __deepcopy__
+        Deepcopy of this object.
 
         Hack sorting double chained task lists by task_id to avoid hitting max_depth on deepcopy operations.
         """

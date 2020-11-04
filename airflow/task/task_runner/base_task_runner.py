@@ -32,7 +32,7 @@ PYTHONPATH_VAR = 'PYTHONPATH'
 
 class BaseTaskRunner(LoggingMixin):
     """
-    BaseTaskRunner
+    Base Task Runner class.
 
     Runs Airflow task instances by invoking the `airflow tasks run` command with raw
     mode enabled in a subprocess.
@@ -148,7 +148,7 @@ class BaseTaskRunner(LoggingMixin):
 
     def return_code(self):
         """
-        return_code.
+        The return code associated with running the task instance.
 
         :return: The return code associated with running the task instance or
             None if the task is not yet done.

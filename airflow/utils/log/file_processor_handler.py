@@ -106,7 +106,7 @@ class FileProcessorHandler(logging.Handler):
 
     def _symlink_latest_log_directory(self):
         """
-        _symlink_latest_log_directory
+        Create symbolic link to the current day's log directory.
 
         Create symbolic link to the current day's log directory to
         allow easy access to the latest scheduler log files.

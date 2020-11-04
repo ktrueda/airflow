@@ -17,10 +17,9 @@
 # under the License.
 
 """
-example_spark_dag.py
+Example Airflow DAG to submit Apache Spark applications.
 
-Example Airflow DAG to submit Apache Spark applications using
-`SparkSubmitOperator`, `SparkJDBCOperator` and `SparkSqlOperator`.
+Use `SparkSubmitOperator`, `SparkJDBCOperator` and `SparkSqlOperator`.
 """
 from airflow.models import DAG
 from airflow.providers.apache.spark.operators.spark_jdbc import SparkJDBCOperator

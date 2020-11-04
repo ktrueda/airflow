@@ -221,7 +221,7 @@ def verify_dagruns(dag_runs, commit, state, session, current_task):
 
 def verify_dag_run_integrity(dag, dates):
     """
-    verify_dag_run_integrity
+    Verify the integrity of the dag runs.
 
     Verify the integrity of the dag runs in case a task was added or removed
     set the confirmed execution dates as they might be different

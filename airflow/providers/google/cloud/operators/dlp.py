@@ -18,11 +18,9 @@
 
 # pylint: disable=R0913, C0302
 """
-dlp.py
+This module contains various Google Cloud DLP operators.
 
-This module contains various Google Cloud DLP operators
-which allow you to perform basic operations using
-Cloud DLP.
+They allow you to perform basic operations using Cloud DLP.
 """
 from typing import Dict, Optional, Sequence, Tuple, Union
 
@@ -130,7 +128,7 @@ class CloudDLPCancelDLPJobOperator(BaseOperator):
 
 class CloudDLPCreateDeidentifyTemplateOperator(BaseOperator):
     """
-    CloudDLPCreateDeidentifyTemplateOperator
+    CloudDLP Create Deidentify Template Operator class.
 
     Creates a DeidentifyTemplate for re-using frequently used configuration for
     de-identifying content, images, and storage.
@@ -348,7 +346,7 @@ class CloudDLPCreateDLPJobOperator(BaseOperator):
 
 class CloudDLPCreateInspectTemplateOperator(BaseOperator):
     """
-    CloudDLPCreateInspectTemplateOperator
+    Cloud DLP Create Inspect Template Operator class.
 
     Creates an InspectTemplate for re-using frequently used configuration for
     inspecting content, images, and storage.
@@ -456,7 +454,7 @@ class CloudDLPCreateInspectTemplateOperator(BaseOperator):
 
 class CloudDLPCreateJobTriggerOperator(BaseOperator):
     """
-    CloudDLPCreateJobTriggerOperator
+    Cloud DLP Create Job Trigger Operator class.
 
     Creates a job trigger to run DLP actions such as scanning storage for sensitive
     information on a set schedule.

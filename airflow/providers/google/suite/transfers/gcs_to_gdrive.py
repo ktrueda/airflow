@@ -30,7 +30,7 @@ WILDCARD = "*"
 
 class GCSToGoogleDriveOperator(BaseOperator):
     """
-    GCSToGoogleDriveOperator
+    GCS To Google Drive Operator class.
 
     Copies objects from a Google Cloud Storage service service to Google Drive service, with renaming
     if requested.

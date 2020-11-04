@@ -123,7 +123,7 @@ class OracleHook(DbApiHook):
         **kwargs,
     ) -> None:
         """
-        insert_rows
+        insert_rows for Oracle.
 
         A generic way to insert a set of tuples into a table,
         the whole set of inserts is treated as one transaction

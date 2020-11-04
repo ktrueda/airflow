@@ -28,7 +28,7 @@ from airflow.utils.decorators import apply_defaults
 
 class QuboleCheckOperator(CheckOperator, QuboleOperator):
     """
-    QuboleCheckOperator
+    Qubole Check Operator class.
 
     Performs checks against Qubole Commands. ``QuboleCheckOperator`` expects
     a command that will be executed on QDS.

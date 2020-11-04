@@ -48,7 +48,7 @@ EventBufferValueType = Tuple[Optional[str], Any]
 
 class BaseExecutor(LoggingMixin):
     """
-    BaseExecutor
+    Class to derive in order to interface with executor-type systems.
 
     Class to derive in order to interface with executor-type systems
     like Celery, Kubernetes, Local, Sequential and the likes..
@@ -257,7 +257,7 @@ class BaseExecutor(LoggingMixin):
 
     def end(self) -> None:  # pragma: no cover
         """
-        End
+        This method is called when the caller is done submitting job.
 
         This method is called when the caller is done submitting job and
         wants to wait synchronously for the job submitted previously to be

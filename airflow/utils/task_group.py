@@ -16,7 +16,7 @@
 # specific language governing permissions and limitations
 # under the License.
 """
-task_group.py
+A TaskGroup module.
 
 A TaskGroup is a collection of closely related tasks on the same DAG that should be grouped
 together when the DAG is displayed graphically.
@@ -253,10 +253,9 @@ class TaskGroup(TaskMixin):
 
     def get_roots(self) -> Generator["BaseOperator", None, None]:
         """
-        get_roots
+        Returns a generator of tasks that are root tasks.
 
-        Returns a generator of tasks that are root tasks, i.e. those with no upstream
-        dependencies within the TaskGroup.
+        I.e. those with no upstream dependencies within the TaskGroup.
         """
         for task in self:
             if not any(self.has_task(parent) for parent in task.get_direct_relatives(upstream=True)):
@@ -264,10 +263,9 @@ class TaskGroup(TaskMixin):
 
     def get_leaves(self) -> Generator["BaseOperator", None, None]:
         """
-        get_leaves
+        Returns a generator of tasks that are leaf tasks.
 
-        Returns a generator of tasks that are leaf tasks, i.e. those with no downstream
-        dependencies within the TaskGroup
+        I.e. those with no downstream dependencies within the TaskGroup
         """
         for task in self:
             if not any(self.has_task(child) for child in task.get_direct_relatives(upstream=False)):
@@ -287,7 +285,7 @@ class TaskGroup(TaskMixin):
     @property
     def upstream_join_id(self) -> str:
         """
-        upstream_join_id
+        Upstream join ID.
 
         If this TaskGroup has immediate upstream TaskGroups or tasks, a dummy node called
         upstream_join_id will be created in Graph View to join the outgoing edges from this
@@ -298,7 +296,7 @@ class TaskGroup(TaskMixin):
     @property
     def downstream_join_id(self) -> str:
         """
-        downstream_join_id
+        Downstream join ID.
 
         If this TaskGroup has immediate downstream TaskGroups or tasks, a dummy node called
         downstream_join_id will be created in Graph View to join the outgoing edges from this

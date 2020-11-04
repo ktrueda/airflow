@@ -112,10 +112,9 @@ def reduce_in_chunks(
     chunk_size: int = 0
 ):
     """
-    reduce_in_chunks
+    Reduce the given list of items by splitting it into chunks of the given size.
 
-    Reduce the given list of items by splitting it into chunks
-    of the given size and passing each chunk through the reducer
+    Plus it pass each chunk through the reducer
     """
     if len(iterable) == 0:
         return initializer

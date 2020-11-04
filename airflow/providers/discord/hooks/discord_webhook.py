@@ -78,7 +78,7 @@ class DiscordWebhookHook(HttpHook):
 
     def _get_webhook_endpoint(self, http_conn_id: Optional[str], webhook_endpoint: Optional[str]) -> str:
         """
-        _get_webhook_endpoint
+        Return the default webhook endpoint.
 
         Given a Discord http_conn_id, return the default webhook endpoint or override if a
         webhook_endpoint is manually supplied.

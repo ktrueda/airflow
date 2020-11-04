@@ -632,7 +632,7 @@ class CloudSQLCreateInstanceDatabaseOperator(CloudSQLBaseOperator):
 
 class CloudSQLPatchInstanceDatabaseOperator(CloudSQLBaseOperator):
     """
-    CloudSQLPatchInstanceDatabaseOperator
+    CloudSQL Patch Instance Database Operator class.
 
     Updates a resource containing information about a database inside a Cloud SQL
     instance using patch semantics.

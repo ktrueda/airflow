@@ -27,10 +27,9 @@ from airflow.utils.decorators import apply_defaults
 
 class AwsGlueJobOperator(BaseOperator):
     """
-    AwsGlueJobOperator
+    Creates an AWS Glue Job.
 
-    Creates an AWS Glue Job. AWS Glue is a serverless Spark
-    ETL service for running Spark Jobs on the AWS cloud.
+    AWS Glue is a serverless Spark ETL service for running Spark Jobs on the AWS cloud.
     Language support: Python and Scala
 
     :param job_name: unique job name per AWS Account

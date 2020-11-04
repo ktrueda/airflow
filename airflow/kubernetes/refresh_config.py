@@ -41,7 +41,7 @@ def _parse_timestamp(ts_str: str) -> int:
 
 class RefreshKubeConfigLoader(KubeConfigLoader):
     """
-    RefreshKubeConfigLoader
+    Patched KubeConfigLoader.
 
     Patched KubeConfigLoader, this subclass takes expirationTimestamp into
     account and sets api key refresh callback hook in Configuration object
@@ -53,7 +53,7 @@ class RefreshKubeConfigLoader(KubeConfigLoader):
 
     def _load_from_exec_plugin(self):
         """
-        _load_from_exec_plugin
+        Override of _load_from_exec_plugin method.
 
         We override _load_from_exec_plugin method to also read and store
         expiration timestamp for aws-iam-authenticator. It will be later
@@ -99,7 +99,7 @@ class RefreshConfiguration(Configuration):
 
 def _get_kube_config_loader_for_yaml_file(filename, **kwargs) -> Optional[RefreshKubeConfigLoader]:
     """
-    _get_kube_config_loader_for_yaml_file
+    Get RefreshKubeConfigLoader for yaml file.
 
     Adapted from the upstream _get_kube_config_loader_for_yaml_file function, changed
     KubeConfigLoader to RefreshKubeConfigLoader
@@ -113,7 +113,7 @@ def _get_kube_config_loader_for_yaml_file(filename, **kwargs) -> Optional[Refres
 
 def load_kube_config(client_configuration, config_file=None, context=None):
     """
-    load_kube_config.
+    Load kube config.
 
     Adapted from the upstream load_kube_config function, changes:
         - removed persist_config argument since it's not being used

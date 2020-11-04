@@ -17,7 +17,7 @@
 # under the License.
 #
 """
-salesforce.py
+This module contains a Salesforce Hook.
 
 This module contains a Salesforce Hook which allows you to connect to your Salesforce instance,
 retrieve data from it, and write that data to a file for other uses.

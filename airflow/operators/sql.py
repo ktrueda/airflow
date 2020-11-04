@@ -229,7 +229,7 @@ class SQLValueCheckOperator(BaseOperator):
 
 class SQLIntervalCheckOperator(BaseOperator):
     """
-    SQLIntervalCheckOperator
+    SQL interval check operator class.
 
     Checks that the values of metrics given as SQL expressions are within
     a certain tolerance of the ones from days_back before.
@@ -466,9 +466,8 @@ class SQLThresholdCheckOperator(BaseOperator):
 
     def push(self, meta_data):
         """
-        push.
+        Send data check info and metadata to an external database.
 
-        Optional: Send data check info and metadata to an external database.
         Default functionality will log metadata.
         """
         info = "\n".join([f"""{key}: {item}""" for key, item in meta_data.items()])

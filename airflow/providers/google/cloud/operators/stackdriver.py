@@ -832,7 +832,7 @@ class StackdriverDisableNotificationChannelsOperator(BaseOperator):
 
 class StackdriverUpsertNotificationChannelOperator(BaseOperator):
     """
-    StackdriverUpsertNotificationChannelOperator
+    Stackdriver Upsert Notification Channel Operator class.
 
     Creates a new notification or updates an existing notification channel
     identified the name field in the alerts parameter.

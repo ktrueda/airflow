@@ -262,7 +262,7 @@ class DbApiHook(BaseHook):
     def insert_rows(self, table, rows, target_fields=None, commit_every=1000,
                     replace=False, **kwargs):
         """
-        insert_rows
+        Insert into a table.
 
         A generic way to insert a set of tuples into a table,
         a new transaction is created every commit_every rows

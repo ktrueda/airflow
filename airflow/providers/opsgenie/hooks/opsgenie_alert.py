@@ -57,7 +57,7 @@ class OpsgenieAlertHook(HttpHook):
 
     def get_conn(self, headers: Optional[dict] = None) -> requests.Session:
         """
-        get_conn
+        Overwrite of HttpHook get_conn.
 
         Overwrite HttpHook get_conn because this hook just needs base_url
         and headers, and does not need generic params

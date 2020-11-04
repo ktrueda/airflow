@@ -306,7 +306,7 @@ class KubernetesPodOperator(BaseOperator):  # pylint: disable=too-many-instance-
         self, labels: dict, try_numbers_match: bool, launcher: Any, pod: k8s.V1Pod
     ) -> Tuple[State, Optional[str]]:
         """
-        handle_pod_overlap
+        Handle pop overlap.
 
         In cases where the Scheduler restarts while a KubernetesPodOperator task is running,
         this function will either continue to monitor the existing pod or launch a new pod

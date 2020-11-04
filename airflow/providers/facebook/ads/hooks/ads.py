@@ -79,7 +79,7 @@ class FacebookAdsReportingHook(BaseHook):
     @cached_property
     def facebook_ads_config(self) -> Dict:
         """
-        facebook_ads_config
+        Gets Facebook ads connection.
 
         Gets Facebook ads connection from meta db and sets
         facebook_ads_config attribute with returned config file

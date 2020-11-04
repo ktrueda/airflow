@@ -296,7 +296,7 @@ class CassandraToGCSOperator(BaseOperator):
     @classmethod
     def convert_tuple_type(cls, values: Tuple[Any]) -> Dict[str, Any]:
         """
-        convert_tuple_type
+        Converts a tuple to RECORD.
 
         Converts a tuple to RECORD that contains n fields, each will be converted
         to its corresponding data type in bq and will be named 'field_<index>', where
@@ -308,7 +308,7 @@ class CassandraToGCSOperator(BaseOperator):
     @classmethod
     def convert_map_type(cls, value: OrderedMapSerializedKey) -> List[Dict[str, Any]]:
         """
-        convert_map_type
+        Converts a map to a repeated RECORD.
 
         Converts a map to a repeated RECORD that contains two fields: 'key' and 'value',
         each will be converted to its corresponding data type in BQ.

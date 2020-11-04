@@ -28,7 +28,7 @@ from airflow.utils.log.logging_mixin import LoggingMixin
 
 class DatadogHook(BaseHook, LoggingMixin):
     """
-    DatadogHook
+    Datadog hook class.
 
     Uses datadog API to send metrics of practically anything measurable,
     so it's possible to track # of db records inserted/deleted, records read
@@ -95,7 +95,7 @@ class DatadogHook(BaseHook, LoggingMixin):
 
     def query_metric(self, query: str, from_seconds_ago: int, to_seconds_ago: int) -> Dict[str, Any]:
         """
-        query_metric
+        Queries datadog for a specific metric.
 
         Queries datadog for a specific metric, potentially with some
         function applied to it and returns the results.

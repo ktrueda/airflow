@@ -239,7 +239,7 @@ def get_table_constraints(conn, table_name):
 
 def reorder_columns(columns):
     """
-    reorder_columns
+    Reorder the columns for creating constraint.
 
     Reorder the columns for creating constraint, preserve primary key ordering
     ``['task_id', 'dag_id', 'execution_date']``
@@ -303,7 +303,7 @@ def create_constraint(operator, constraint_dict):
 
 def modify_execution_date_with_constraint(conn, batch_operator, table_name, type_, nullable):
     """
-    modify_execution_date_with_constraint
+    Modify execution date with constraint.
 
     Helper function changes type of column execution_date by
     dropping and recreating any primary/unique constraint associated with

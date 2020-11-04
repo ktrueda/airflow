@@ -31,7 +31,7 @@ from airflow.utils.decorators import apply_defaults
 
 class BaseSQLToGCSOperator(BaseOperator):
     """
-    BaseSQLToGCSOperator
+    Base SQL To GCS Operator class
 
     :param sql: The SQL to execute.
     :type sql: str

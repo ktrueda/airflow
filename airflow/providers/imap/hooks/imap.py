@@ -16,7 +16,7 @@
 # specific language governing permissions and limitations
 # under the License.
 """
-imap.py
+Imap module.
 
 This module provides everything to be able to search in mails for a specific attachment
 and also to download it.

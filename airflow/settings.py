@@ -124,7 +124,7 @@ def task_instance_mutation_hook(task_instance):  # pylint: disable=unused-argume
 
 def pod_mutation_hook(pod):  # pylint: disable=unused-argument
     """
-    pod_mutation_hook
+    Pod mutation hook.
 
     This setting allows altering ``kubernetes.client.models.V1Pod`` object
     before they are passed to the Kubernetes client by the ``PodLauncher``

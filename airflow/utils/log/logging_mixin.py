@@ -77,7 +77,7 @@ class StreamLogWriter:
 
     def __init__(self, logger, level):
         """
-        __init__
+        __init__ of StreamLogWriter.
 
         :param log: The log level method to write to, ie. log.debug, log.warning
         :return:
@@ -96,7 +96,7 @@ class StreamLogWriter:
     @property
     def closed(self):   # noqa: D402
         """
-        Closed
+        Returns False to indicate that the stream is not closed.
 
         Returns False to indicate that the stream is not closed (as it will be
         open for the duration of Airflow's lifecycle).
@@ -139,7 +139,7 @@ class StreamLogWriter:
 
 class RedirectStdHandler(StreamHandler):
     """
-    RedirectStdHandler
+    Redirect Std Handler class
 
     This class is like a StreamHandler using sys.stderr/stdout, but always uses
     whatever sys.stderr/stderr is currently set to rather than the value of

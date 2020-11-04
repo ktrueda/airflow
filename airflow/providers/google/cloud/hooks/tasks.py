@@ -16,12 +16,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-"""
-tasks.py
-
-This module contains a CloudTasksHook
-which allows you to connect to Google Cloud Tasks service,
-"""
+"""This module contains a CloudTasksHook which allows you to connect to Google Cloud Tasks service."""
 from typing import Dict, List, Optional, Sequence, Tuple, Union
 
 from google.api_core.retry import Retry

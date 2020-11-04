@@ -79,7 +79,7 @@ class MSSQLToGCSOperator(BaseSQLToGCSOperator):
     @classmethod
     def convert_type(cls, value, schema_type):
         """
-        convert_type
+        Convert MSSQL value to safe value for JSON/Google Cloud Storage/BigQuery.
 
         Takes a value from MSSQL, and converts it to a value that's safe for
         JSON/Google Cloud Storage/BigQuery.

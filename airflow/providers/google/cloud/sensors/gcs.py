@@ -248,7 +248,7 @@ def get_time():
 @poke_mode_only
 class GCSUploadSessionCompleteSensor(BaseSensorOperator):
     """
-    GCSUploadSessionCompleteSensor
+    GCS Upload Session Complete Sensor class.
 
     Checks for changes in the number of objects at prefix in Google Cloud Storage
     bucket and returns True if the inactivity period has passed with no
@@ -343,7 +343,7 @@ class GCSUploadSessionCompleteSensor(BaseSensorOperator):
 
     def is_bucket_updated(self, current_objects: Set[str]) -> bool:
         """
-        is_bucket_updated
+        Checks whether new objects have been uploaded.
 
         Checks whether new objects have been uploaded and the inactivity_period
         has passed and updates the state of the sensor accordingly.

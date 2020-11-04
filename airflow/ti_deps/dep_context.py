@@ -24,7 +24,7 @@ from airflow.utils.state import State
 
 class DepContext:
     """
-    DepContext
+    A base class for contexts that specifies which dependencies should be evaluated.
 
     A base class for contexts that specifies which dependencies should be evaluated in
     the context for a task instance to satisfy the requirements of the context. Also

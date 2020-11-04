@@ -63,7 +63,7 @@ class BiqQueryDataTransferServiceHook(GoogleBaseHook):
     @staticmethod
     def _disable_auto_scheduling(config: Union[dict, TransferConfig]) -> TransferConfig:
         """
-        _disable_auto_scheduling
+        Disable auto scheduling.
 
         In the case of Airflow, the customer needs to create a transfer config
         with the automatic scheduling disabled (UI, CLI or an Airflow operator) and

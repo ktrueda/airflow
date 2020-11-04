@@ -138,7 +138,7 @@ class BackfillJob(BaseJob):
             run_backwards=False,
             *args, **kwargs):
         """
-        __init__.
+        __init__ of _DagRunTaskStatus.
 
         :param dag: DAG object.
         :type dag: airflow.models.DAG
@@ -287,7 +287,7 @@ class BackfillJob(BaseJob):
     @provide_session
     def _get_dag_run(self, run_date: datetime, dag: DAG, session: Session = None):
         """
-        _get_dag_run
+        Returns a dag run for the given run date.
 
         Returns a dag run for the given run date, which will be matched to an existing
         dag run if available or create a new dag run otherwise. If the max_active_runs
@@ -709,11 +709,10 @@ class BackfillJob(BaseJob):
     def _execute_for_run_dates(self, run_dates, ti_status, executor, pickle_id,
                                start_date, session=None):
         """
-        _execute_for_run_dates
+        Returns a list of execution dates of the dag runs that were executed.
 
         Computes the dag runs and their respective task instances for
         the given run dates and executes the task instances.
-        Returns a list of execution dates of the dag runs that were executed.
 
         :param run_dates: Execution dates for dag runs
         :type run_dates: list
@@ -850,7 +849,7 @@ class BackfillJob(BaseJob):
     @provide_session
     def reset_state_for_orphaned_tasks(self, filter_by_dag_run=None, session=None):
         """
-        reset_state_for_orphaned_tasks
+        Find orphaned tasks and reset the state to None.
 
         This function checks if there are any tasks in the dagrun (or all) that
         have a schedule or queued states but are not known by the executor. If

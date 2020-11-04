@@ -16,7 +16,7 @@
 # under the License.
 
 """
-example_imap_attachment_to_s3.py
+An example dag for using `ImapAttachmentToS3Operator`.
 
 This is an example dag for using `ImapAttachmentToS3Operator` to transfer an email attachment via IMAP
 protocol from a mail server to S3 Bucket.

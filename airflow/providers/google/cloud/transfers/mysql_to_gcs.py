@@ -95,7 +95,7 @@ class MySQLToGCSOperator(BaseSQLToGCSOperator):
 
     def convert_type(self, value, schema_type: str):
         """
-        convert_type
+        Convert MySQLdb value to safe value for JSON/Google Cloud Storage/BigQuery.
 
         Takes a value from MySQLdb, and converts it to a value that's safe for
         JSON/Google Cloud Storage/BigQuery.

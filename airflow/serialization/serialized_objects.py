@@ -102,7 +102,7 @@ class BaseSerialization:
     def from_dict(cls, serialized_obj: Dict[Encoding, Any]) -> \
             Union['BaseSerialization', dict, list, set, tuple]:
         """
-        from_dict
+        Deserializes a python dict.
 
         Deserializes a python dict stored with type decorators and
         reconstructs all DAGs and operators it contains.

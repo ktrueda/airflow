@@ -29,7 +29,7 @@ from airflow.utils.operator_helpers import context_to_airflow_vars
 
 class HiveToSambaOperator(BaseOperator):
     """
-    HiveToSambaOperator
+    Class for moving data from Hive to Samba.
 
     Executes hql code in a specific Hive database and loads the
     results of the query as a csv to a Samba location.

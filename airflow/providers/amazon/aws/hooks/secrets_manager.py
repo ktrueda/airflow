@@ -39,7 +39,7 @@ class SecretsManagerHook(AwsBaseHook):
 
     def get_secret(self, secret_name: str) -> Union[str, bytes]:
         """
-        get_secret
+        Retrieve secret value from AWS Secrets Manager.
 
         Retrieve secret value from AWS Secrets Manager as a str or bytes
         reflecting format it stored in the AWS Secrets Manager

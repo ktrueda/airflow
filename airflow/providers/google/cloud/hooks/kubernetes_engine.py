@@ -84,7 +84,7 @@ class GKEHook(GoogleBaseHook):
 
     def wait_for_operation(self, operation: Operation, project_id: Optional[str] = None) -> Operation:
         """
-        wait_for_operation
+        Wait for operation with continuously fetching status.
 
         Given an operation, continuously fetches the status from Google Cloud until either
         completion or an error occurring

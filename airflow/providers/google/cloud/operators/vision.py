@@ -630,9 +630,9 @@ class CloudVisionGetProductOperator(BaseOperator):
 
 class CloudVisionUpdateProductOperator(BaseOperator):
     """
-    CloudVisionUpdateProductOperator
+    Makes changes to a Product resource.
 
-    Makes changes to a Product resource. Only the display_name, description, and labels fields can be
+    Only the display_name, description, and labels fields can be
     updated right now.
 
     If labels are updated, the change will not be reflected in queries until the next index time.
@@ -1663,10 +1663,9 @@ def prepare_additional_parameters(
     additional_properties: Optional[Dict], language_hints: Any, web_detection_params: Any
 ) -> Optional[Dict]:
     """
-    prepare_additional_parameters
+    Creates additional_properties parameter based on language_hints.
 
-    Creates additional_properties parameter based on language_hints, web_detection_params and
-    additional_properties parameters specified by the user
+    web_detection_params and additional_properties parameters specified by the user.
     """
     if language_hints is None and web_detection_params is None:
         return additional_properties

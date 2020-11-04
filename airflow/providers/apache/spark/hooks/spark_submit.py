@@ -182,7 +182,7 @@ class SparkSubmitHook(BaseHook, LoggingMixin):
 
     def _resolve_should_track_driver_status(self) -> bool:
         """
-        _resolve_should_track_driver_status
+        Determines whether or not this hook should poll the spark driver status.
 
         Determines whether or not this hook should poll the spark driver status through
         subsequent spark-submit status requests after the initial spark-submit request

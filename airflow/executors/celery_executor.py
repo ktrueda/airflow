@@ -320,7 +320,7 @@ class CeleryExecutor(BaseExecutor):
 
     def _check_for_stalled_adopted_tasks(self):
         """
-        _check_for_stalled_adopted_tasks
+        Check for stalled adopted tasks.
 
         See if any of the tasks we adopted from another Executor run have not
         progressed after the configured timeout.

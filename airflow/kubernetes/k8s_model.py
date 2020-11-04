@@ -38,7 +38,7 @@ class K8SModel(ABC):
     @abstractmethod
     def attach_to_pod(self, pod: k8s.V1Pod) -> k8s.V1Pod:
         """
-        attach_to_pod
+        Attach to pod.
 
         :param pod: A pod to attach this Kubernetes object to
         :type pod: kubernetes.client.models.V1Pod
@@ -48,7 +48,7 @@ class K8SModel(ABC):
 
 def append_to_pod(pod: k8s.V1Pod, k8s_objects: Optional[List[K8SModel]]):
     """
-    append_to_pod
+    Append to pod.
 
     :param pod: A pod to attach a list of Kubernetes objects to
     :type pod: kubernetes.client.models.V1Pod

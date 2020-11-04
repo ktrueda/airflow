@@ -686,7 +686,7 @@ class SageMakerHook(AwsBaseHook):  # pylint: disable=too-many-public-methods
 
     def describe_endpoint(self, name: str) -> dict:
         """
-        describe_endpoint.
+        Describe endpoint.
 
         :param name: the name of the endpoint
         :type name: str
@@ -924,7 +924,7 @@ class SageMakerHook(AwsBaseHook):  # pylint: disable=too-many-public-methods
         self, partial_func: Callable, result_key: str, max_results: Optional[int] = None
     ) -> List[Dict]:
         """
-        _list_request
+        All AWS boto3 list_* requests return results in batches.
 
         All AWS boto3 list_* requests return results in batches (if the key "NextToken" is contained in the
         result, there are more results to fetch). The default AWS batch size is 10, and configurable up to

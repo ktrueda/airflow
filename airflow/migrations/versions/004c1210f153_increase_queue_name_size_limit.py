@@ -36,7 +36,7 @@ depends_on = None
 
 def upgrade():
     """
-    Upgrade
+    Increase column size from 50 to 256 characters.
 
     Increase column size from 50 to 256 characters, closing AIRFLOW-4737 caused
     by broker backends that might use unusually large queue names.

@@ -26,7 +26,7 @@ log = logging.getLogger(__name__)
 
 def is_tty():
     """
-    is_tty
+    Checks if the standard output is s connected.
 
     Checks if the standard output is s connected (is associated with a terminal device) to a tty(-like)
     device.

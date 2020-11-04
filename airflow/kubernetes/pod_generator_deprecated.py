@@ -62,7 +62,7 @@ class PodDefaults:
 
 def make_safe_label_value(string):
     """
-    make_safe_label_value
+    Make validated label str.
 
     Valid label values must be 63 characters or less and must be empty or begin and
     end with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
@@ -327,7 +327,7 @@ class PodGenerator:
     @staticmethod
     def make_unique_pod_id(dag_id):
         r"""
-        make_unique_pod_id
+        Make uniqeue pod id.
 
         Kubernetes pod names must be <= 253 chars and must pass the following regex for
         validation

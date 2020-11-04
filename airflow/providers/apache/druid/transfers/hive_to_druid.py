@@ -31,7 +31,7 @@ DEFAULT_TARGET_PARTITION_SIZE = 5000000
 
 class HiveToDruidOperator(BaseOperator):
     """
-    HiveToDruidOperator
+    Class for moving data from Hive to Druid.
 
     Moves data from Hive to Druid, [del]note that for now the data is loaded
     into memory before being pushed to Druid, so this operator should

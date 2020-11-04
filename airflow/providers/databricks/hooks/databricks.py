@@ -119,7 +119,7 @@ class DatabricksHook(BaseHook):  # noqa
     @staticmethod
     def _parse_host(host: str) -> str:
         """
-        _parse_host
+        Parse host.
 
         The purpose of this function is to be robust to improper connections
         settings provided by users, specifically in the host field.

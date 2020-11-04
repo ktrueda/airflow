@@ -819,7 +819,7 @@ class CloudSQLDatabaseHook(BaseHook):  # noqa
     @staticmethod
     def _generate_unique_path() -> str:
         """
-        _generate_unique_path
+        Generate unique path.
 
         We are not using mkdtemp here as the path generated with mkdtemp
         can be close to 60 characters and there is a limitation in

@@ -85,7 +85,7 @@ class _PrestoToGCSPrestoCursorAdapter:
 
     def executemany(self, *args, **kwargs):
         """
-        Execute many
+        Prepare and execute it against all.
 
         Prepare a database operation (query or command) and then execute it against all parameter
         sequences or mappings found in the sequence seq_of_parameters.
@@ -103,10 +103,9 @@ class _PrestoToGCSPrestoCursorAdapter:
 
     def fetchone(self) -> Any:
         """
-        Fetchone
+        Fetch the next row of a query result set.
 
-        Fetch the next row of a query result set, returning a single sequence, or
-        ``None`` when no more data is available.
+        Returning a single sequence, or ``None`` when no more data is available.
         """
         if self.rows:
             return self.rows.pop(0)
@@ -133,7 +132,7 @@ class _PrestoToGCSPrestoCursorAdapter:
 
     def __next__(self) -> Any:
         """
-        __next__
+        Return the next row from the currently executing SQL statement.
 
         Return the next row from the currently executing SQL statement using the same semantics as
         ``.fetchone()``.  A ``StopIteration`` exception is raised when the result set is exhausted.

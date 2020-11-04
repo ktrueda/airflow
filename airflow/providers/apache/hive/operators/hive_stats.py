@@ -30,7 +30,7 @@ from airflow.utils.decorators import apply_defaults
 
 class HiveStatsCollectionOperator(BaseOperator):
     """
-    HiveStatsCollectionOperator
+    Hive stats collection operator class
 
     Gathers partition statistics using a dynamically generated Presto
     query, inserts the stats into a MySql table with this format. Stats

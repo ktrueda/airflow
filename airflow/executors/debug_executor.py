@@ -133,7 +133,7 @@ class DebugExecutor(BaseExecutor):
 
     def end(self) -> None:
         """
-        End
+        Just set states of queued tasks to UPSTREAM_FAILED marking them as not executed.
 
         When the method is called we just set states of queued tasks
         to UPSTREAM_FAILED marking them as not executed.

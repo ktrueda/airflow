@@ -62,7 +62,7 @@ class BaseTIDep:
 
     def _get_dep_statuses(self, ti, session, dep_context):
         """
-        _get_dep_statuses
+        Abstract method that returns an iterable of TIDepStatus objects.
 
         Abstract method that returns an iterable of TIDepStatus objects that describe
         whether the given task instance has this dependency met.
@@ -82,7 +82,7 @@ class BaseTIDep:
     @provide_session
     def get_dep_statuses(self, ti, session, dep_context=None):
         """
-        get_dep_statuses
+        Returns an iterable of TIDepStatus objects.
 
         Wrapper around the private _get_dep_statuses method that contains some global
         checks for all dependencies.
@@ -154,7 +154,7 @@ class BaseTIDep:
 
 class TIDepStatus(NamedTuple):
     """
-    TIDepStatus
+    Dependency status for a specific task instance.
 
     Dependency status for a specific task instance indicating whether or not the task
     instance passed the dependency.

@@ -34,7 +34,7 @@ class TriggerRuleDep(BaseTIDep):
     @staticmethod
     def _get_states_count_upstream_ti(ti, finished_tasks):
         """
-        _get_states_count_upstream_ti
+        Returns the states of the upstream tis.
 
         This function returns the states of the upstream tis for a specific ti in order to determine
         whether this ti can run in this iteration

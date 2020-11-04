@@ -30,7 +30,7 @@ from airflow.typing_compat import Protocol
 
 class Validator(Protocol):
     """
-    Validator
+    This class is only used for TypeChecking due to the way ``Draft7Validator`` is created.
 
     This class is only used for TypeChecking (for IDEs, mypy, pylint, etc)
     due to the way ``Draft7Validator`` is created. They are created or do not inherit

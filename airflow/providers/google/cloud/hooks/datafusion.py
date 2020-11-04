@@ -98,7 +98,7 @@ class DataFusionHook(GoogleBaseHook):
         timeout: int = 5 * 60,
     ) -> None:
         """
-        wait_for_pipeline_state
+        Polls pipeline state and raises an exception if failure.
 
         Polls pipeline state and raises an exception if the state is one of
         `failure_states` or the operation timed_out.

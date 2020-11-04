@@ -268,7 +268,7 @@ class DagFileProcessorProcess(AbstractDagFileProcessorProcess, LoggingMixin, Mul
     @property
     def pid(self) -> int:
         """
-        pid.
+        The PID of the process launched to process the given file
 
         :return: the PID of the process launched to process the given file
         :rtype: int
@@ -337,7 +337,7 @@ class DagFileProcessorProcess(AbstractDagFileProcessorProcess, LoggingMixin, Mul
     @property
     def result(self) -> Optional[Tuple[int, int]]:
         """
-        result.
+        Result of running SchedulerJob.process_file().
 
         :return: result of running SchedulerJob.process_file()
         :rtype: tuple[int, int] or None
@@ -349,7 +349,7 @@ class DagFileProcessorProcess(AbstractDagFileProcessorProcess, LoggingMixin, Mul
     @property
     def start_time(self) -> datetime.datetime:
         """
-        start_time.
+        Return when this started to process the file.
 
         :return: when this started to process the file
         :rtype: datetime
@@ -545,7 +545,7 @@ class DagFileProcessor(LoggingMixin):
     @staticmethod
     def update_import_errors(session: Session, dagbag: DagBag) -> None:
         """
-        update_import_errors
+        Record any associated import errors and clears errors for files that no longer have them.
 
         For the DAGs in the given DagBag, record any associated import errors and clears
         errors for files that no longer have them. These are usually displayed through the
@@ -836,7 +836,7 @@ class SchedulerJob(BaseJob):  # pylint: disable=too-many-instance-attributes
         session: Session = None
     ) -> None:
         """
-        _change_state_for_tis_without_dagrun.
+        Look for task instance with illegal state and set them to new state.
 
         For all DAG IDs in the DagBag, look for task instances in the
         old_states and set them to new_state if the corresponding DagRun
@@ -930,7 +930,7 @@ class SchedulerJob(BaseJob):  # pylint: disable=too-many-instance-attributes
     @provide_session
     def _executable_task_instances_to_queued(self, max_tis: int, session: Session = None) -> List[TI]:
         """
-        _executable_task_instances_to_queued
+        Find task instance that are ready for execution.
 
         Finds TIs that are ready for execution with respect to pool limits,
         dag concurrency, executor state, and priority.
@@ -1187,7 +1187,7 @@ class SchedulerJob(BaseJob):  # pylint: disable=too-many-instance-attributes
     @provide_session
     def _change_state_for_tasks_failed_to_execute(self, session: Session = None):
         """
-        _change_state_for_tasks_failed_to_execute
+        Change state for tasks failed to execute.
 
         If there are tasks left over in the executor,
         we set them back to SCHEDULED to avoid creating hanging tasks.
@@ -1565,7 +1565,7 @@ class SchedulerJob(BaseJob):  # pylint: disable=too-many-instance-attributes
 
     def _create_dag_runs(self, dag_models: Iterable[DagModel], session: Session) -> None:
         """
-        _create_dag_runs
+        Create dag runs.
 
         Unconditionally create a DAG run for the given DAG, and update the dag_model's fields to control
         if/when the next DAGRun should be created
@@ -1787,7 +1787,7 @@ class SchedulerJob(BaseJob):  # pylint: disable=too-many-instance-attributes
     @provide_session
     def adopt_or_reset_orphaned_tasks(self, session: Session = None):
         """
-        adopt_or_reset_orphaned_tasks
+        Adopt/reset orphaned tasks.
 
         Reset any TaskInstance still in QUEUED or SCHEDULED states that were
         enqueued by a SchedulerJob that is no longer running.

@@ -278,7 +278,7 @@ class GCSListObjectsOperator(BaseOperator):
 
 class GCSDeleteObjectsOperator(BaseOperator):
     """
-    GCSDeleteObjectsOperator
+    GCS Delete Objects Operator class.
 
     Deletes objects from a Google Cloud Storage bucket, either
     from an explicit list of object names or all objects

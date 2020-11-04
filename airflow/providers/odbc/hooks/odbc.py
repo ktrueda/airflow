@@ -48,7 +48,7 @@ class OdbcHook(DbApiHook):
         **kwargs,
     ) -> None:
         """
-        __init__
+        __init__ of OdbcHook.
 
         :param args: passed to DbApiHook
         :param database: database to use -- overrides connection ``schema``
@@ -156,7 +156,7 @@ class OdbcHook(DbApiHook):
     @property
     def connect_kwargs(self) -> dict:
         """
-        connect_kwargs
+        Returns effective kwargs to be passed to ``pyodbc.connect``.
 
         Returns effective kwargs to be passed to ``pyodbc.connect`` after merging between conn extra,
         ``connect_kwargs`` and hook init.

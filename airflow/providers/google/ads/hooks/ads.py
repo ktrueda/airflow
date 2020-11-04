@@ -112,7 +112,7 @@ class GoogleAdsHook(BaseHook):
 
     def _get_config(self) -> None:
         """
-        _get_config
+        Gets google ads connection.
 
         Gets google ads connection from meta db and sets google_ads_config attribute with returned config
         file

@@ -26,7 +26,7 @@ from airflow.utils.sqlalchemy import UtcDateTime
 
 class DagPickle(Base):
     """
-    DagPickle
+    Represents a version of a DAG and becomes a source of truth for a BackfillJob execution.
 
     Dags can originate from different places (user repos, master repo, ...)
     and also get executed in different places (different executors). This

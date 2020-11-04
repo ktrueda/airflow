@@ -425,7 +425,7 @@ class AirflowKubernetesScheduler(LoggingMixin):
     @staticmethod
     def _make_safe_pod_id(safe_dag_id: str, safe_task_id: str, safe_uuid: str) -> str:
         r"""
-        _make_safe_pod_id.
+        Make validated pod name.
 
         Kubernetes pod names must be <= 253 chars and must pass the following regex for
         validation
@@ -514,7 +514,7 @@ class KubernetesExecutor(BaseExecutor, LoggingMixin):
     @provide_session
     def clear_not_launched_queued_tasks(self, session=None) -> None:
         """
-        clear_not_launched_queued_tasks
+        Set not-launched queued tasks state to "None".
 
         If the airflow scheduler restarts with pending "Queued" tasks, the tasks may or
         may not

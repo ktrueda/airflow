@@ -46,7 +46,7 @@ class CeleryQueueSensor(BaseSensorOperator):
 
     def _check_task_id(self, context: Dict[str, Any]) -> bool:
         """
-        _check_task_id
+        Check if the celery result has been finished execution.
 
         Gets the returned Celery result from the Airflow task
         ID provided to the sensor, and returns True if the

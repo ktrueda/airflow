@@ -68,7 +68,7 @@ class FTPHook(BaseHook):
 
     def describe_directory(self, path: str) -> dict:
         """
-        describe_directory
+        Returns a dictionary for all files on the remote system.
 
         Returns a dictionary of {filename: {attributes}} for all files
         on the remote system (where the MLSD command is supported).

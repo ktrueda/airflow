@@ -141,7 +141,7 @@ class PostgresHook(DbApiHook):
     @staticmethod
     def _serialize_cell(cell: object, conn: Optional[connection] = None) -> object:
         """
-        _serialize_cell
+        Return cell without any conversion.
 
         Postgresql will adapt all arguments to the execute() method internally,
         hence we return cell without any conversion.

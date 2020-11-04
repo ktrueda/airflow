@@ -140,7 +140,7 @@ def perform_krb181_workaround(principal: str):
 
 def detect_conf_var() -> bool:
     """
-    detect_conf_var
+    Detect conf var.
 
     Return true if the ticket cache contains "conf" information as is found
     in ticket caches of Kerberos 1.8.1 or later. This is incompatible with the

@@ -17,7 +17,7 @@
 # under the License.
 
 """
-example_video_intelligence.py
+Example Airflow DAG about Google Cloud Video Intelligence
 
 Example Airflow DAG that demonstrates operators for the Google Cloud Video Intelligence service in the Google
 Cloud Platform.

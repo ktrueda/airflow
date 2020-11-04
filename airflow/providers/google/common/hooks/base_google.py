@@ -87,7 +87,7 @@ def is_soft_quota_exception(exception: Exception):
 
 def is_operation_in_progress_exception(exception: Exception) -> bool:
     """
-    is_operation_in_progress_exception
+    Check whether given exception is operation in progress or not.
 
     Some of the calls return 429 (too many requests!) or 409 errors (Conflict)
     in case of operation in progress.
@@ -301,7 +301,7 @@ class GoogleBaseHook(BaseHook):
     @staticmethod
     def quota_retry(*args, **kwargs) -> Callable:
         """
-        quota_retry
+        A decorator for repeat requests.
 
         A decorator that provides a mechanism to repeat requests in response to exceeding a temporary quote
         limit.
@@ -322,7 +322,7 @@ class GoogleBaseHook(BaseHook):
     @staticmethod
     def operation_in_progress_retry(*args, **kwargs) -> Callable[[T], T]:
         """
-        operation_in_progress_retry
+        A decorator for repeat requests.
 
         A decorator that provides a mechanism to repeat requests in response to
         operation in progress (HTTP 409)
@@ -377,7 +377,7 @@ class GoogleBaseHook(BaseHook):
     @staticmethod
     def provide_gcp_credential_file(func: T) -> T:
         """
-        provide_gcp_credential_file
+        Function decorator that provides a Google Cloud credentials.
 
         Function decorator that provides a Google Cloud credentials for application supporting Application
         Default Credentials (ADC) strategy.
@@ -397,7 +397,7 @@ class GoogleBaseHook(BaseHook):
     @contextmanager
     def provide_gcp_credential_file_as_context(self):
         """
-        provide_gcp_credential_file_as_context
+        Context manager that provides a Google Cloud credentials.
 
         Context manager that provides a Google Cloud credentials for application supporting `Application
         Default Credentials (ADC) strategy <https://cloud.google.com/docs/authentication/production>`__.

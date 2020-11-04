@@ -97,7 +97,7 @@ def on_post_execution(**kwargs):
 
 def default_action_log(log, **_):
     """
-    default_action_log
+    A default action logger callback.
 
     A default action logger callback that behave same as www.utils.action_logging
     which uses global session and pushes log ORM object.

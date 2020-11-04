@@ -22,7 +22,6 @@ import json
 import time
 from decimal import Decimal
 from typing import Dict
-
 import pendulum
 
 from airflow.providers.google.cloud.transfers.sql_to_gcs import BaseSQLToGCSOperator
@@ -79,7 +78,7 @@ class PostgresToGCSOperator(BaseSQLToGCSOperator):
 
     def convert_type(self, value, schema_type):
         """
-        convert_type
+        Convert Postgres value to safe value for JSON/Google Cloud Storage/BigQuery.
 
         Takes a value from Postgres, and converts it to a value that's safe for
         JSON/Google Cloud Storage/BigQuery. Dates are converted to UTC seconds.

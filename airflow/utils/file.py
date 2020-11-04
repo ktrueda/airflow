@@ -62,7 +62,7 @@ ZIP_REGEX = re.compile(r'((.*\.zip){})?(.*)'.format(re.escape(os.sep)))
 
 def correct_maybe_zipped(fileloc):
     """
-    correct_maybe_zipped
+    Correct the given file.
 
     If the path contains a folder with a .zip suffix, then
     the folder is treated as a zip archive and path to zip is returned.

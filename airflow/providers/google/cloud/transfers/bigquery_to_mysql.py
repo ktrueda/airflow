@@ -26,7 +26,7 @@ from airflow.utils.decorators import apply_defaults
 
 class BigQueryToMySqlOperator(BaseOperator):
     """
-    BigQueryToMySqlOperator
+    Fetches the data from a BigQuery table and insert that data into a MySQL table.
 
     Fetches the data from a BigQuery table (alternatively fetch data for selected columns)
     and insert that data into a MySQL table.

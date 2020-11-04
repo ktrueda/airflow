@@ -210,7 +210,7 @@ class CgroupTaskRunner(BaseTaskRunner):
     @staticmethod
     def _get_cgroup_names():
         """
-        _get_cgroup_names.
+        A mapping between the subsystem name to the cgroup name
 
         :return: a mapping between the subsystem name to the cgroup name
         :rtype: dict[str, str]

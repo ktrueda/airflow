@@ -38,7 +38,7 @@ TABLE_NAME = 'rendered_task_instance_fields'
 
 def upgrade():
     """
-    Upgrade
+    Recreate RenderedTaskInstanceFields table when using MSSQL as backend.
 
     Recreate RenderedTaskInstanceFields table changing timestamp to datetime2(6) when using MSSQL as
     backend
@@ -60,7 +60,7 @@ def upgrade():
 
 def downgrade():
     """
-    Downgrade
+    Recreate RenderedTaskInstanceFields table when using MSSQL as backend.
 
     Recreate RenderedTaskInstanceFields table changing datetime2(6) to timestamp when using MSSQL as
     backend

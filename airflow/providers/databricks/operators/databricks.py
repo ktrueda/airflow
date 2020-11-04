@@ -96,7 +96,7 @@ def _handle_databricks_operator_execution(operator, hook, log, context) -> None:
 
 class DatabricksSubmitRunOperator(BaseOperator):
     """
-    DatabricksSubmitRunOperator
+    Submits a Spark job run to Databricks.
 
     Submits a Spark job run to Databricks using the
     `api/2.0/jobs/runs/submit
@@ -322,7 +322,7 @@ class DatabricksSubmitRunOperator(BaseOperator):
 
 class DatabricksRunNowOperator(BaseOperator):
     """
-    DatabricksRunNowOperator
+    Runs an existing Spark job run to Databricks.
 
     Runs an existing Spark job run to Databricks using the
     `api/2.0/jobs/run-now

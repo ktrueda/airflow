@@ -221,7 +221,7 @@ class ExternalTaskSensor(BaseSensorOperator):
 
     def _handle_execution_date_fn(self, context):
         """
-        _handle_execution_date_fn
+        Call execution_date_fn with backwards compatibility.
 
         This function is to handle backwards compatibility with how this operator was
         previously where it only passes the execution date, but also allow for the newer

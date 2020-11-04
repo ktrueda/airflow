@@ -151,7 +151,7 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> DeidentifyTemplate:
         """
-        create_deidentify_template
+        Creates a deidentify template.
 
         Creates a deidentify template for re-using frequently used configuration for
         de-identifying content, images, and storage.
@@ -294,7 +294,7 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> InspectTemplate:
         """
-        create_inspect_template
+        Creates an inspect template.
 
         Creates an inspect template for re-using frequently used configuration for
         inspecting content, images, and storage.
@@ -353,7 +353,7 @@ class CloudDLPHook(GoogleBaseHook):
         metadata: Optional[Sequence[Tuple[str, str]]] = None,
     ) -> JobTrigger:
         """
-        create_job_trigger
+        Creates a job trigger.
 
         Creates a job trigger to run DLP actions such as scanning storage for sensitive
         information on a set schedule.

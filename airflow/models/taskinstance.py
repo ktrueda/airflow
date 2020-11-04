@@ -297,7 +297,7 @@ class TaskInstance(Base, LoggingMixin):     # pylint: disable=R0902,R0904
     @property
     def prev_attempted_tries(self):
         """
-        prev_attempted_tries
+        The number of previously attempted tries.
 
         Based on this instance's try_number, this will calculate
         the number of previously attempted tries, defaulting to 0.
@@ -482,7 +482,7 @@ class TaskInstance(Base, LoggingMixin):     # pylint: disable=R0902,R0904
     @provide_session
     def current_state(self, session=None) -> str:
         """
-        current_state.
+        Get the very latest state from the database.
 
         Get the very latest state from the database, if a session is passed,
         we use and looking up the state becomes part of the session, otherwise
@@ -787,7 +787,7 @@ class TaskInstance(Base, LoggingMixin):     # pylint: disable=R0902,R0904
             session=None,
             verbose=False):
         """
-        are_dependencies_met.
+        Returns if all the conditions are met for this task instance to be run.
 
         Returns whether or not all the conditions are met for this task instance to be run
         given the context for the dependencies (e.g. a task instance being force run from
@@ -850,10 +850,9 @@ class TaskInstance(Base, LoggingMixin):     # pylint: disable=R0902,R0904
 
     def next_retry_datetime(self):
         """
-        next_retry_datetime
+        Get datetime of the next retry if the task instance fails.
 
-        Get datetime of the next retry if the task instance fails. For exponential
-        backoff, retry_delay is used as base and will be converted to seconds.
+        For exponential backoff, retry_delay is used as base and will be converted to seconds.
         """
         delay = self.task.retry_delay
         if self.task.retry_exponential_backoff:
@@ -1054,7 +1053,7 @@ class TaskInstance(Base, LoggingMixin):     # pylint: disable=R0902,R0904
             pool: Optional[str] = None,
             session=None) -> None:
         """
-        run_raw_task.
+        Immediately runs the task.
 
         Immediately runs the task (without checking or changing db state
         before execution) and then sets the appropriate final state after
